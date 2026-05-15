@@ -1,0 +1,162 @@
+/* +++GESTIÓ UNITAT (inici)+++ */
+
+/* part comuna (inici) */ 
+
+	/* barra de gestors (inici) */
+	nav.navGestors {
+		height: 10px;
+		margin: 10px;
+		padding: 0px;
+	}
+	
+	div.navGestors a.home {
+		font-weight: bold;
+	}
+	div.navGestors a.home:hover {
+		background-color: #777777;
+		color: white;
+	}
+	
+	div.navGestors a.unitat:hover {
+		background-color: white;
+		color: red;
+	}
+	
+	a.unitat span {
+		font-size: x-small;
+	}
+	/* barra de gestors (inici) */
+
+	/* capçalera (inici) */
+	div.parlaControlador {
+		font-style: italic;
+	}
+	
+	div.separador {
+		margin: 10px;
+	}
+	
+	div.liniaUnitat {
+		margin-left: 10px;
+		margin-right: 10px;
+		padding: 10px;
+		padding-bottom: 20px;
+		border: 1px;
+		border-style: solid;
+		border-color: black grey black grey;
+	}
+	
+	div.inner-default-heading h2, div.inner-default-heading p {
+	    text-align: center;
+	}
+	/* capçalera (fi) */
+	
+	/* menu idioma (inici) */
+	div.menuIdioma {
+		height: 25px;
+		padding-left: 70px;
+	}
+	/* menu idioma (fi) */
+	
+/* part comuna (fi) */
+
+
+
+/* veureUnitat (inici) */
+div.veureUnitat {
+	min-width: 10000px;
+	margin-left: 50px;
+}
+
+table.tableVeureUnitat {
+	padding: 0px;
+	border: 2px solid #D2691E !important;
+	border-collapse: inherit;
+}
+
+table.tableVeureUnitat td.col1 {
+	background-color: orange;
+	padding: 3px;
+	font-weight: bold;
+	text-align: left !important;
+	border-right: 2px solid #D2691E !important;	
+}
+
+table.tableVeureUnitat td.col2  {
+	background-color: #EEE8AA;
+	padding: 5px;
+	text-align: center;
+	height: 20px;
+}
+
+div.botonsVeure a {
+	margin-right: 7px;
+}
+/* veureUnitat (fi) */
+
+/* llistatUnitat (inici) */
+div.llistatUnitat {
+	min-width: 10000px;
+	margin-left: 50px;
+}
+
+	/* table scrolled (inici) */
+	table.cap, table.cos {
+	    width: 600px;
+	    text-align: center;
+	    border-style: solid;
+	    border-color: #D2691E;
+		border-collapse: collapse;
+	}
+	
+	div.scroll {
+	    max-height: 150px;
+	    overflow-y: auto;
+	    /* 16px és el gruix de la barra vertical d'scroll */
+	    /* 500px (taula) + 16px (barra scroll) = 516px */
+	    width: 616px;
+	}
+	
+	table.cap {
+		border-width: 2px 2px 4px 2px;
+	}
+	
+	table.cos {
+		border-width: 0px 2px 2px 2px;
+	}
+	
+	table.cap th.col4, table.cap th.col5, table.cap th.col6 {
+		color: orange;
+	}
+	
+	table.cap th {
+		text-align: center;
+		background-color: orange;
+		padding: 3px;
+		border-width: 0px;
+		width: 16%;
+	}
+	
+	table.cos td {
+		text-align: center;
+		background-color: #EEE8AA;
+		padding: 3px;
+		height: 35px;
+		width: 16%;
+	}
+	/* table scrolled (fi) */
+/* llistatUnitat (fi) */
+
+/* formUnitat (inici) */
+div.formUnitat {
+	margin-left: 50px;
+}
+
+div.innUnitat, div.cheUnitat, div.con2Unitat {
+	margin: 0px;
+	padding: 0px;
+}	
+/* formUnitat (fi) */
+
+
+/* +++GESTIÓ UNITAT (fi)+++ */

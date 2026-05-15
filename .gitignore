@@ -1,0 +1,24 @@
+# Eclipse
+.metadata/
+Servers/
+RemoteSystemsTempFiles/
+
+# compilados
+bin/
+build/classes/
+target/
+*.class
+
+# logs
+*.log
+
+# sistema
+.DS_Store
+Thumbs.db
+
+# tomcat temp
+tmp/
+work/
+
+# opcional
+node_modules/

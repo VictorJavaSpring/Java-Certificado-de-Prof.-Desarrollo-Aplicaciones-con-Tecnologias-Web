@@ -1,0 +1,159 @@
+.tableEwok  {
+	padding: 0px;	
+	border-collapse: inherit;
+}
+
+.tableEwok th:first-child {
+	border-radius: 15px 0 0 0;
+}
+
+.tableEwok th:last-child {
+	border-radius: 0 15px 0 0;
+}
+
+.tableEwok th {
+	background-color: orange;
+	padding: 3px;
+	text-align: center !important;
+	border-bottom: 2px solid #D2691E !important;	
+}
+
+.imgCheck {	
+	max-width: 70px;
+}
+
+i.tancaOnclick {	
+	cursor: pointer;
+	border-radius:50%;
+	padding: 6px;
+	opacity: 0.7;
+	background-color: white;
+	transition: 0.7s all ease-in-out;
+}
+
+i.tancaOnclick:hover {
+	background-color: red;
+	color: white;	
+	opacity: 1;
+}
+
+.tableEwok td {
+	background-color: #EEE8AA;
+	padding: 5px;
+	text-align: center;
+}
+
+.alert-form {
+	padding:5px;
+	border:1px solid transparent;
+	border-radius:5px;
+	margin: -10px 17% 20px 17%;
+	text-align: center;
+	}
+
+.alert-form h4 {
+	margin-top:0;
+	color:inherit
+	}
+
+.alert-form .alert-link {
+	font-weight:bold
+	}
+
+.alert-form>p,.alert-form>ul {
+	margin-bottom:0
+	}
+
+.alert-form>p+p{
+	margin-top:5px
+}
+
+p.textError {
+	text-align: center;
+}
+
+div.alert-ewok {
+	margin-left: 10%;
+	margin-right: 10%;
+}
+
+span.alert-ewok {
+/*   display: block; */
+}
+
+/* estils Formes Pagament */
+.FP {
+	color:grey;
+	background-color: orange;
+	border: 2px solid #D2691E;
+	padding: 3px;
+	font-weight: bold;
+	padding-right:5px;
+	padding-left:5px;
+	margin:5px;
+}
+
+a {
+	color : orange;
+}
+
+.item-hover-2{
+	width: 150px !important;
+}
+
+/* estils HeaderStaff */
+.goUp {
+	padding-bottom: 20px;
+}
+.goDown {
+	padding-top: 15px;
+}
+
+/* estils pag producte compost
+	fitxes i drag and drop
+*/
+div.fitxa {
+	/*float: left;*/
+	margin-top: 0px;
+	margin-top: 5px;
+	padding: 5px;
+	border: 1px solid white;
+	border-radius: 10px;
+	background-color: rgb(57,155,57);
+	box-shadow: 2px 2px 15px rgb(100,100,100);
+	text-align:center;
+}
+div#componentsActuals div.fitxa{
+	background-color: rgb(157,155,57);
+}
+div.dadesproducte{
+	text-align:left;
+	padding: 3px;
+	margin-top: 8px;
+	background-color: white;
+	/*color: darkred;*/
+	border: 2px solid gray;
+	border-radius: 5px;
+}
+div#areaComponents, div#componentsActuals{
+	min-height:100px;
+}
+.compoproductes{
+	overflow:auto;
+}
+div#areaComponents div.quantitat, div#areaComponents div.preu {
+	display:none;
+}
+.quantitat input, .preu input, div#dcostTot, div#dcostTot input,
+ div#dpreuFinal, div#dpreuFinal input{
+	text-align: center !important;
+}
+.dropencurs{
+	background-color: rgb(148,215,148);
+	opacity: 0.4;
+}
+div.fitxa.dropencurs{
+	opacity: 0.3;
+	transition: 1s;
+}
+/* final pag producte compost*/

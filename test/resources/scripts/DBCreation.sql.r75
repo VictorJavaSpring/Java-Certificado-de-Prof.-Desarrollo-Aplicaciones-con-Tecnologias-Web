@@ -1,0 +1,36 @@
+DROP TABLE IF EXISTS `Rol`;
+
+CREATE TABLE IF NOT EXISTS `Rol` (
+  `Id` INT NOT NULL AUTO_INCREMENT,
+  `Nom` VARCHAR(45) NOT NULL,
+  PRIMARY KEY (`Id`));
+  
+-- -----------------------------------------------------
+-- Table `Producte`
+-- -----------------------------------------------------
+DROP TABLE IF EXISTS `Producte`;
+
+CREATE TABLE IF NOT EXISTS `Producte` (
+  `Id` INT UNSIGNED NOT NULL AUTO_INCREMENT,
+  `Nom` VARCHAR(50) NOT NULL,
+  `DescripcioCurta` VARCHAR(100) NULL,
+  `Descripcio` TEXT NULL,
+  `IniciVigencia` DATETIME NULL,
+  `FiVigencia` DATETIME NULL,
+  `IdUnitat` INT UNSIGNED NOT NULL,
+  `IdTipusProducte` INT UNSIGNED NOT NULL,
+  PRIMARY KEY (`Id`));
+  -- -----------------------------------------------------
+  
+  -- -----------------------------------------------------
+-- Table `OfertaComanda`
+-- -----------------------------------------------------
+DROP TABLE IF EXISTS `OfertaComanda` ;
+
+CREATE TABLE IF NOT EXISTS `OfertaComanda` (
+  `Id` INT UNSIGNED NOT NULL AUTO_INCREMENT,
+  `LimitInferior` DECIMAL(6,2) NOT NULL,
+  `PctDescompte` DECIMAL(5,2) UNSIGNED NOT NULL,
+  `IniciVigencia` DATETIME NOT NULL,
+  `FiVigencia` DATETIME NOT NULL,
+  PRIMARY KEY (`Id`));

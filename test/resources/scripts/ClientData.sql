@@ -1,0 +1,3 @@
+INSERT INTO Client (Id, Nom, Cognoms, Telefon, eMail, DataAlta, DNI, idUsuari) VALUES (1, 'Client1', 'CognomsClient1', '666666666', 'Client1@email.com', '2014-05-01T10:00:00', '00000000A', 'unemail@email.com');
+INSERT INTO Client (Id, Nom, Cognoms, Telefon, eMail, DataAlta, DNI, idUsuari) VALUES (2, 'Client2', 'CognomsClient2', '766666666', 'Client2@email.com', '2014-05-01T10:00:00', '00000000B', 'unaltreemail@email.com');
+INSERT INTO Client (Id, Nom, Cognoms, Telefon, eMail, DataAlta, DNI, idUsuari) VALUES (3, 'Client3', 'CognomsClient3', '866666666', 'Client3@email.com', '2014-05-01T10:00:00', '00000000C', 'unemailmes@email.com');
