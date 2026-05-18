@@ -17,6 +17,14 @@ sin comprometer la versión estable original.
 
 # Estado actual del proyecto
 
+## Working Environment
+
+- Eclipse 2024-12
+- Java Runtime: JDK 21
+- Project compliance: Java 8
+- Tomcat 8.5
+- MariaDB
+
 ## Stack legacy original
 
 - Java 8
