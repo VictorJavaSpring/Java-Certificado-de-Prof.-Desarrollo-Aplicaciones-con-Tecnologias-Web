@@ -38,7 +38,8 @@ public class ViewMenuServlet extends PublicController {
 	private static final String PARAM_ERROR_IDPROD = "idProd";
 	private static final String PARAM_ERROR_PROD = "prod";
 	private static final String PARAM_ERROR_PRODNOTFOUND = "prodNF";
-	private static final String PARAM_ERROR_IDPRODNOTFOUND = "idProdNF";
+	private static final String PARAM_ERROR_IDPRODNOTFOUND = "viewmenu001.errorIdProducte";
+//	private static final String PARAM_ERROR_IDPRODNOTFOUND = "idProdNF";
 	private static final String PARAM_ERROR_TIPUSPRODNOTFOUND = "tipusProdNF";
 	private static final String PARAM_ERROR_TIPUSPROD = "error_tipusProd";
 
