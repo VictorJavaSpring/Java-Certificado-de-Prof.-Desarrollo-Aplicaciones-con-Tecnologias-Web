@@ -5,20 +5,24 @@ RemoteSystemsTempFiles/
 
 # compilados
 bin/
-build/classes/
+build/
 target/
-*.class
 
-# logs
+*.class
 *.log
+
+# Eclipse project files
+.settings/
+.classpath
+.project
 
 # sistema
 .DS_Store
 Thumbs.db
 
-# tomcat temp
+# temporales
 tmp/
 work/
 
-# opcional
+# frontend
 node_modules/
