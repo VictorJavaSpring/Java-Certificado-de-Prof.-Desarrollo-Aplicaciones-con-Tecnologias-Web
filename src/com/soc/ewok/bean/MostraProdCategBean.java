@@ -32,7 +32,7 @@ public class MostraProdCategBean implements Serializable {
                 .getExternalContext()
                 .getRequestParameterMap();
 
-        codi = params.get("codi");
+        codi = params.get("codi");// 01, 02 , 03
         if (codi == null || codi.trim().isEmpty()) {
             errorParamCodi = true;
             productesFiltrats = Collections.emptyList();
