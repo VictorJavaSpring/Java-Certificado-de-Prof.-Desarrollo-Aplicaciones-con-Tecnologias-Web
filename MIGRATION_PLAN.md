@@ -2,6 +2,29 @@
 
 Sorted from easiest to hardest migration.
 
+## Migration Progress
+
+### mostraProdCateg (Phase 1 — read-only)
+
+| Item | Detail |
+|------|--------|
+| **JSP source** | `WebContent/WEB-INF/jsp/mostraProdCateg/mostraProdCateg.jsp` |
+| **XHTML target** | `WebContent/views/mostraProdCateg.xhtml` |
+| **Managed bean** | `com.soc.ewok.bean.MostraProdCategBean` |
+| **Status** | Working |
+| **DAO reused** | `ProducteDAO.obtenirTotsXTipusIdVigents(String codi)` |
+| **Database access** | Working |
+| **PrimeFaces page rendering** | Working |
+| **Known issue** | Product images not displayed because `GFotoController` uses a hardcoded path (`/media/windows7/eWokFotos`) and throws `NullPointerException` in `getCurrentFile()`. |
+| **Blocking** | No |
+| **Priority** | Medium |
+
+**Test URL (example):** `/eWok/views/mostraProdCateg.xhtml?codi=<tipusProducteCodi>`
+
+Legacy servlet/JSP route remains unchanged: `/mostraProdCateg?codi=...`
+
+---
+
 | File path | Purpose | Controllers used | DAO dependencies | Complexity | Migration effort | Risk |
 |---|---|---|---|---|---|---|
 | `WebContent/WEB-INF/jsp/exemples/plantilla.jsp` | Template/example page | (none mapped) | (none) | Low | 1 day | Low |
