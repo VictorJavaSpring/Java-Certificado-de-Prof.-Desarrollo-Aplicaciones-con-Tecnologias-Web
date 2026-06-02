@@ -14,10 +14,10 @@ public class TipusProducteDAOTest extends AbstractDAOTest {
 	@Override
 	public void preparaBD() throws SQLException {
 		
-		// Creem l'esquema a través de la classe base
+		// Creem l'esquema a traves de la classe base
 		super.preparaBD();
 		
-		// Executem l'script de càrrega de dades de TipusProducte
+		// Executem l'script de cï¿½rrega de dades de TipusProducte
 		executaScript("test/resources/scripts/TipusProducteData.sql"); 
 	}
 
@@ -40,7 +40,7 @@ public class TipusProducteDAOTest extends AbstractDAOTest {
 		// (alta m'ha d'haver assignat el nou id)
 		TipusProducte nou = dao.obtenirPerId(tp.getId());
 		
-		// Miro que els dos objectes són iguals
+		// Miro que els dos objectes sï¿½n iguals
 		Assert.assertEquals(tp, nou);
 	}
 	
@@ -57,7 +57,7 @@ public class TipusProducteDAOTest extends AbstractDAOTest {
 		tp.setCodi("Codi Nou");
 		dao.modificar(tp);
 		
-		// El recupero i comprobo que està modificat
+		// El recupero i comprobo que estï¿½ modificat
 		TipusProducte nou = dao.obtenirPerId(1l);
 		Assert.assertEquals(tp, nou);
 	}
@@ -68,7 +68,7 @@ public class TipusProducteDAOTest extends AbstractDAOTest {
 		TipusProducteDAO dao = new TipusProducteDAO(createDataSource());
 		
 		// Recuperem l'objecte que esborrarem
-		// per assegurar-nos que hi és
+		// per assegurar-nos que hi es
 		TipusProducte tp = dao.obtenirPerId(1l);
 		Assert.assertNotNull(tp);
 		
@@ -89,7 +89,7 @@ public class TipusProducteDAOTest extends AbstractDAOTest {
 		// Comprovem que hem rebut totas les unitat
 		Assert.assertEquals(3, tots.size());
 		
-		// Comprovem que el un a un són correctes
+		// Comprovem que el un a un sï¿½n correctes
 		Assert.assertEquals(tots.get(0).getId(), (Long)1l);
 		Assert.assertEquals(tots.get(0).getNom(), "Ingredientes");
 		Assert.assertEquals(tots.get(0).getCodi(), "01");

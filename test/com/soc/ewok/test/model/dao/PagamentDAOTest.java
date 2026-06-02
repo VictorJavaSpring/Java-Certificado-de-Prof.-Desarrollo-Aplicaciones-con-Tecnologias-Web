@@ -13,9 +13,9 @@ import com.soc.ewok.model.Pagament;
 public class PagamentDAOTest extends AbstractDAOTest {
 	@Override
 	public void preparaBD() throws SQLException {
-		// Creem l'esquema a través de la classe base
+		// Creem l'esquema a traves de la classe base
 		super.preparaBD();
-		// Executem l'script de càrrega de dades de rol
+		// Executem l'script de cï¿½rrega de dades de rol
 		executaScript("test/resources/scripts/PagamentData.sql"); 
 	}
 
@@ -38,7 +38,7 @@ public class PagamentDAOTest extends AbstractDAOTest {
 		// Recupero de nou el rol
 		// (alta m'ha d'haver assignat el nou id)
 		Pagament nou = dao.obtenirPerId(p.getnId());
-		// Miro que els dos objectes són iguals
+		// Miro que els dos objectes sï¿½n iguals
 		Assert.assertEquals(p, nou);
 	}
 	
@@ -58,7 +58,7 @@ public class PagamentDAOTest extends AbstractDAOTest {
 		
 		// El modifico
 		dao.modificar(p);
-		// El recupero i comprobo que està modificat
+		// El recupero i comprobo que estï¿½ modificat
 		Pagament nou = dao.obtenirPerId(1l);
 		Assert.assertEquals(p, nou);
 	}
@@ -67,7 +67,7 @@ public class PagamentDAOTest extends AbstractDAOTest {
 	public void eliminacioCorrecta() throws SQLException {
 		PagamentDAO dao = new PagamentDAO(createDataSource());
 		// Recuperem l'objecte que esborrarem
-		// per assegurar-nos que hi és
+		// per assegurar-nos que hi es
 		Pagament p = dao.obtenirPerId(1l);
 		Assert.assertNotNull(p);
 		// Esborrem l'objecte
@@ -84,7 +84,7 @@ public class PagamentDAOTest extends AbstractDAOTest {
 		List<Pagament> tots = dao.obtenirTots();
 		// Comprovem que hem rebut tres rols
 		Assert.assertEquals(3, tots.size());
-		// Comprovem que el un a un són correctes
+		// Comprovem que el un a un sï¿½n correctes
 		Assert.assertEquals(tots.get(0).getnId(), (Long)1l);
 		Assert.assertEquals(tots.get(0).getnIdComanda(), (Long)1l);
 		Assert.assertEquals((float)tots.get(0).getQuantitat(),(float)123.45,(float)0.00);

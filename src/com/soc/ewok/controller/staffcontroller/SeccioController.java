@@ -29,7 +29,7 @@ public abstract class SeccioController implements ISectionController {
 	
 	//constatnts de parametre id
 	private static final String PARAM_ID = "id";
-	private static final String REQ_ERRORPARAM = "No s'ha trobat el paràmetre";
+	private static final String REQ_ERRORPARAM = "No s'ha trobat el parï¿½metre";
 
 	//var membre de la classe
 	protected List<String> llistaCodisRols = null;
@@ -45,7 +45,7 @@ public abstract class SeccioController implements ISectionController {
 	}
 	
 	/**
-	 * mètode d'utilitat que afegeix els rols d'usuari que poden usar 
+	 * mï¿½tode d'utilitat que afegeix els rols d'usuari que poden usar 
 	 * aquest controller a la var membre llistaCodisRols
 	 */
 	protected void addRols2Controller(String codirol) {
@@ -57,7 +57,7 @@ public abstract class SeccioController implements ISectionController {
 
 	/**
 	 * utilitat per a obtenir l'id del request
-	 * el literal buscat és 'id' (tot minúscula)
+	 * el literal buscat es 'id' (tot minescula)
 	 * @param request La request actual
 	 * @param response La response actual
 	 * @return id en format Long o null

@@ -13,9 +13,9 @@ public class RolDAOTest extends AbstractDAOTest {
 
 	@Override
 	public void preparaBD() throws SQLException {
-		// Creem l'esquema a través de la classe base
+		// Creem l'esquema a traves de la classe base
 		super.preparaBD();
-		// Executem l'script de càrrega de dades de rol
+		// Executem l'script de cï¿½rrega de dades de rol
 		executaScript("test/resources/scripts/RolData.sql");
 	}
 
@@ -32,7 +32,7 @@ public class RolDAOTest extends AbstractDAOTest {
 		// Recupero de nou el rol
 		// (alta m'ha d'haver assignat el nou id)
 		Rol nou = dao.obtenirPerId(r.getId());
-		// Miro que els dos objectes són iguals
+		// Miro que els dos objectes sï¿½n iguals
 		Assert.assertEquals(r, nou);
 	}
 	
@@ -44,7 +44,7 @@ public class RolDAOTest extends AbstractDAOTest {
 		// El modifico
 		r.setNom("Un altre");
 		dao.modificar(r);
-		// El recupero i comprobo que està modificat
+		// El recupero i comprobo que estï¿½ modificat
 		Rol nou = dao.obtenirPerId(1l);
 		Assert.assertEquals(r, nou);
 	}
@@ -53,7 +53,7 @@ public class RolDAOTest extends AbstractDAOTest {
 	public void eliminacioCorrecta() throws SQLException {
 		RolDAO dao = new RolDAO(createDataSource());
 		// Recuperem l'objecte que esborrarem
-		// per assegurar-nos que hi és
+		// per assegurar-nos que hi es
 		Rol r = dao.obtenirPerId(1l);
 		Assert.assertNotNull(r);
 		// Esborrem l'objecte
@@ -70,7 +70,7 @@ public class RolDAOTest extends AbstractDAOTest {
 		List<Rol> tots = dao.obtenirTots();
 		// Comprovem que hem rebut tres rols
 		Assert.assertEquals(3, tots.size());
-		// Comprovem que el un a un són correctes
+		// Comprovem que el un a un sï¿½n correctes
 		Assert.assertEquals(tots.get(0).getId(), (Long)1l);
 		Assert.assertEquals(tots.get(0).getNom(), "Administrador");
 		Assert.assertEquals(tots.get(0).getCodi(), "C1Administ");

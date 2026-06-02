@@ -14,9 +14,9 @@ public class ClientDAOTest extends AbstractDAOTest {
 
 	@Override
 	public void preparaBD() throws SQLException {
-		// Creem l'esquema a través de la classe base
+		// Creem l'esquema a traves de la classe base
 		super.preparaBD();
-		// Executem l'script de càrrega de dades de rol
+		// Executem l'script de cï¿½rrega de dades de rol
 		executaScript("test/resources/scripts/ClientData.sql"); 
 	}
 
@@ -39,7 +39,7 @@ public class ClientDAOTest extends AbstractDAOTest {
 		// Recupero de nou el client
 		// (alta m'ha d'haver assignat el nou id)
 		Client nou = dao.obtenirPerId(c.getId());
-		// Miro que els dos objectes són iguals
+		// Miro que els dos objectes sï¿½n iguals
 		Assert.assertEquals(c, nou);
 	}
 	
@@ -52,7 +52,7 @@ public class ClientDAOTest extends AbstractDAOTest {
 		c.setNom("Un altre");
 		// El modifico
 		dao.modificar(c);
-		// El recupero i comprovo que està modificat
+		// El recupero i comprovo que estï¿½ modificat
 		Client nou = dao.obtenirPerId(1l);
 		Assert.assertEquals(c, nou);
 	}
@@ -61,7 +61,7 @@ public class ClientDAOTest extends AbstractDAOTest {
 	public void eliminacioCorrecta() throws SQLException {
 		ClientDAO dao = new ClientDAO(createDataSource());
 		// Recuperem l'objecte que esborrarem
-		// per assegurar-nos que hi és
+		// per assegurar-nos que hi es
 		Client c = dao.obtenirPerId(1l);
 		Assert.assertNotNull(c);
 		// Esborrem l'objecte
@@ -78,7 +78,7 @@ public class ClientDAOTest extends AbstractDAOTest {
 		List<Client> tots = dao.obtenirTots();
 		// Comprovem que hem rebut tres 
 		Assert.assertEquals(3, tots.size());
-		// Comprovem un a un que són correctes
+		// Comprovem un a un que sï¿½n correctes
 		Assert.assertEquals(tots.get(0).getId(), (Long)1l);
 		Assert.assertEquals(tots.get(0).getNom(), "Client1");
 		Assert.assertEquals(tots.get(0).getCognoms(), "CognomsClient1");

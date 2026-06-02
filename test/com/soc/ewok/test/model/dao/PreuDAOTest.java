@@ -19,9 +19,9 @@ public class PreuDAOTest extends AbstractDAOTest {
 	
 	@Override
 	public void preparaBD() throws SQLException {
-		// Creem l'esquema a través de la classe base
+		// Creem l'esquema a traves de la classe base
 		super.preparaBD();
-		// Executem l'script de càrrega de dades de preu
+		// Executem l'script de cï¿½rrega de dades de preu
 		executaScript("test/resources/scripts/PreuData.sql"); 
 	}
 
@@ -40,7 +40,7 @@ public class PreuDAOTest extends AbstractDAOTest {
 		// Recupero de nou el preu
 		// (alta m'ha d'haver assignat el nou id)
 		Preu nou = dao.obtenirPerId(p.getId());
-		// Miro que els dos objectes són iguals
+		// Miro que els dos objectes sï¿½n iguals
 		Assert.assertEquals(p, nou);
 	}
 	
@@ -55,7 +55,7 @@ public class PreuDAOTest extends AbstractDAOTest {
 		p.setFinalVigencia(dFinalModificada);
 		p.setIdProducte(1l);
 		dao.modificar(p);
-		// El recupero i comprobo que està modificat
+		// El recupero i comprobo que estï¿½ modificat
 		Preu nou = dao.obtenirPerId(1l);
 		Assert.assertEquals(p, nou);
 	}
@@ -64,7 +64,7 @@ public class PreuDAOTest extends AbstractDAOTest {
 	public void eliminacioCorrecta() throws SQLException {
 		PreuDAO dao = new PreuDAO(createDataSource());
 		// Recuperem l'objecte que esborrarem
-		// per assegurar-nos que hi és
+		// per assegurar-nos que hi es
 		Preu p = dao.obtenirPerId(1l);
 		Assert.assertNotNull(p);
 		// Esborrem l'objecte
@@ -81,7 +81,7 @@ public class PreuDAOTest extends AbstractDAOTest {
 		List<Preu> tots = dao.obtenirTots();
 		// Comprovem que hem rebut tres rols
 		Assert.assertEquals(3, tots.size());
-		// Comprovem que un a un són correctes
+		// Comprovem que un a un sï¿½n correctes
 		Assert.assertEquals(tots.get(0).getId(), (Long)1l);
 		Assert.assertEquals(tots.get(0).getPreu(), (Float)10f);
 		Assert.assertTrue(sonIguals(tots.get(0).getIniciVigencia(), 2015, 4, 25, 0, 0, 0));

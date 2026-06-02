@@ -129,7 +129,7 @@ public class GUnitatController extends SeccioController {
 			return;
 		}
 		if (u == null) {
-			// Si el preu �s null, retorno un missatge d'error
+			// Si el preu es null, retorno un missatge d'error
 			EWokController.addI18nMessage(ETipusMissatge.error,	null, PARAM_ERROR_UNITAT, 
 										  new String[]{nId.toString()}, request);
 			// i redirigeixo al llistat d'Unitat
@@ -206,7 +206,7 @@ public class GUnitatController extends SeccioController {
 		}		
 		
 		// Si tot ha anat b�
-		// dono d'alta la unitat a trav�s del DAO
+		// dono d'alta la unitat a traves del DAO
 		try {
 			daoUnitat.alta(unitat);
 			// Si s'ha donat d'alta la unitat,

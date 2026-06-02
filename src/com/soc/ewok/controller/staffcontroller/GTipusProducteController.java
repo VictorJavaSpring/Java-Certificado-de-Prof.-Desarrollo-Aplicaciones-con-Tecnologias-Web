@@ -36,8 +36,8 @@ public class GProducteController extends SeccioController {
 	
 	private static final String REQ_ERRORGENERIC = "No s'ha trobat el producte amb id ";
 	private static final String REQ_ERRORLLISTAT ="No s'ha pogut obtenir la llista de productes";
-	private static final String REQ_ERRORPARAM ="Error en el paràmetre";
-	private static final String REQ_ERRORMODIFICACIO = "No s'ha pogut modificar la informació";
+	private static final String REQ_ERRORPARAM ="Error en el parï¿½metre";
+	private static final String REQ_ERRORMODIFICACIO = "No s'ha pogut modificar la informacio";
 	private static final String REQ_ERRORALTA = "No s'ha pogut donar d'alta el producte.";
 	private static final String REQ_ERRORSQL = "No s'ha pogut esborrar el producte.Possiblement ha estat esborrat amb anterioritat.";
 
@@ -62,11 +62,11 @@ public class GProducteController extends SeccioController {
 			HttpServletResponse response) 
 					throws ServletException, IOException {
 		request.setAttribute("msg",
-				"He passat pel controlador de gestió tipus de productes");
+				"He passat pel controlador de gestiï¿½ tipus de productes");
 		
 		
 		/**
-		 * Mètode principal per servir totes les peticions
+		 * Mï¿½tode principal per servir totes les peticions
 		 * relatives a Comandes
 		 */
 		if (accio.equals(ACCIO_VEURE)) {
@@ -100,14 +100,14 @@ private void doPreparaModificaProducte(HttpServletRequest request,
 	 */
 	Long nId = getId(request, response, "modificar");
 	/**
-	 *  Si no hem obtingut id, hem acabat, perquè el getId,
-	 * ja haurà redirigit cap al llistat
+	 *  Si no hem obtingut id, hem acabat, perquï¿½ el getId,
+	 * ja haurï¿½ redirigit cap al llistat
 	 */
 	if (nId == null) {
 		return;
 	}
 	/**
-	 * Obtenim el producte a través del DAO
+	 * Obtenim el producte a traves del DAO
 	 */
 	TipusProducte TipusProd = null;
 	try {
@@ -176,14 +176,14 @@ private void doModificaTipusProducte(HttpServletRequest request,
 	
 	/**
 	 * Si no l'he obtingut no faig res
-	 * (extreureProducte ja haurà redirigit on calgui)
+	 * (extreureProducte ja haurï¿½ redirigit on calgui)
 	 */
 	if (TipusProd == null) {
 		return;
 	}
 	
-	/** Si tot ha anat bé
-	 * Donem d'alta el producte a través del DAO
+	/** Si tot ha anat bï¿½
+	 * Donem d'alta el producte a traves del DAO
 	 */
 	try {
 		daoTipusProducte.modificar(TipusProd);
@@ -213,14 +213,14 @@ private void doAltaTipusProducte(HttpServletRequest request,
 			}
 			/**
 			 *  Si no l'he obtingut no faig res
-			 *  (extreure Producte ja haurà redirigit on calgui)
+			 *  (extreure Producte ja haurï¿½ redirigit on calgui)
 			 */
 			if (TipusProd == null) {
 				return;
 			}
 			
-			// Si tot ha anat bé
-			// Donem d'alta el producte a través del DAO
+			// Si tot ha anat bï¿½
+			// Donem d'alta el producte a traves del DAO
 			try {
 				daoTipusProducte.alta(TipusProd);
 			} catch (SQLException e) {
@@ -282,7 +282,7 @@ private TipusProducte extreureGTipusProducte(
 	if (			(extreureId && nId == null) || 
 		sNom == null )
 		 {
-		// Si hi ha algun error i era una modificació
+		// Si hi ha algun error i era una modificaciï¿½
 		// (extreuId == true), llavor necessitem posar un producte
 		// com a flag
 		if (extreureId) {
@@ -340,7 +340,7 @@ private void doEsborrarTipusProducte(HttpServletRequest request,
 				request);
 		}
 	/**
-	 *  Hagi anat bé o malament, pintem el llistat de tipus productes
+	 *  Hagi anat bï¿½ o malament, pintem el llistat de tipus productes
 	 */
 	doLlistatTipusProducte(request, response);
 	}
@@ -416,7 +416,7 @@ private Long getId(
 				return null;
 				}
 			/**
-			 *  Si tot ha anat bé, retorno l'id
+			 *  Si tot ha anat bï¿½, retorno l'id
 			 */
 			return nId;	}
 }

@@ -23,7 +23,7 @@ public class ComandaListener implements HttpSessionListener {
      * @see HttpSessionListener#sessionCreated(HttpSessionEvent)
      */
     public void sessionCreated(HttpSessionEvent sess)  { 
-         // Associem una comanda nova a la sessió
+         // Associem una comanda nova a la sessio
     	Comanda comanda = new Comanda();
     	comanda.addLiniaComanda(null);
     	PublicController.setComanda(comanda, sess.getSession());

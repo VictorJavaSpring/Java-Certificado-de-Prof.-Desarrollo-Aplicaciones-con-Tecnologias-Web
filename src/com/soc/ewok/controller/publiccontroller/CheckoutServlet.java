@@ -59,39 +59,39 @@ public class CheckoutServlet extends PublicController {
 		// request.setAttribute("msg", "Idioma "+idioma);
 		request.getSession().setAttribute(PARAM_IDIOMA, idioma);
 
-		// Agafem la comanda en curs de la sessió
+		// Agafem la comanda en curs de la sessio
 		Comanda com = PublicController.getComanda(request);
 
-// Això és per treure per pantalla informació mentre no hi ha comandes a la BdD
+// Aixo es per treure per pantalla informacio mentre no hi ha comandes a la BdD
 		try { 
 			com.getLiniesComanda();
 		} catch(IllegalStateException e) {
-			LiniaComanda linCom = new LiniaComanda(); // Creem una línia de
+			LiniaComanda linCom = new LiniaComanda(); // Creem una linia de
 														// comanda
 			Producte prod = new Producte(); // Creem un producte
 			prod.setId(1L); // Li posem un Id
 			prod.setNom("Wok complet"); // Li posem un nom
-			prod.setDescripcio("Especialitat de la casa"); // Afegim una descripció al producte
-			linCom.setProducte(prod); // Posem el producte a la línia de comanda			
+			prod.setDescripcio("Especialitat de la casa"); // Afegim una descripciï¿½ al producte
+			linCom.setProducte(prod); // Posem el producte a la linia de comanda			
 			linCom.setQuantitat(2); // Posem una quantitat d'unitats
 			linCom.setPreuVenda((float) 9.5); // Posem un preu de venda
-			com.addLiniaComanda(linCom); // Afegim la línia de comanda a la llista
-			// Creem una altra línia de comanda
+			com.addLiniaComanda(linCom); // Afegim la linia de comanda a la llista
+			// Creem una altra linia de comanda
 			LiniaComanda linCom2 = new LiniaComanda(); 
 			Producte pr = new Producte(); // Creem un producte
 			pr.setId(2L); // Li posem un Id
 			pr.setNom("Coca Cola"); // Li posem un nom
-			pr.setDescripcio("Ampolla de 2 litres"); // Afegim una descripció al producte
-			linCom2.setProducte(pr); // Posem el producte a la línia de comanda			
+			pr.setDescripcio("Ampolla de 2 litres"); // Afegim una descripciï¿½ al producte
+			linCom2.setProducte(pr); // Posem el producte a la linia de comanda			
 			linCom2.setQuantitat(1); // Posem una quantitat d'unitats
 			linCom2.setPreuVenda((float) 2.5); // Posem un preu de venda
-			com.addLiniaComanda(linCom); // Afegim la primera línia de comanda a la llista
-			com.addLiniaComanda(linCom2); // Afegim la segona línia de comanda a la llista
+			com.addLiniaComanda(linCom); // Afegim la primera linia de comanda a la llista
+			com.addLiniaComanda(linCom2); // Afegim la segona linia de comanda a la llista
 		}
-// Fins aquí. Aquesta part anterior s'haurà d'eliminar.
+// Fins aquï¿½. Aquesta part anterior s'haurï¿½ d'eliminar.
 
-		// Recuperem la llista de línies de comanda corresponents a la comanda
-		// de la sessió
+		// Recuperem la llista de lï¿½nies de comanda corresponents a la comanda
+		// de la sessio
 //		try {
 //			// Fiquem al request el que volem que es pinti si han demanat
 //			// checkout
@@ -99,8 +99,8 @@ public class CheckoutServlet extends PublicController {
 //		} catch (IllegalStateException ex) {
 //		}
 		
-		// Ja tenim 'comandaActual' a la sessió
-		// Pintem la pàgina
+		// Ja tenim 'comandaActual' a la sessio
+		// Pintem la pï¿½gina
 		forward("checkout/checkout.jsp", request, response);
 		// request.getRequestDispatcher("exemples/checkout.jsp").forward(request,
 		// response);

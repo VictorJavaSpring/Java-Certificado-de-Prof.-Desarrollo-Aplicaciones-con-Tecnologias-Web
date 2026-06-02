@@ -20,14 +20,14 @@ public class OfertaProducte {
 	/**
 	 * Retorna l'id d' oferta de Producte.
 	 * @return L'id de la oferta. Si l'oferta no s'ha grabat a base de dades,
-	 * retornarà null.
+	 * retornarï¿½ null.
 	 */
 	public Long getId() {
 		return nId;
 	}
 	/**
 	 * Assigna l'id de la oferta
-	 * @param nId és l'id que s'assignarà a la oferta de producte
+	 * @param nId es l'id que s'assignarï¿½ a la oferta de producte
 	 */
 	public void setId(Long nId) {
 		this.nId = nId;
@@ -47,7 +47,7 @@ public class OfertaProducte {
 
 	public void setPctDescompte(Float pctDescompte) {
 		if(pctDescompte == null){
-			throw new IllegalArgumentException("El camp Descompte és obligatori");
+			throw new IllegalArgumentException("El camp Descompte es obligatori");
 		}
 		else if(pctDescompte < 0){
 			throw new IllegalArgumentException("El descompte no pot ser negatiu"); 
@@ -69,14 +69,14 @@ public class OfertaProducte {
 		sOnom = onom;
 	}
 	/**
-	 * Retorna la data d'inici de vigència de l'oferta
+	 * Retorna la data d'inici de vigï¿½ncia de l'oferta
 	 * @return es la data d'inici de l'oferta
 	 */
 	public Date getIniciVigencia() {
 		return dIniciVigencia;
 	}
 	/**
-	 * Assigna una data d'inici de vigència de l'oferta
+	 * Assigna una data d'inici de vigï¿½ncia de l'oferta
 	 * @param iniciVigencia
 	 */
 	public void setIniciVigencia(Date iniciVigencia) {
@@ -90,22 +90,22 @@ public class OfertaProducte {
 		return dFiVigencia;
 	}
 	/**
-	 * Assigna una data de fi de vigència de l'oferta
-	 * @param fiVigencia es la data de fi de vigència de l'oferta
+	 * Assigna una data de fi de vigï¿½ncia de l'oferta
+	 * @param fiVigencia es la data de fi de vigï¿½ncia de l'oferta
 	 */
 	public void setFiVigencia(Date fiVigencia) {
 		dFiVigencia = fiVigencia;
 	}
 	/**
-	 * Retorna la descripció de l'oferta
-	 * @return es la descripció de l'oferta
+	 * Retorna la descripciï¿½ de l'oferta
+	 * @return es la descripciï¿½ de l'oferta
 	 */
 	public String getOtext() {
 		return sOtext;
 	}
 	/**
-	 * Assigna la descripció de l'oferta
-	 * @param otext es la descripció de l'oferta que pot ser null
+	 * Assigna la descripciï¿½ de l'oferta
+	 * @param otext es la descripciï¿½ de l'oferta que pot ser null
 	 */
 	public void setOtext(String otext) {
 		sOtext = otext;
@@ -118,8 +118,8 @@ public class OfertaProducte {
 		return nIdP;
 	}
 	/**
-	 * Assigna id de relació amb l'oferta de producte
-	 * @param nIdP id de relació amb l'oferta i el producte
+	 * Assigna id de relaciï¿½ amb l'oferta de producte
+	 * @param nIdP id de relaciï¿½ amb l'oferta i el producte
 	 * @throws IllegalArgumentException si es null
 	 */
 	public void setIdProducte(Long nIdP) {

@@ -1,4 +1,4 @@
-/* +++GESTIÓ UNITAT (inici)+++ */
+/* +++GESTIï¿½ UNITAT (inici)+++ */
 
 /* part comuna (inici) */ 
 
@@ -27,7 +27,7 @@
 	}
 	/* barra de gestors (inici) */
 
-	/* capçalera (inici) */
+	/* capï¿½alera (inici) */
 	div.parlaControlador {
 		font-style: italic;
 	}
@@ -49,7 +49,7 @@
 	div.inner-default-heading h2, div.inner-default-heading p {
 	    text-align: center;
 	}
-	/* capçalera (fi) */
+	/* capï¿½alera (fi) */
 	
 	/* menu idioma (inici) */
 	div.menuIdioma {
@@ -112,7 +112,7 @@ div.llistatUnitat {
 	div.scroll {
 	    max-height: 150px;
 	    overflow-y: auto;
-	    /* 16px és el gruix de la barra vertical d'scroll */
+	    /* 16px es el gruix de la barra vertical d'scroll */
 	    /* 500px (taula) + 16px (barra scroll) = 516px */
 	    width: 616px;
 	}
@@ -159,4 +159,4 @@ div.innUnitat, div.cheUnitat, div.con2Unitat {
 /* formUnitat (fi) */
 
 
-/* +++GESTIÓ UNITAT (fi)+++ */
+/* +++GESTIï¿½ UNITAT (fi)+++ */

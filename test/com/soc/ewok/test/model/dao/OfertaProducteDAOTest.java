@@ -18,9 +18,9 @@ public class OfertaProducteDAOTest extends AbstractDAOTest {
 	
 	@Override
 	public void preparaBD() throws SQLException {
-		// Creem l'esquema a través de la classe base
+		// Creem l'esquema a traves de la classe base
 		super.preparaBD();
-		// Executem l'script de càrrega de dades de ofertaproducte
+		// Executem l'script de cï¿½rrega de dades de ofertaproducte
 		executaScript("test/resources/scripts/OfertaProducteData.sql");
 	}
 
@@ -44,7 +44,7 @@ public class OfertaProducteDAOTest extends AbstractDAOTest {
 		// Recupero de nou el ofertaproducte
 		// (alta m'ha d'haver assignat el nou id)
 		OfertaProducte nou = dao.obtenirPerId(r.getId());
-		// Miro que els dos objectes són iguals
+		// Miro que els dos objectes sï¿½n iguals
 		Assert.assertEquals(r, nou);
 	}
 	
@@ -62,7 +62,7 @@ public class OfertaProducteDAOTest extends AbstractDAOTest {
 		r.setIdProducte(4l);
 		// El modifico
 		dao.modificar(r);
-		// El recupero i comprobo que està modificat
+		// El recupero i comprobo que estï¿½ modificat
 		OfertaProducte nou = dao.obtenirPerId(1l);
 		Assert.assertEquals(r, nou);
 	}
@@ -71,7 +71,7 @@ public class OfertaProducteDAOTest extends AbstractDAOTest {
 	public void eliminacioCorrecta() throws SQLException {
 		OfertaProducteDAO dao = new OfertaProducteDAO(createDataSource());
 		// Recuperem l'objecte que esborrarem
-		// per assegurar-nos que hi és
+		// per assegurar-nos que hi es
 		OfertaProducte r = dao.obtenirPerId(1l);
 		Assert.assertNotNull(r);
 		// Esborrem l'objecte
@@ -88,7 +88,7 @@ public class OfertaProducteDAOTest extends AbstractDAOTest {
 		List<OfertaProducte> tots = dao.obtenirTots();
 		// Comprovem que hem rebut tres rols
 		Assert.assertEquals(3, tots.size());
-		// Comprovem que el un a un són correctes
+		// Comprovem que el un a un sï¿½n correctes
 		Assert.assertEquals(tots.get(0).getId(), (Long)1l);
 		Assert.assertEquals(tots.get(0).getNom(), "Special Hot eWok Dish");
 		Assert.assertEquals(tots.get(0).getPctDescompte(), (Float)15.00f);

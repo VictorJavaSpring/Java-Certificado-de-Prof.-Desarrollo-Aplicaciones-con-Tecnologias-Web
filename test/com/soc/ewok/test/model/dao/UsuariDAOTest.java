@@ -21,9 +21,9 @@ public class UsuariDAOTest extends AbstractDAOTest {
 	
 	@Override
 	public void preparaBD() throws SQLException {
-		// Creem l'esquema a través de la classe base
+		// Creem l'esquema a traves de la classe base
 		super.preparaBD();
-		// Executem l'script de càrrega de dades de rol
+		// Executem l'script de cï¿½rrega de dades de rol
 		
 		executaScript("test/resources/scripts/UsuariData.sql");
 		executaScript("test/resources/scripts/RolData4UsuariDAOtest.sql");
@@ -44,7 +44,7 @@ public class UsuariDAOTest extends AbstractDAOTest {
 		// Recupero de nou l' usuari
 		
 		Usuari nou = dao.obtenirPerEmail(u.getMail());
-		// Miro que els dos objectes són iguals
+		// Miro que els dos objectes sï¿½n iguals
 		Assert.assertEquals(u, nou);
 	}
 	
@@ -56,7 +56,7 @@ public class UsuariDAOTest extends AbstractDAOTest {
 		// El modifico
 		u.setPassword("patata");
 		dao.modificar(u);
-		// El recupero i comprobo que està modificat
+		// El recupero i comprobo que estï¿½ modificat
 		Usuari nou = dao.obtenirPerEmail("user1@user.com");
 		Assert.assertEquals(u, nou);
 	}
@@ -67,7 +67,7 @@ public class UsuariDAOTest extends AbstractDAOTest {
 		List<Usuari> tots = dao.obtenirTots();
 		// Comprovem que hem rebut tres usuaris
 		Assert.assertEquals(4, tots.size());
-		// Comprovem un a un que són correctes
+		// Comprovem un a un que sï¿½n correctes
 		Assert.assertEquals(tots.get(0).getMail(), "user1@user.com");
 		Assert.assertEquals(tots.get(0).getPassword(), "user1");
 		Assert.assertEquals(tots.get(0).getActiu(), true);
@@ -85,11 +85,11 @@ public class UsuariDAOTest extends AbstractDAOTest {
 	public void eliminacioCorrecta() throws SQLException {
 		UsuariDAO dao = new UsuariDAO(createDataSource());
 		// Recuperem l'objecte que esborrarem
-		// per assegurar-nos que hi és
+		// per assegurar-nos que hi es
 		Usuari u = dao.obtenirPerEmail("user5@user.com");
 		Assert.assertNotNull(u);
 		
-		//comprovo que té rols relacionats
+		//comprovo que tï¿½ rols relacionats
 		DBWrapper dbw = new DBWrapper(createDataSource());
 		String sql = "SELECT * FROM rolusuari WHERE eMail='user5@user.com'";
 		final List<Integer> l = new Vector<Integer>();
@@ -104,7 +104,7 @@ public class UsuariDAOTest extends AbstractDAOTest {
 					
 					l.add(rset.getRow());
 					// Indico al DBWrapper que segueixi amb el
-					// següent registre
+					// segï¿½ent registre
 					return true;
 					}
 			}
@@ -132,7 +132,7 @@ public class UsuariDAOTest extends AbstractDAOTest {
 					
 					ll.add(rset.getRow());
 					// Indico al DBWrapper que segueixi amb el
-					// següent registre
+					// segï¿½ent registre
 					return true;
 					}
 			}
@@ -159,7 +159,7 @@ public class UsuariDAOTest extends AbstractDAOTest {
 		// Recupero de nou l' usuari
 		Usuari nou = dao.obtenirPerEmail(u.getMail());
 		System.out.println(nou.toString());
-		// Miro que els dos objectes Usuari són iguals
+		// Miro que els dos objectes Usuari sï¿½n iguals
 		Assert.assertEquals(u, nou);
 		//miro que tenen el mateix nombre de Rols
 		Assert.assertEquals(u.getRols().size(), nou.getRols().size());

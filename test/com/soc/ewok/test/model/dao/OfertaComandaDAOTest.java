@@ -12,7 +12,7 @@ import com.soc.ewok.model.OfertaComanda;
 
 
 public class OfertaComandaDAOTest extends AbstractDAOTest {
-	//creo dates accessibles des de qualsevol mètode 
+	//creo dates accessibles des de qualsevol mï¿½tode 
 	//per a provar iniciVigencia i fiVigencia on calgui
 	
 	Date data1 = new Date();
@@ -20,9 +20,9 @@ public class OfertaComandaDAOTest extends AbstractDAOTest {
 	
 	@Override
 	public void preparaBD() throws SQLException {
-		// Creem l'esquema a través de la classe base
+		// Creem l'esquema a traves de la classe base
 		super.preparaBD();
-		// Executem l'script de càrrega de dades de rol
+		// Executem l'script de cï¿½rrega de dades de rol
 		executaScript("test/resources/scripts/OfertaComandaData.sql"); 
 	}
 
@@ -42,7 +42,7 @@ public class OfertaComandaDAOTest extends AbstractDAOTest {
 		// Recupero de nou el Producte
 		// (alta m'ha d'haver assignat el nou id)
 		OfertaComanda nou = dao.obtenirPerId(r.getId());
-		// Miro que els dos objectes són iguals
+		// Miro que els dos objectes sï¿½n iguals
 		Assert.assertEquals(r, nou);
 	}
 	@Test
@@ -57,7 +57,7 @@ public class OfertaComandaDAOTest extends AbstractDAOTest {
 		r.setFiVigencia(data2);
 		// El modifico
 		dao.modificar(r);
-		// El recupero i comprobo que està modificat
+		// El recupero i comprobo que estï¿½ modificat
 		OfertaComanda nou = dao.obtenirPerId(1l);
 		Assert.assertEquals(r, nou);
 	}
@@ -66,7 +66,7 @@ public class OfertaComandaDAOTest extends AbstractDAOTest {
 	public void eliminacioCorrecta() throws SQLException {
 		OfertaComandaDAO dao = new OfertaComandaDAO(createDataSource());
 		// Recuperem l'objecte que esborrarem
-		// per assegurar-nos que hi és
+		// per assegurar-nos que hi es
 		OfertaComanda r = dao.obtenirPerId(1l);
 		Assert.assertNotNull(r);
 		// Esborrem l'objecte
@@ -83,7 +83,7 @@ public class OfertaComandaDAOTest extends AbstractDAOTest {
 		List<OfertaComanda> tots = dao.obtenirTots();
 		// Comprovem que hem rebut tres rols
 		Assert.assertEquals(3, tots.size());
-		// Comprovem que el un a un són correctes
+		// Comprovem que el un a un sï¿½n correctes
 		Assert.assertEquals(tots.get(0).getId(), (Long)1l);
 		Assert.assertEquals(tots.get(0).getLimitInferior(), (Float)25.30f);
 		Assert.assertEquals(tots.get(0).getPctDescompte(), (Float)10.00f);

@@ -13,10 +13,10 @@ import com.soc.ewok.model.PuntsPendents;
 public class PuntsPendentsDAOTest extends AbstractDAOTest {
 	@Override
 	public void preparaBD() throws SQLException {
-		// Creem l'esquema a través de la classe base
+		// Creem l'esquema a traves de la classe base
 		super.preparaBD();
-		// Executem l'script de càrrega de dades de PuntsPendents
-		// (En aquest cas també crea la taula associada)
+		// Executem l'script de cï¿½rrega de dades de PuntsPendents
+		// (En aquest cas tambï¿½ crea la taula associada)
 		executaScript("test/resources/scripts/PuntsPendents.sql"); 
 	}
 
@@ -48,10 +48,10 @@ public class PuntsPendentsDAOTest extends AbstractDAOTest {
 						ppNou.getDataCaducitat().getMonth() ,
 						ppNou.getDataCaducitat().getDay()) 
 					);
-			// Un cop veiem que són iguals, la copiem del vell al
+			// Un cop veiem que sï¿½n iguals, la copiem del vell al
 			// nou per no tenir problemes amb l'equals
 			ppNou.setDataCaducitat(pp.getDataCaducitat());
-		// Miro que els dos objectes són iguals
+		// Miro que els dos objectes sï¿½n iguals
 		Assert.assertEquals(pp, ppNou);
 	}
 	
@@ -63,7 +63,7 @@ public class PuntsPendentsDAOTest extends AbstractDAOTest {
 		// El modifico
 		pp.setNumPunts((short)2);
 		dao.modificar(pp);
-		// El recupero i comprobo que està modificat
+		// El recupero i comprobo que estï¿½ modificat
 		PuntsPendents ppNou = dao.obtenirPerId(1l);
 		Assert.assertEquals(pp, ppNou);
 	}
@@ -72,7 +72,7 @@ public class PuntsPendentsDAOTest extends AbstractDAOTest {
 	public void eliminacioCorrecta() throws SQLException {
 		PuntsPendentsDAO dao = new PuntsPendentsDAO(createDataSource());
 		// Recuperem l'objecte que esborrarem
-		// per assegurar-nos que hi és
+		// per assegurar-nos que hi es
 		PuntsPendents pp = dao.obtenirPerId(1l);
 		Assert.assertNotNull(pp);
 		// Esborrem l'objecte
@@ -89,7 +89,7 @@ public class PuntsPendentsDAOTest extends AbstractDAOTest {
 		List<PuntsPendents> tots = dao.obtenirTots();
 		// Comprovem que hem rebut tres PuntsPendents
 		Assert.assertEquals(3, tots.size());
-		// Comprovem un a un que són correctos
+		// Comprovem un a un que sï¿½n correctos
 		Assert.assertEquals(tots.get(0).getId(), (Long)1l);
 		Assert.assertEquals((short)tots.get(0).getNumPunts(), (short)3);
 		Assert.assertTrue(sonIguals(tots.get(0).getDataCaducitat(), 2015, 6, 3, 0, 0, 0));

@@ -4,8 +4,8 @@ import java.util.Date;
 
 /**
  * Classe que representa les ofertes que s'aplicaran a la comanda
- * S'expressa en un % de descompte en funció del preu
- * i cada oferta tindrà data d'inici i fi de vigència
+ * S'expressa en un % de descompte en funciï¿½ del preu
+ * i cada oferta tindrï¿½ data d'inici i fi de vigï¿½ncia
  * @author Nacho
  *
  */
@@ -19,7 +19,7 @@ public class OfertaComanda {
 	/**
 	 * Retorna l'id de l'oferta que s'aplica a la comanda.
 	 * @return L'id de l'ofertaComanda. 
-	 * Retornarà null si l'oferta no queda en la base de dades,
+	 * Retornarï¿½ null si l'oferta no queda en la base de dades,
 	 */
 	public Long getId() {
 		return nId;
@@ -27,7 +27,7 @@ public class OfertaComanda {
 	
 	/**
 	 * Assigna l'id a l'oferta.
-	 * @param id és l'id que s'assignarà a la oferta.
+	 * @param id es l'id que s'assignarï¿½ a la oferta.
 	 * 
 	 */
 	public void setId(Long id) {
@@ -35,28 +35,28 @@ public class OfertaComanda {
 	}
 	
 	/**
-	 * Retorna el límit inferior de l'oferta
-	 * @return limitInferior és el límit inferior que té l'oferta
+	 * Retorna el lï¿½mit inferior de l'oferta
+	 * @return limitInferior es el lï¿½mit inferior que tï¿½ l'oferta
 	 */
 	public Float getLimitInferior() {
 		return nLimitInferior;
 	}
 	
 	/**
-	 * Assigna un límit inferior a la oferta de comanda.
-	 * @param limitInferior és el límit inferior que s'assignarà
-	 * @throws IllegalArgumentException En cas que el límit sigui null o negatiu
+	 * Assigna un lï¿½mit inferior a la oferta de comanda.
+	 * @param limitInferior es el lï¿½mit inferior que s'assignarï¿½
+	 * @throws IllegalArgumentException En cas que el lï¿½mit sigui null o negatiu
 	 */
 	public void setLimitInferior(Float limitInferior) {
 		if (limitInferior == null || limitInferior < 0) {
-			throw new IllegalArgumentException("El límit inferior ha de ser un número positiu");
+			throw new IllegalArgumentException("El lï¿½mit inferior ha de ser un nï¿½mero positiu");
 		}
 		nLimitInferior = limitInferior;
 	}
 	
 	/**
 	 * Retorna el percentatge de descompte de l'oferta
-	 * @return pctDescompte és el % de descompte que té l'oferta
+	 * @return pctDescompte es el % de descompte que tï¿½ l'oferta
 	 */
 	public Float getPctDescompte() {
 		return nPctDescompte;
@@ -64,54 +64,54 @@ public class OfertaComanda {
 	
 	/**
 	 * Assigna un percentatge de descompte de l'oferta
-	 * @param pctDescompte és el % de descompte que s'assignarà
+	 * @param pctDescompte es el % de descompte que s'assignarï¿½
 	 * @throws IllegalArgumentException En cas que el % sigui null o negatiu
 	 */
 	public void setPctDescompte(Float pctDescompte) {
 		if (pctDescompte == null || pctDescompte < 0) {
-			throw new IllegalArgumentException("El percentatge de descompte ha de ser un número positiu");
+			throw new IllegalArgumentException("El percentatge de descompte ha de ser un nï¿½mero positiu");
 		}
 		nPctDescompte = pctDescompte;
 	}
 	
 	/**
 	 * 
-	 * Retorna la data d'inici de vigència de l'oferta
-	 * @return iniciVigencia és la data d'inici de vigència de l'oferta
+	 * Retorna la data d'inici de vigï¿½ncia de l'oferta
+	 * @return iniciVigencia es la data d'inici de vigï¿½ncia de l'oferta
 	 */
 	public Date getIniciVigencia() {
 		return dIniciVigencia;
 	}
 	
 	/**
-	 * Assigna una data d'inici de vigència a l'oferta
-	 * @param iniciVigencia és la data en que entra en vigor l'oferta
+	 * Assigna una data d'inici de vigï¿½ncia a l'oferta
+	 * @param iniciVigencia es la data en que entra en vigor l'oferta
 	 * @throws IllegalArgumentException En cas que la data sigui null o buida
 	 */
 	public void setIniciVigencia(Date iniciVigencia) {
 		if (iniciVigencia == null || iniciVigencia.equals("")) {
-			throw new IllegalArgumentException("La data d'inici de vigència ha d'estar informada");
+			throw new IllegalArgumentException("La data d'inici de vigï¿½ncia ha d'estar informada");
 		}
 		dIniciVigencia = iniciVigencia;
 	}
 	
 	/**
 	 * 
-	 * Retorna la data de fi de vigència de l'oferta
-	 * @return fiVigencia és la data de finalització de vigència de l'oferta
+	 * Retorna la data de fi de vigï¿½ncia de l'oferta
+	 * @return fiVigencia es la data de finalitzaciï¿½ de vigï¿½ncia de l'oferta
 	 */
 	public Date getFiVigencia() {
 		return dFiVigencia;
 	}
 	
 	/**
-	 * Assigna una data de fi de vigència a l'oferta
-	 * @param fiVigencia és la data en que finalitza l'oferta
+	 * Assigna una data de fi de vigï¿½ncia a l'oferta
+	 * @param fiVigencia es la data en que finalitza l'oferta
 	 * @throws IllegalArgumentException En cas que la data sigui null o buida
 	 */
 	public void setFiVigencia(Date fiVigencia) {
 		if (fiVigencia == null || fiVigencia.equals("")) {
-			throw new IllegalArgumentException("La data de fi de vigència ha d'estar informada");
+			throw new IllegalArgumentException("La data de fi de vigï¿½ncia ha d'estar informada");
 		}
 		dFiVigencia = fiVigencia;
 	}

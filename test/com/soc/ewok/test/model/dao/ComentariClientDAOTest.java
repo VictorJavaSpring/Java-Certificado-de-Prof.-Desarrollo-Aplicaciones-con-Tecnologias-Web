@@ -14,9 +14,9 @@ import com.soc.ewok.model.ComentariClient;
 public class ComentariClientDAOTest extends AbstractDAOTest{
 	@Override
 	public void preparaBD() throws SQLException {
-		// Creem l'esquema a través de la classe base
+		// Creem l'esquema a traves de la classe base
 		super.preparaBD();
-		// Executem l'script de càrrega de dades de rol
+		// Executem l'script de cï¿½rrega de dades de rol
 		executaScript("test/resources/scripts/ComentariClientData.sql");
 	}
 
@@ -36,7 +36,7 @@ public class ComentariClientDAOTest extends AbstractDAOTest{
 		// Recupero de nou el comentari
 		// (alta m'ha d'haver assignat el nou id)
 		ComentariClient nou = dao.obtenirPerId(cc.getId());
-		// Miro que els dos objectes són iguals
+		// Miro que els dos objectes sï¿½n iguals
 		Assert.assertEquals(cc, nou);
 	}
 	
@@ -48,7 +48,7 @@ public class ComentariClientDAOTest extends AbstractDAOTest{
 		// El modifico
 		cc.setComentari("No deixa mai propina");
 		dao.modificar(cc);
-		// El recupero i comprobo que està modificat
+		// El recupero i comprobo que estï¿½ modificat
 		ComentariClient nou = dao.obtenirPerId(1l);
 		Assert.assertEquals(cc, nou);
 	}
@@ -57,7 +57,7 @@ public class ComentariClientDAOTest extends AbstractDAOTest{
 	public void eliminacioCorrecta() throws SQLException {
 		ComentariClientDAO dao = new ComentariClientDAO(createDataSource());
 		// Recuperem l'objecte que esborrarem
-		// per assegurar-nos que hi és
+		// per assegurar-nos que hi es
 		ComentariClient cc = dao.obtenirPerId(1l);
 		Assert.assertNotNull(cc);
 		// Esborrem l'objecte
@@ -74,7 +74,7 @@ public class ComentariClientDAOTest extends AbstractDAOTest{
 		List<ComentariClient> tots = dao.obtenirTots();
 		// Comprovem que hem rebut tres rols
 		Assert.assertEquals(3, tots.size());
-		// Comprovem que el un a un són correctes
+		// Comprovem que el un a un sï¿½n correctes
 		Assert.assertEquals(tots.get(0).getId(), (Long)1l);
 		Assert.assertEquals(tots.get(0).getIdClient(), 10);
 		Assert.assertEquals(tots.get(0).getComentari(), "Bon Client");

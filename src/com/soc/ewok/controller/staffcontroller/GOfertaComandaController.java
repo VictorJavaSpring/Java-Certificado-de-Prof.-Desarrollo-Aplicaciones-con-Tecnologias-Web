@@ -33,7 +33,7 @@ public class GOfertaComandaController extends SeccioController {
 	OfertaComandaDAO daoOfertaComanda = null;
 	
 	public GOfertaComandaController() {
-		// De moment creem un dao que anirà contra memòria,
+		// De moment creem un dao que anirï¿½ contra memï¿½ria,
 		// en un futur hauriem d'agafar del web.xml
 		// la classe amb la que volem treballar i crear
 		// l'objecte a partir d'aquell nom
@@ -54,7 +54,7 @@ public class GOfertaComandaController extends SeccioController {
 			HttpServletResponse response)
 					throws ServletException, IOException {
 	
-		// Mètode principal per servir totes les peticions
+		// Mï¿½tode principal per servir totes les peticions
 		// relatives a ofertaComanda
 				
 			if(accio.equals(ACCIO_VEURE)){
@@ -86,13 +86,13 @@ public class GOfertaComandaController extends SeccioController {
 				// Obtenim l'id
 				Long nId = getId(request, response, "modificar");
 				
-				// Si no hem obtingut id, hem acabat, perquè el getId,
-				// ja haurà redirigit cap al llistat
+				// Si no hem obtingut id, hem acabat, perquï¿½ el getId,
+				// ja haurï¿½ redirigit cap al llistat
 				if (nId == null) {
 					return;
 				}
 				
-				// Obtenim la ofertaComanda a través del DAO
+				// Obtenim la ofertaComanda a traves del DAO
 				OfertaComanda oc = null;
 				
 				try {
@@ -148,13 +148,13 @@ public class GOfertaComandaController extends SeccioController {
 		OfertaComanda oc = extreureOfertaComanda(request, response, true);
 				
 		// Si no l'he obtingu no faig res
-		// (extreOfertaComanda ja haurà redirigit on calgui)
+		// (extreOfertaComanda ja haurï¿½ redirigit on calgui)
 		if (oc == null) {
 			return;
 		}
 				
-		// Si tot ha anat bé
-		// Donem d'alta la persona a través del DAO
+		// Si tot ha anat bï¿½
+		// Donem d'alta la persona a traves del DAO
 		try {
 			daoOfertaComanda.modificar(oc);
 		} catch (SQLException e) {
@@ -173,13 +173,13 @@ public class GOfertaComandaController extends SeccioController {
 		// Intento obtenir la persona 
 		OfertaComanda oc = extreureOfertaComanda(request, response, false);
 		// Si no l'he obtingu no faig res
-		// (extrePersona ja haurà redirigit on calgui)
+		// (extrePersona ja haurï¿½ redirigit on calgui)
 		if (oc == null) {
 			return;
 		}
 		
-		// Si tot ha anat bé
-		// Donem d'alta la persona a través del DAO
+		// Si tot ha anat bï¿½
+		// Donem d'alta la persona a traves del DAO
 		
 		try {
 			daoOfertaComanda.alta(oc);
@@ -280,7 +280,7 @@ public class GOfertaComandaController extends SeccioController {
 		ofertaComanda.setIniciVigencia(dIniciVigencia);
 		ofertaComanda.setFiVigencia(dFiVigencia);
 		
-		// Si hi ha algun error de validació, retornem al formulari
+		// Si hi ha algun error de validaciï¿½, retornem al formulari
 		if (
 				(extreureId && nId == null) || 
 				nLimitInferior == null || 
@@ -288,7 +288,7 @@ public class GOfertaComandaController extends SeccioController {
 				dIniciVigencia == null || 
 				dFiVigencia == null
 			) {
-			// Si hi ha algun error i era una modificació
+			// Si hi ha algun error i era una modificaciï¿½
 			// (extreuId == true), llavor necessitem posar una persona
 			// com a flag
 			if (extreureId) {
@@ -327,7 +327,7 @@ public class GOfertaComandaController extends SeccioController {
 					".Possiblement ha estat esborrat amb anterioritat.",
 					request);
 			}
-		// Hagi anat bé o malament, pintem el llistat de productes
+		// Hagi anat bï¿½ o malament, pintem el llistat de productes
 		doLlistatOfertaComanda(request, response);
 		}
 
@@ -340,7 +340,7 @@ public class GOfertaComandaController extends SeccioController {
 		if (nId == null) {
 			// Si no tinc Id, no he de fer res
 			return;
-		// compruebo que no se lanza excepción
+		// compruebo que no se lanza excepciï¿½n
 		} try {
 		// Obtenim les dades del DAO
 		oc = daoOfertaComanda.obtenirPerId(nId);	
@@ -373,13 +373,13 @@ public class GOfertaComandaController extends SeccioController {
 		
 		// Iniciamos la variable nId
 		Long nId = null;
-		// Comprobamos que no lanza excepción sql
+		// Comprobamos que no lanza excepciï¿½n sql
 		try {
 			nId = RequestValidationUtils.getMandatoryLong(
 					PARAM_ID, 
 					request);
 		} catch (ParameterException e) {
-		// Si hay errores, lazamos excepción
+		// Si hay errores, lazamos excepciï¿½n
 			EWokController.addMessage(ETipusMissatge.error, 
 					"No s'ha trobat el producte amb id" + nId, request);
 		}
@@ -389,7 +389,7 @@ public class GOfertaComandaController extends SeccioController {
 			doLlistatOfertaComanda(request, response);
 			return null;
 		}
-		// Si tot ha anat bé, retorno l'id
+		// Si tot ha anat bï¿½, retorno l'id
 		return nId;
 	}
 }

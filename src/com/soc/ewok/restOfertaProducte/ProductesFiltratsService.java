@@ -27,12 +27,12 @@ import com.soc.ewok.model.TipusProducte;
 public class ProductesFiltratsService {
 
 	/**
-	 * Service que retorna la colecció de productes de una categoria 
+	 * Service que retorna la colecciï¿½ de productes de una categoria 
 	 * @param id Identificador de la categoria
 	 * @return Retorna una List de Productes, o un objecte Producte 
-	 * quan només ni a un a la bd, o null si no n'hi ha cap
+	 * quan nomes ni a un a la bd, o null si no n'hi ha cap
 	 * @throws SQLException
-	 * s'arriba a aquest mètode per eWok/data/productesfiltrats/unTipusdeProductes
+	 * s'arriba a aquest mï¿½tode per eWok/data/productesfiltrats/unTipusdeProductes
 	 */
 	@GET
 	@Path("/unTipusdeProductes/{id}")
@@ -48,7 +48,7 @@ public class ProductesFiltratsService {
 	 * @return Retorna una un objecte Producte 
 	 * o null si no existeix
 	 * @throws SQLException
-	 * s'arriba a aquest mètode per eWok/data/productesfiltrats/unProducteCompost
+	 * s'arriba a aquest mï¿½tode per eWok/data/productesfiltrats/unProducteCompost
 	 */
 	@GET
 	@Path("/unProducteCompost/{id}")
@@ -59,13 +59,13 @@ public class ProductesFiltratsService {
 		return p;
 	}
 	/**
-	 * Service que retorna la colecció de productes que un Producte compost
+	 * Service que retorna la colecciï¿½ de productes que un Producte compost
 	 * pot usar 
 	 * @param id Identificador de la categoria del producte compost
 	 * @return Retorna una List de Productes, o un objecte Producte 
-	 * quan només ni a un a la bd, o null si no n'hi ha cap
+	 * quan nomes ni a un a la bd, o null si no n'hi ha cap
 	 * @throws SQLException
-	 * s'arriba a aquest mètode per eWok/data/productesfiltrats/totsComponentsTipusdeProducte/id
+	 * s'arriba a aquest mï¿½tode per eWok/data/productesfiltrats/totsComponentsTipusdeProducte/id
 	 */
 	@GET
 	@Path("/totsComponentsTipusdeProducte/{id}")
@@ -95,7 +95,7 @@ public class ProductesFiltratsService {
 						.obtenirTotsXTipusIdVigents(TipusProducte.CODI_INGREDIENT);
 
 			}else{
-				//no és un tipus de producte que pugui tenir components
+				//no es un tipus de producte que pugui tenir components
 				//retornarem una llista buida
 				lpafegir = new Vector<Producte>();
 			}
@@ -108,12 +108,12 @@ public class ProductesFiltratsService {
 	}
 	
 	/**
-	 * Service que retorna la colecció de productes de una categoria 
+	 * Service que retorna la colecciï¿½ de productes de una categoria 
 	 * @param id Identificador de la categoria
 	 * @return Retorna una List de Productes, o un objecte Producte 
-	 * quan només ni a un a la bd, o null si no n'hi ha cap
+	 * quan nomes ni a un a la bd, o null si no n'hi ha cap
 	 * @throws SQLException
-	 * s'arriba a aquest mètode per eWok/data/productesfiltrats/unTipusdeProductes
+	 * s'arriba a aquest mï¿½tode per eWok/data/productesfiltrats/unTipusdeProductes
 	 */
 	@GET
 	@Path("/unPreuProducte/{id}")

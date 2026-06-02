@@ -12,7 +12,7 @@ import com.soc.ewok.model.Producte;
 
 
 public class ProducteDAOTest extends AbstractDAOTest {
-	//creo dates accessibles des de qualsevol mètode 
+	//creo dates accessibles des de qualsevol mï¿½tode 
 	//per a provar iniciVigencia i fiVigencia on calgui
 	
 	Date data1 = new Date();
@@ -20,9 +20,9 @@ public class ProducteDAOTest extends AbstractDAOTest {
 	
 	@Override
 	public void preparaBD() throws SQLException {
-		// Creem l'esquema a través de la classe base
+		// Creem l'esquema a traves de la classe base
 		super.preparaBD();
-		// Executem l'script de càrrega de dades de rol
+		// Executem l'script de cï¿½rrega de dades de rol
 		executaScript("test/resources/scripts/ProducteData.sql"); 
 	}
 
@@ -45,7 +45,7 @@ public class ProducteDAOTest extends AbstractDAOTest {
 		// Recupero de nou el Producte
 		// (alta m'ha d'haver assignat el nou id)
 		Producte nou = dao.obtenirPerId(r.getId());
-		// Miro que els dos objectes són iguals
+		// Miro que els dos objectes sï¿½n iguals
 		Assert.assertEquals(r, nou);
 	}
 	@Test
@@ -59,7 +59,7 @@ public class ProducteDAOTest extends AbstractDAOTest {
 		r.setIdTipusProducte(2l);
 		// El modifico
 		dao.modificar(r);
-		// El recupero i comprobo que està modificat
+		// El recupero i comprobo que estï¿½ modificat
 		Producte nou = dao.obtenirPerId(1l);
 		Assert.assertEquals(r, nou);
 	}
@@ -68,7 +68,7 @@ public class ProducteDAOTest extends AbstractDAOTest {
 	public void eliminacioCorrecta() throws SQLException {
 		ProducteDAO dao = new ProducteDAO(createDataSource());
 		// Recuperem l'objecte que esborrarem
-		// per assegurar-nos que hi és
+		// per assegurar-nos que hi es
 		Producte r = dao.obtenirPerId(1l);
 		Assert.assertNotNull(r);
 		// Esborrem l'objecte
@@ -85,7 +85,7 @@ public class ProducteDAOTest extends AbstractDAOTest {
 		List<Producte> tots = dao.obtenirTots();
 		// Comprovem que hem rebut tres objectes
 		Assert.assertEquals(3, tots.size());
-		// Comprovem que un a un són correctes
+		// Comprovem que un a un sï¿½n correctes
 		Assert.assertEquals(tots.get(0).getId(), (Long)2l);
 		Assert.assertEquals(tots.get(0).getNom(), "Arros");
 		Assert.assertEquals(tots.get(0).getDescripcioCurta(), "Arros thai amb chinchis");

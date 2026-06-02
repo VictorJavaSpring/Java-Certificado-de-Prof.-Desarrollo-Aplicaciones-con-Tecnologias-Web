@@ -75,8 +75,8 @@ public class PreuDAO {
 	}
 	
 	/**
-	 * Dóna d'alta un registre a base de dades.
-	 * Actualitzarà l'id amb el valor generat pel gestor
+	 * Dï¿½na d'alta un registre a base de dades.
+	 * Actualitzarï¿½ l'id amb el valor generat pel gestor
 	 * @param p Preu a donar d'alta
 	 * @throws SQLException En cas que hi hagi un error de base de dades
 	 */
@@ -130,8 +130,8 @@ public class PreuDAO {
 	
 	/**
 	 * Modifica un preu a base da dades
-	 * @param p El preu a modificar. Usarà l'id
-	 * per buscar el registre i actualitzarà tots els seus camps
+	 * @param p El preu a modificar. Usarï¿½ l'id
+	 * per buscar el registre i actualitzarï¿½ tots els seus camps
 	 * @throws SQLException En cas que es produeixi un error de base de dades
 	 */
 	public void modificar(final Preu p) throws SQLException {
@@ -175,10 +175,10 @@ public class PreuDAO {
 				public boolean processRow(Connection con, PreparedStatement st,
 						ResultSet rset) throws SQLException {
 					// Obtinc el registre de la fila actual
-					// i el fico a l'objecte que retornaré
+					// i el fico a l'objecte que retornarï¿½
 					crearPreu(rset, elPreu);
 					// Indico al DBWrapper que segueixi amb el 
-					// següent registre
+					// segï¿½ent registre
 					return false;
 				}
 			}
@@ -188,7 +188,7 @@ public class PreuDAO {
 	
 	/**
 	 * Recupera de base de dades tots els preus ordenats per nom
-	 * @return La llista de preus. Si no n'hi ha, retornarà una llista buida
+	 * @return La llista de preus. Si no n'hi ha, retornarï¿½ una llista buida
 	 * @throws SQLException En cas que es produeixi un error de base de dades
 	 */
 	public List<Preu> obtenirTots() throws SQLException {
@@ -203,7 +203,7 @@ public class PreuDAO {
 					// i el fico a la llista
 					elsPreus.add(crearPreu(rset));
 					// Indico al DBWrapper que segueixi amb el 
-					// següent registre
+					// segï¿½ent registre
 					return true;
 				}
 			}
@@ -238,10 +238,10 @@ public class PreuDAO {
 				public boolean processRow(Connection con, PreparedStatement st,
 						ResultSet rset) throws SQLException {
 					// Obtinc el registre de la fila actual
-					// i el fico a l'objecte que retornaré
+					// i el fico a l'objecte que retornarï¿½
 					crearPreu(rset, elPreu);
 					// Indico al DBWrapper que segueixi amb el 
-					// següent registre. si hi ha més d'un registre vàlid agafarem l'últim
+					// segï¿½ent registre. si hi ha mes d'un registre vï¿½lid agafarem l'ï¿½ltim
 					return true;
 				}
 			}
@@ -250,7 +250,7 @@ public class PreuDAO {
 	}
 	
 	/**
-	 * Funció d'utilitat per crear un objecte Preu a partir de la fila actual
+	 * Funciï¿½ d'utilitat per crear un objecte Preu a partir de la fila actual
 	 * d'un recordset 
 	 * @param rset El recordset d'on treurem el Preu
 	 * @return El Preu creat
@@ -261,10 +261,10 @@ public class PreuDAO {
 	}
 	
 	/**
-	 * Funció d'utilitat per omplir un objecte Preu amb els valors
+	 * Funciï¿½ d'utilitat per omplir un objecte Preu amb els valors
 	 * de la fila actual d'un recordset 
 	 * @param rset El recordset d'on treurem el Preu
-	 * @param p El Preu a omplir. Pot ser null i es crearà un Preu nou
+	 * @param p El Preu a omplir. Pot ser null i es crearï¿½ un Preu nou
 	 * @return El Preu amb els camps recuperats
 	 * @throws SQLExceptionEl recordset d'on treurem el Preu
 	 */

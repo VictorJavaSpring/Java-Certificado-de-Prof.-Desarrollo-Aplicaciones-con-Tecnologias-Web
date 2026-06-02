@@ -36,9 +36,10 @@ public class GFotoController extends SeccioController {
 
 //	private static final String PATH_FITXERS = "C:" + File.separator
 //			+ "eWokFotos";
-	private static final String PATH_FITXERS = "/media/windows7/eWokFotos";
+//	private static final String PATH_FITXERS = "/media/windows7/eWokFotos";
+	private static final String PATH_FITXERS = "E:/ewokImages";
 
-	/** Dao d'acc�s als productes */
+	/** Dao d'acces als productes */
 	ProducteDAO prDao = null;
 	
 	public GFotoController() {
@@ -66,6 +67,7 @@ public class GFotoController extends SeccioController {
 			EWokController.addMessage(ETipusMissatge.error,
 					"No es reconeix l'accio " + accio, request);
 		}
+//		EWokController.forward("staff/gFoto/upldFoto.jsp", request, response);
 		EWokController.forward("staff/gFoto/upldFoto.jsp", request, response);
 	}
 
@@ -84,9 +86,9 @@ public class GFotoController extends SeccioController {
 
 	public static void downloadFoto(HttpServletRequest request,
 			HttpServletResponse response) {
-		// Busquem el par�metre
+		// Busquem el parametre
 		final String idProd = request.getParameter(PARAM_IDPROD);
-		// Si no em passen par�metre, no puc seguir
+		// Si no em passen parametre, no puc seguir
 		if (idProd == null || idProd.trim().equals("")) {
 			response.setStatus(HttpServletResponse.SC_BAD_REQUEST);
 			return;
@@ -183,17 +185,17 @@ public class GFotoController extends SeccioController {
 			}
 			if (idProd != null && !idProd.equals("-1") && file != null) {
 				// Abans de pujar el nou fitxer, esborro l'antic, si existia
-				// (per si me'n pugen un amb extensi� diferent a l'antic)
+				// (per si me'n pugen un amb extensio diferent a l'antic)
 				File f = getCurrentFile(idProd);
 				if (f != null) {
 					Files.deleteIfExists(f.toPath());
 				}
 
-				// TODO Atenci� amb l'extensi�
+				// TODO Atencio amb l'extensio
 				// Per obtenir el path base hauriem de treballar amb:
 				// request.getSession().getServletContext().getRealPath("/")
-				// aix� d�na el directori a partir del webcontent.
-				// per� com que estem en desenvolupament i no producci�, usem un
+				// aixo  dona el directori a partir del webcontent.
+				// pero com que estem en desenvolupament i no produccio, usem un
 				// path fix del disc dur
 				String name = PATH_FITXERS + File.separator
 						+ getNomFitxer(idProd, file.getName());
@@ -216,7 +218,7 @@ public class GFotoController extends SeccioController {
 					"Error parsejant la request: " + e.getMessage(), request);
 		} catch (Exception e) {
 			EWokController.addMessage(ETipusMissatge.error,
-					"Error gen�ric processant el fitxer: " + e.getMessage(),
+					"Error generic processant el fitxer: " + e.getMessage(),
 					request);
 			EWokController.addMessage(ETipusMissatge.error,
 					"Tens creat el directori c:\\eWokFotos ?",

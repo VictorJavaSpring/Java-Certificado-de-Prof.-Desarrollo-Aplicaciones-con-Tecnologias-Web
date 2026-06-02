@@ -79,7 +79,7 @@ public class UsuariDAO {
 	}
 
 	/**
-	 * Dóna d'alta un registre a base de dades.
+	 * Dï¿½na d'alta un registre a base de dades.
 	 * 
 	 * @param u Usuari a donar d'alta
 	 * @throws SQLException En cas que hi hagi un error de base de dades
@@ -105,7 +105,7 @@ public class UsuariDAO {
 	 *             En cas que es produeixi un error de base de dades
 	 */
 	public void esborrar(final String email) throws SQLException {
-		// primer eliminem les relacions rolusuari i després l'usuari
+		// primer eliminem les relacions rolusuari i despres l'usuari
 
 		// esborrat de relacions rolusuari
 		dw.executeSql(
@@ -145,8 +145,8 @@ public class UsuariDAO {
 	 * Modifica un usuari a base de dades
 	 * 
 	 * @param u
-	 *            , usuari a modificar. Usarà l'email per buscar el registre i
-	 *            actualitzarà tots els seus camps
+	 *            , usuari a modificar. Usarï¿½ l'email per buscar el registre i
+	 *            actualitzarï¿½ tots els seus camps
 	 * @throws SQLException
 	 *             En cas que es produeixi un error de base de dades
 	 */
@@ -194,7 +194,7 @@ public class UsuariDAO {
 							throws SQLException {
 						// Si l'usuari no s'ha omplert ja:
 						// Obtinc el registre de la fila actual
-						// i el fico a l'objecte que retornaré
+						// i el fico a l'objecte que retornarï¿½
 						if (us.getMail() == null) {
 							crearUsuari(rset, us);
 						}
@@ -202,8 +202,8 @@ public class UsuariDAO {
 						rset.getLong(ConstantsSQL.ROL_CAMP_ID); // obtenim id si
 																// n'hi ha
 						if (rset.wasNull()) {
-							// si no hi ha rol cridem al mètode addRol amb null
-							// així carregarà una llista de rols buida
+							// si no hi ha rol cridem al mï¿½tode addRol amb null
+							// Aixo carregarï¿½ una llista de rols buida
 							// (obligatori)
 							us.addRol(null);
 						} else {
@@ -211,7 +211,7 @@ public class UsuariDAO {
 							us.addRol(rd.crearRol(rset));
 						}
 						// Indico al DBWrapper que segueixi amb el
-						// següent registre
+						// segï¿½ent registre
 						return true;
 					}
 
@@ -222,7 +222,7 @@ public class UsuariDAO {
 	/**
 	 * Recupera de base de dades tots els usuaris ordenats per nom
 	 * 
-	 * @return La llista d' usuaris. Si no n'hi ha, retornarà una llista buida
+	 * @return La llista d' usuaris. Si no n'hi ha, retornarï¿½ una llista buida
 	 * @throws SQLException
 	 *             En cas que es produeixi un error de base de dades
 	 */
@@ -237,7 +237,7 @@ public class UsuariDAO {
 				// i el fico a la llista
 				elsUsuaris.add(crearUsuari(rset));
 				// Indico al DBWrapper que segueixi amb el
-				// següent registre
+				// segï¿½ent registre
 				return true;
 			}
 		});
@@ -245,7 +245,7 @@ public class UsuariDAO {
 	}
 
 	/**
-	 * Funció d'utilitat per crear un objecte Usuari a partir de la fila actual
+	 * Funciï¿½ d'utilitat per crear un objecte Usuari a partir de la fila actual
 	 * d'un recordset
 	 * 
 	 * @param rset
@@ -259,13 +259,13 @@ public class UsuariDAO {
 	}
 
 	/**
-	 * Funció d'utilitat per omplir un objecte Usuari amb els valors de la fila
+	 * Funciï¿½ d'utilitat per omplir un objecte Usuari amb els valors de la fila
 	 * actual d'un recordset
 	 * 
 	 * @param rset
 	 *            El recordset d'on treurem l' usuari
 	 * @param u
-	 *            L'usuari a omplir. Pot ser null i es crearà un Usuari nou
+	 *            L'usuari a omplir. Pot ser null i es crearï¿½ un Usuari nou
 	 * @return L'usuari amb els camps recuperats
 	 * @throws SQLException
 	 *             En cas que es produeixi un error de base de dades

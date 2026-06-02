@@ -12,9 +12,9 @@ import com.soc.ewok.model.Components;
 public class ComponentsDAOTest extends AbstractDAOTest {
 	@Override
 	public void preparaBD() throws SQLException {
-		// Creem l'esquema a través de la classe base
+		// Creem l'esquema a traves de la classe base
 		super.preparaBD();
-		// Executem l'script de càrrega de dades de components
+		// Executem l'script de cï¿½rrega de dades de components
 		executaScript("test/resources/scripts/ComponentsData.sql"); 
 	}
 
@@ -33,7 +33,7 @@ public class ComponentsDAOTest extends AbstractDAOTest {
 		// Recupero de nou el component
 		// (alta m'ha d'haver assignat el nou id)
 		Components nou = dao.obtenirPerId(c.getIdProducte(), c.getIdComponent());
-		// Miro que els dos objectes són iguals
+		// Miro que els dos objectes sï¿½n iguals
 		Assert.assertEquals(c, nou);
 	}
 	
@@ -46,7 +46,7 @@ public class ComponentsDAOTest extends AbstractDAOTest {
 		c.setQuantitat(1);
 		c.setOrdre(1);
 		dao.modificar(c);
-		// El recupero i comprobo que està modificat
+		// El recupero i comprobo que estï¿½ modificat
 		Components nou = dao.obtenirPerId(1l, 1l);
 		Assert.assertEquals(c, nou);
 	}
@@ -55,7 +55,7 @@ public class ComponentsDAOTest extends AbstractDAOTest {
 	public void eliminacioCorrecta() throws SQLException {
 		ComponentsDAO dao = new ComponentsDAO(createDataSource());
 		// Recuperem l'objecte que esborrarem
-		// per assegurar-nos que hi és
+		// per assegurar-nos que hi es
 		Components c = dao.obtenirPerId(1l, 1l);
 		Assert.assertNotNull(c);
 		// Esborrem l'objecte
@@ -72,7 +72,7 @@ public class ComponentsDAOTest extends AbstractDAOTest {
 		List<Components> tots = dao.obtenirTots();
 		// Comprovem que hem rebut tres components
 		Assert.assertEquals(3, tots.size());
-		// Comprovem que un a un són correctes
+		// Comprovem que un a un sï¿½n correctes
 		Assert.assertEquals(tots.get(0).getIdProducte(), (Long)1l);
 		Assert.assertEquals(tots.get(0).getIdComponent(), (Long)1l);
 		Assert.assertEquals(tots.get(0).getQuantitat(), (Integer)1);

@@ -9,7 +9,7 @@ import javax.xml.bind.annotation.XmlRootElement;
 /**
  * Classe que representa una element de l'entitat Producte
  * Un producte representa aliments base, condiments, complements,
- * plats o menus en l'aplicació eWok  
+ * plats o menus en l'aplicaciï¿½ eWok  
  * @author JordiM
  *
  */
@@ -28,7 +28,7 @@ public class Producte {
 	
 
 	/**
-	 * obté l'id d'un producte
+	 * obtï¿½ l'id d'un producte
 	 * @return l'id del producte. Pot ser Null si el producte no s'ha gravat encara a BD 
 	 */
 	public Long getId() {
@@ -44,7 +44,7 @@ public class Producte {
 	}
 	
 	/**
-	 * obté el nom del producte 
+	 * obtï¿½ el nom del producte 
 	 * @return el nom del producte
 	 */
 	public String getNom() {
@@ -63,7 +63,7 @@ public class Producte {
 	}
 	
 	/**
-	 * obté la Descripcio Curta del producte
+	 * obtï¿½ la Descripcio Curta del producte
 	 * @return la Descripcio Curta del producte
 	 */
 	public String getDescripcioCurta() {
@@ -79,67 +79,67 @@ public class Producte {
 	}
 	
 	/**
-	 * obté la descripció del producte
-	 * @return la descripció del producte
+	 * obtï¿½ la descripciï¿½ del producte
+	 * @return la descripciï¿½ del producte
 	 */
 	public String getDescripcio() {
 		return sDescripcio;
 	}
 	
 	/**
-	 * assigna la descripció (llarga) del producte
-	 * @param descripcio. descripció a assignar al producte. Pot ser null
+	 * assigna la descripciï¿½ (llarga) del producte
+	 * @param descripcio. descripciï¿½ a assignar al producte. Pot ser null
 	 */
 	public void setDescripcio(String descripcio) {
 		sDescripcio = descripcio;
 	}
 	
 	/**
-	 * obté la data d'inici de vigència del producte.
-	 * @return la data d'inici de vigència del producte. Pot ser null quan el producte 
-	 * està en implementació
+	 * obtï¿½ la data d'inici de vigï¿½ncia del producte.
+	 * @return la data d'inici de vigï¿½ncia del producte. Pot ser null quan el producte 
+	 * estï¿½ en implementaciï¿½
 	 */
 	public Date getIniciVigencia() {
 		return dIniciVigencia;
 	}
 	
 	/**
-	 * assigna la data d'inici de vigència del producte
-	 * @param iniciVigencia. data d'inici de vigència del producte.
+	 * assigna la data d'inici de vigï¿½ncia del producte
+	 * @param iniciVigencia. data d'inici de vigï¿½ncia del producte.
 	 */
 	public void setIniciVigencia(Date iniciVigencia) {
 		dIniciVigencia = iniciVigencia;
 	}
 	
 	/**
-	 * obté la data de fi de vigència del producte.
-	 * @return data de fi de vigència del producte.
+	 * obtï¿½ la data de fi de vigï¿½ncia del producte.
+	 * @return data de fi de vigï¿½ncia del producte.
 	 */
 	public Date getFiVigencia() {
 		return dFiVigencia;
 	}
 	
 	/**
-	 * assigna la data de fi de vigència del producte. Pot ser null en els productes permanentment
-	 * en catàleg
-	 * @param fiVigencia. data de fi de vigència del producte.
+	 * assigna la data de fi de vigï¿½ncia del producte. Pot ser null en els productes permanentment
+	 * en catï¿½leg
+	 * @param fiVigencia. data de fi de vigï¿½ncia del producte.
 	 */
 	public void setFiVigencia(Date fiVigencia) {
 		this.dFiVigencia = fiVigencia;
 	}
 	
 	/**
-	 * obté l'id de relació amb l'entitat unitat de mesura del producte
-	 * @return l'id de relació amb l'entitat unitat de mesura del producte
+	 * obtï¿½ l'id de relaciï¿½ amb l'entitat unitat de mesura del producte
+	 * @return l'id de relaciï¿½ amb l'entitat unitat de mesura del producte
 	 */
 	public Long getIdUnitat() {
 		return nIdUnitat;
 	}
 	
 	/**
-	 * assigna l'id de relació amb l'entitat unitat de mesura del producte. No pot ser null i
+	 * assigna l'id de relaciï¿½ amb l'entitat unitat de mesura del producte. No pot ser null i
 	 * ha d'existir a la BD
-	 * @param idUnitat. l'id de relació amb l'entitat 'Unitat' 
+	 * @param idUnitat. l'id de relaciï¿½ amb l'entitat 'Unitat' 
 	 */
 	public void setIdUnitat(Long idUnitat) {
 		if (idUnitat == null){
@@ -149,7 +149,7 @@ public class Producte {
 	}
 	
 	/**
-	 * obté l'Id de relació de tipus de producte
+	 * obtï¿½ l'Id de relaciï¿½ de tipus de producte
 	 * @return Id de 'TipusProducte'
 	 */
 	public Long getIdTipusProducte() {
@@ -157,8 +157,8 @@ public class Producte {
 	}
 	
 	/**
-	 * assigna id de relació amb tipus de producte
-	 * @param idTipusProducte. l'id de relació amb l'entitat 'TipusProducte'
+	 * assigna id de relaciï¿½ amb tipus de producte
+	 * @param idTipusProducte. l'id de relaciï¿½ amb l'entitat 'TipusProducte'
 	 */
 	public void setIdTipusProducte(Long idTipusProducte) {
 		if(idTipusProducte == null){
@@ -180,10 +180,10 @@ public class Producte {
 		}
 		//comprovar si ens passen producte o no
 		if (p == null){
-			// si és null retornem fals i no fem res més
+			// si es null retornem fals i no fem res mes
 			return false;
 		}
-		//afegim el producte amb el métode add de la classe List i
+		//afegim el producte amb el mï¿½tode add de la classe List i
 		//retornem el boolean resultat del metode.
 		return components.add(p);
 	}
@@ -192,9 +192,9 @@ public class Producte {
 	 * @return List de Productes de tipus ProducteComponent
 	 */
 	public List<ProducteComponent> getComponents() {
-		//si l'objecte no té llista de components llençar excepció illegalState
+		//si l'objecte no tï¿½ llista de components llenï¿½ar excepciï¿½ illegalState
 		if (components == null){
-			//throw new IllegalStateException("El producte "+ this.toString() +" no té components carregats");
+			//throw new IllegalStateException("El producte "+ this.toString() +" no tï¿½ components carregats");
 		}
 		return components;
 	}
@@ -204,7 +204,7 @@ public class Producte {
 	 * @param components List de Productes de tipus ProducteComponent
 	 */
 	public void setComponents(List<ProducteComponent> components) {
-		//si l'objecte no té llista de components llençar excepció illegalState
+		//si l'objecte no tï¿½ llista de components llenï¿½ar excepciï¿½ illegalState
 		if (this.components == null){
 			this.components = new Vector<ProducteComponent>();
 		}

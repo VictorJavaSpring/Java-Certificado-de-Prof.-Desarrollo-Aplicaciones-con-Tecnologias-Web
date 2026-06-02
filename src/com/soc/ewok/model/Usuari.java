@@ -64,7 +64,7 @@ public class Usuari {
 	/**
 	 * Afegeix un Rol a la llista de rols de l'usuari
 	 * @param r El Rol a afegir
-	 * @return False si el rol passat és null.
+	 * @return False si el rol passat es null.
 	 */
 	public boolean addRol(Rol r){
 		//comprovar si hi ha llista
@@ -74,22 +74,22 @@ public class Usuari {
 		}
 		//comprovar si ens passen Rol o no
 		if (r == null){
-			// si és null retornem fals i no fem res més
+			// si es null retornem fals i no fem res mes
 			return false;
 		}
-		//afegim el rol amb el métode add de la classe List i
+		//afegim el rol amb el mï¿½tode add de la classe List i
 		//retornem el boolean resultat del metode.
 		return llistaRols.add(r);
 	}
 	
 	/**
-	 * Obté la llista de rols de l'usuari
+	 * Obtï¿½ la llista de rols de l'usuari
 	 * @return Un objecte List amb objectes Rol
 	 */
 	public List<Rol> getRols(){
-		//si l'objecte no té llista de rols llençar excepció illegalState
+		//si l'objecte no tï¿½ llista de rols llenï¿½ar excepciï¿½ illegalState
 		if (llistaRols == null){
-			throw new IllegalStateException("L'usuari "+ this.getMail() +" no té Rols carregats");
+			throw new IllegalStateException("L'usuari "+ this.getMail() +" no tï¿½ Rols carregats");
 		}
 		return llistaRols;
 	}

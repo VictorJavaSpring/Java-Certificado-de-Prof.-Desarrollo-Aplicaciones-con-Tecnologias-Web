@@ -102,7 +102,7 @@ public class ViewMenuServlet extends PublicController {
 		
 		if (nId == null) {
 			// Si no tinc Id, no llen�o error perqu� ja ho fa el m�tode "getIdTipusProd"
-			// a trav�s del m�tode "getIdProd"
+			// a traves del m�tode "getIdProd"
 			// Llavors redirigeixo cap a la jsp de men� i retorno "null"
 			EWokController.forward("/viewMenuServlet/viewMenuServlet.jsp", request, response);
 			return null;
@@ -122,7 +122,7 @@ public class ViewMenuServlet extends PublicController {
 			return null;
 		}
 		if (tp == null) {
-			// Si el tipus de producte �s null, retorno un missatge d'error i un "null"
+			// Si el tipus de producte es null, retorno un missatge d'error i un "null"
 			EWokController.addI18nMessage(ETipusMissatge.error,	null, PARAM_ERROR_TIPUSPROD, 
 										  new String[]{nId.toString()}, request);
 			// Redirigeixo a la jsp
@@ -160,7 +160,7 @@ public class ViewMenuServlet extends PublicController {
 		// a partir de l'objecte Producte "p"
 		Long nId = prod.getIdTipusProducte();
 //		if (nId == null) {
-//			// Si l'id del tipus de producte �s "null",
+//			// Si l'id del tipus de producte es "null",
 //			// retorno un missatge d'error 
 //			EWokController.addI18nMessage(ETipusMissatge.error, null, PARAM_ERROR_IDNOTFOUND, 
 //										  new String[]{"null"}, request);
@@ -207,7 +207,7 @@ public class ViewMenuServlet extends PublicController {
 			return null;
 		}
 		if (p == null) {
-			// Si el producte �s null, retorno un missatge d'error i un "null"
+			// Si el producte es null, retorno un missatge d'error i un "null"
 			EWokController.addI18nMessage(ETipusMissatge.error,	null, PARAM_ERROR_PROD, 
 										  new String[]{nId.toString()}, request);
 			return null;
@@ -241,7 +241,7 @@ public class ViewMenuServlet extends PublicController {
 			return null;
 		}
 		if (nId == null) {
-			// Si l'id de producte �s null, retorno un missatge d'error i un "null"
+			// Si l'id de producte es null, retorno un missatge d'error i un "null"
 			EWokController.addI18nMessage(ETipusMissatge.error,	null, PARAM_ERROR_IDPROD, 
 													  new String[]{"null"}, request);
 			return null;

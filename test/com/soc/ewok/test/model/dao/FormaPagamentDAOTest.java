@@ -14,9 +14,9 @@ import com.soc.ewok.model.Rol;
 public class FormaPagamentDAOTest extends AbstractDAOTest{
 	@Override
 	public void preparaBD() throws SQLException {
-		// Creem l'esquema a través de la classe base
+		// Creem l'esquema a traves de la classe base
 		super.preparaBD();
-		// Executem l'script de càrrega de dades de rol
+		// Executem l'script de cï¿½rrega de dades de rol
 		executaScript("test/resources/scripts/FormaPagamentData.sql"); 
 	}
 	
@@ -32,7 +32,7 @@ public class FormaPagamentDAOTest extends AbstractDAOTest{
 		// Recupero de nou la forma de pagament
 		// (alta m'ha d'haver assignat el nou id)
 		FormaPagament nova = dao.obtenirPerId(fp.getnId());
-		// Miro que els dos objectes són iguals
+		// Miro que els dos objectes sï¿½n iguals
 		Assert.assertEquals(fp, nova);
 	}
 	
@@ -44,7 +44,7 @@ public class FormaPagamentDAOTest extends AbstractDAOTest{
 		// El modifico
 		fp.setsNom("Un altre forma de pagament");
 		dao.modificar(fp);
-		// El recupero i comprobo que està modificat
+		// El recupero i comprobo que estï¿½ modificat
 		FormaPagament nova = dao.obtenirPerId(1l);
 		Assert.assertEquals(fp, nova);
 	}
@@ -53,7 +53,7 @@ public class FormaPagamentDAOTest extends AbstractDAOTest{
 	public void eliminacioCorrecta() throws SQLException {
 		FormaPagamentDAO dao = new FormaPagamentDAO(createDataSource());
 		// Recuperem l'objecte que esborrarem
-		// per assegurar-nos que hi és
+		// per assegurar-nos que hi es
 		FormaPagament fp = dao.obtenirPerId(1l);
 		Assert.assertNotNull(fp);
 		// Esborrem l'objecte
@@ -70,7 +70,7 @@ public class FormaPagamentDAOTest extends AbstractDAOTest{
 		List<FormaPagament> tots = dao.obtenirTots();
 		// Comprovem que hem rebut tres rols
 		Assert.assertEquals(3, tots.size());
-		// Comprovem que el un a un són correctes
+		// Comprovem que el un a un sï¿½n correctes
 		Assert.assertEquals(tots.get(0).getnId(), (Long)1l);
 		Assert.assertEquals(tots.get(0).getsNom(), "Efectiu");
 		Assert.assertEquals(tots.get(1).getnId(), (Long)2l);

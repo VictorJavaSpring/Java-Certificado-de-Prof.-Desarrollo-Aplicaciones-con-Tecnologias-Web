@@ -3,9 +3,9 @@ package com.soc.ewok.model;
 import java.util.Date;
  
 /**
- * Classe que representa els xecs que té cada client.
- * Cada registre és un xec i està relacionat amb el client al qui pertany i 
- * a la comanda en que s'haurà gastat.
+ * Classe que representa els xecs que tï¿½ cada client.
+ * Cada registre es un xec i estï¿½ relacionat amb el client al qui pertany i 
+ * a la comanda en que s'haurï¿½ gastat.
  * @author Sara
  */
 
@@ -17,7 +17,7 @@ public class Xec {
 	private Long nIdClient;
 	
 	/**
-	 * Retorna l'id del xec (cada registre/cada id és un xec).
+	 * Retorna l'id del xec (cada registre/cada id es un xec).
 	 * @return l'id del xec.
 	 */
 	public Long getId() {
@@ -33,21 +33,21 @@ public class Xec {
 	}
 	
 	/**
-	 * Retorna el número de punts per cada xec.
-	 * @return Número de punts per cada xec. No pot ser null.
+	 * Retorna el nï¿½mero de punts per cada xec.
+	 * @return Nï¿½mero de punts per cada xec. No pot ser null.
 	 */
 	public Short getNumPunts() {
 		return nNumPunts;
 	}
 	
 	/**
-	 * Assigna el número de punts per cada xec, 
+	 * Assigna el nï¿½mero de punts per cada xec, 
 	 * @param nNumPunts El num de punts a assignar a cada xec
-	 * @throws IllegalArgumentException En cas que el número de punts sigui null
+	 * @throws IllegalArgumentException En cas que el nï¿½mero de punts sigui null
 	 */
 	public void setNumPunts(Short nNumPunts) {
 		if (nNumPunts == null) {
-			throw new IllegalArgumentException("El número de punts per cada xec ha d'estar informat");
+			throw new IllegalArgumentException("El nï¿½mero de punts per cada xec ha d'estar informat");
 		}
 		this.nNumPunts = nNumPunts;
 	}
@@ -98,7 +98,7 @@ public class Xec {
 	
 	/**
 	 * Assigna l'id del client al qui pertany el xec
-	 * @param nIdClient És l'id del client
+	 * @param nIdClient es l'id del client
 	 * @throws IllegalArgumentException En cas que l'id del client sigui null
 	 */
 	public void setIdClient(Long nIdClient) {

@@ -9,7 +9,7 @@ import com.soc.ewok.model.Comanda;
 
 /**
  * Classe base per a tots els servlets
- * (controladors) de la zona ública
+ * (controladors) de la zona ï¿½blica
  * @author Administrador
  *
  */
@@ -26,12 +26,12 @@ public class PublicController extends EWokController {
     }    
 
 	public static void setComanda(Comanda comanda, HttpSession sess) {
-		// Posem a la sessió la comanda que rebem del listener
+		// Posem a la sessio la comanda que rebem del listener
 		sess.setAttribute(COMANDA_ACTUAL, comanda);
 	}
 	
 	public static Comanda getComanda(HttpServletRequest request){
-		// Demanem la comanda que tenim a la sessió
+		// Demanem la comanda que tenim a la sessio
 		Comanda com = (Comanda) ((HttpServletRequest) request).getSession().getAttribute(COMANDA_ACTUAL);
 		
 		if (com == null) {

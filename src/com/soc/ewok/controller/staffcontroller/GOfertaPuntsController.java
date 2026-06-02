@@ -20,7 +20,7 @@ import com.soc.utils.RequestValidationUtils;
 
 public class GOfertaPuntsController extends SeccioController {
 	
-	//path dels jsp de la secció oferta de punts
+	//path dels jsp de la secciï¿½ oferta de punts
 	private static final String PATH_OFERTA_PUNTS = "staff/gOfertaPunts/";
 	
 	// Constants de les accions
@@ -32,8 +32,8 @@ public class GOfertaPuntsController extends SeccioController {
 	// Constants dels errors
 	private static final String REQ_ERRORGENERIC = "No s'ha trobat l'oferta de punts amb id ";
 	private static final String REQ_ERRORLLISTAT ="No hem pogut obtenir la llista d'ofertes de punts";
-	private static final String REQ_ERRORPARAM ="Error en el paràmetre";
-	private static final String REQ_ERRORMODIFICACIO = "No s'ha pogut modificar la informació";
+	private static final String REQ_ERRORPARAM ="Error en el parï¿½metre";
+	private static final String REQ_ERRORMODIFICACIO = "No s'ha pogut modificar la informacio";
 	private static final String REQ_ERRORALTA = "No s'ha pogut donar d'alta l'oferta de punts.";
 	private static final String REQ_ERRORSQL = "No s'ha pogut esborrar l'oferta de punts. Potser ja havia estat esborrada.";
 	private static final String REQ_ERRORDATE = "error date";
@@ -42,12 +42,12 @@ public class GOfertaPuntsController extends SeccioController {
 	private static final String REQ_ERROR_CALPOS = "Cal introduir un valor positiu";
 	private static final String REQ_ERROR_PUNTSXEC = "Els punts per xec han d'estar informats";
 	private static final String REQ_ERROR_EUROSPUNT = "Els euros per punt han d'estar informats";
-	private static final String REQ_ERROR_INIVIGENCIA = "L'Inici de Vigència ha d'estar informat en un format vàlid";
-	private static final String REQ_ERROR_FIVIGENCIA = "El Fi de Vigència ha d'estar informat en un format vàlid";
-	private static final String REQ_ERROR_VIG_PUNT = "Els dies de vigència han d'estar informats";
-	private static final String REQ_ERROR_VIG_XEC = "Els dies de vigència han d'estar informats";
-	private static final String REQ_ERROR_TIMEIN = "L'hora d'inici de vigència ha d'estar informada en format correcte";
-	private static final String REQ_ERROR_TIMEFI = "L'hora de final de vigència ha d'estar informada en format correcte";
+	private static final String REQ_ERROR_INIVIGENCIA = "L'Inici de Vigï¿½ncia ha d'estar informat en un format vï¿½lid";
+	private static final String REQ_ERROR_FIVIGENCIA = "El Fi de Vigï¿½ncia ha d'estar informat en un format vï¿½lid";
+	private static final String REQ_ERROR_VIG_PUNT = "Els dies de vigï¿½ncia han d'estar informats";
+	private static final String REQ_ERROR_VIG_XEC = "Els dies de vigï¿½ncia han d'estar informats";
+	private static final String REQ_ERROR_TIMEIN = "L'hora d'inici de vigï¿½ncia ha d'estar informada en format correcte";
+	private static final String REQ_ERROR_TIMEFI = "L'hora de final de vigï¿½ncia ha d'estar informada en format correcte";
 	private static final String PARAM_ERROR_VIG_PUNT = "errorDiesVigPunt";
 	private static final String PARAM_ERROR_VIG_XEC = "errorDiesVigXec";
 	private static final String PARAM_ERROR_PUNTSXEC = "errorPuntsXec";
@@ -57,7 +57,7 @@ public class GOfertaPuntsController extends SeccioController {
 	private static final String PARAM_ERROR_TIMEIN = "errorinVigTime";
 	private static final String PARAM_ERROR_TIMEFI = "errorfiVigTime";
 	
-	// Constants dels paràmetres
+	// Constants dels parï¿½metres
 	private static final String PARAM_ID = "id";
 	private static final String PARAM_EUROS_PER_PUNT = "eurosPerPunt";
 	private static final String PARAM_PUNTS_PER_XEC = "puntsPerXec";
@@ -73,7 +73,7 @@ public class GOfertaPuntsController extends SeccioController {
 	OfertaPuntsDAO daoOfertaPunts = null;
 	
 	public GOfertaPuntsController() {
-		// Creem un DAO que anirà contra BdD
+		// Creem un DAO que anirï¿½ contra BdD
 		daoOfertaPunts = new OfertaPuntsDAO(EWokController.getGlobalDatasource());
 	}
 	
@@ -91,7 +91,7 @@ public class GOfertaPuntsController extends SeccioController {
 		request.setAttribute("msg",
 				"He passat pel controlador d'Oferta de Punts");
 		
-		// Mètode principal per servir totes les peticions
+		// Mï¿½tode principal per servir totes les peticions
 		// relatives a OfertaPunts
 		if (ACCIO_LLISTAT.equals(accio)){
 			doLlistaOfertaPunts(request, response);
@@ -147,12 +147,12 @@ private void doPreparaModificaOfertaPunts(HttpServletRequest request,
 			HttpServletResponse response) throws ServletException, IOException {
 	// Obtenim l'id
 	Long nId = getId(request, response, "modificar");
-	// Si no hem obtingut id, hem acabat, perquè el getId,
-	// ja haurà redirigit cap al llistat
+	// Si no hem obtingut id, hem acabat, perquï¿½ el getId,
+	// ja haurï¿½ redirigit cap al llistat
 	if (nId == null) {
 		return;
 	}
-	// Obtenim el producte a través del DAO
+	// Obtenim el producte a traves del DAO
 	OfertaPunts op = null;
 	try {
 		op = daoOfertaPunts.obtenirPerId(nId);
@@ -199,12 +199,12 @@ private void doModificaOfertaPunts(HttpServletRequest request,
 	OfertaPunts ofertaPunts = extreureOfertaPunts(request, response, true);
 	
 	// Si no l'he obtingut no faig res
-	// (extreureOfertaPunts s'encarrega de la redirecció
+	// (extreureOfertaPunts s'encarrega de la redirecciï¿½
 	if (ofertaPunts == null) {
 		return;
 	}
 	
-	// Si tot és correcte donem d'alta l'oferta de punts a través del DAO
+	// Si tot es correcte donem d'alta l'oferta de punts a traves del DAO
 	try {
 		daoOfertaPunts.modificar(ofertaPunts);
 	} catch (SQLException e) {
@@ -224,13 +224,13 @@ private void doAltaOfertaPunts(HttpServletRequest request,
 	// Intento obtenir l'oferta de punts
 		OfertaPunts ofertaPunts = extreureOfertaPunts(request, response, false);
 			// Si no l'obtenim no fem res
-			// extreureOfertaPunts el redigirà
+			// extreureOfertaPunts el redigirï¿½
 			if (ofertaPunts == null) {
 				return;
 			}
 			
-			// Si tot ha anat bé
-			// Fem l'alta mitjançant del DAO
+			// Si tot ha anat bï¿½
+			// Fem l'alta mitjanï¿½ant del DAO
 			try {
 				daoOfertaPunts.alta(ofertaPunts);
 			} catch (SQLException exx) {
@@ -245,8 +245,8 @@ private void doAltaOfertaPunts(HttpServletRequest request,
 		}
 
 private OfertaPunts extreureOfertaPunts(HttpServletRequest request, HttpServletResponse response) throws ServletException, IOException {
-	//Aquesta versió s'usa quan estem fent una alta nova  i no cal obtenir un id de l'objecte
-	//crida a la versió amb implementació completa amb el paràmetre extreureId false
+	//Aquesta versiï¿½ s'usa quan estem fent una alta nova  i no cal obtenir un id de l'objecte
+	//crida a la versiï¿½ amb implementaciï¿½ completa amb el parï¿½metre extreureId false
 	return	extreureOfertaPunts(request, response, false);
 }
 
@@ -357,7 +357,7 @@ private OfertaPunts extreureOfertaPunts(
 	
 	
 	
-	// Si hi ha algun error de validació, retornem al formulari
+	// Si hi ha algun error de validaciï¿½, retornem al formulari
 	if (
 			(extreureId && nId == null) || 
 			fEurosPerPunt == null || fEurosPerPunt <= 0 ||
@@ -367,7 +367,7 @@ private OfertaPunts extreureOfertaPunts(
 			dIniciVigencia == null || 
 			dFiVigencia == null
 		) {
-		// Si hi ha algun error i era una modificació
+		// Si hi ha algun error i era una modificaciï¿½
 		// (extreuId == true), llavors cal posar una ofertaPunts
 //		// com a flag
 		if (extreureId) {
@@ -375,7 +375,7 @@ private OfertaPunts extreureOfertaPunts(
 			EWokController.addMessage(ETipusMissatge.error,
 					REQ_ERRORMODIFICACIO, request);
 		}
-		//és error en dades de alta
+		//es error en dades de alta
 		request.setAttribute(MODEL_OFERTA_PUNTS_ALTA, ofertaPunts);
 		
 		// Redirigim 
@@ -416,7 +416,7 @@ private void doEsborrarOfertaPunts(HttpServletRequest request,
 				REQ_ERRORSQL,
 				request);
 		}
-	// Hagi anat bé o malament, pintem la llista
+	// Hagi anat bï¿½ o malament, pintem la llista
 	doLlistaOfertaPunts(request, response);
 	}
 
@@ -437,13 +437,13 @@ private Long getId(
 				EWokController.addMessage(ETipusMissatge.error,
 						REQ_ERRORPARAM, request);
 			}
-			// comprovem que no és null
+			// comprovem que no es null
 			if (nId == null) {
 				// Si hi ha hagut error, vaig a la llista
 				doLlistaOfertaPunts(request, response);
 				return null;
 				}
-			// Si tot ha anat bé, retorno l'id
+			// Si tot ha anat bï¿½, retorno l'id
 			return nId;
 			}
 

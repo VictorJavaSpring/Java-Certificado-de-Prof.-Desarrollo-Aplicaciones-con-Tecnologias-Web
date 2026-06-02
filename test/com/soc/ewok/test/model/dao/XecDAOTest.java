@@ -14,10 +14,10 @@ public class XecDAOTest extends AbstractDAOTest {
 	
 	@Override
 	public void preparaBD() throws SQLException {
-		// Creem l'esquema a través de la classe base
+		// Creem l'esquema a traves de la classe base
 		super.preparaBD();
-		// Executem l'script de càrrega de dades de xec
-		// (En aquest cas també crea la taula associada)
+		// Executem l'script de cï¿½rrega de dades de xec
+		// (En aquest cas tambï¿½ crea la taula associada)
 		executaScript("test/resources/scripts/Xec.sql"); 
 	}
 
@@ -50,10 +50,10 @@ public class XecDAOTest extends AbstractDAOTest {
 					xNou.getDataCaducitat().getMonth() ,
 					xNou.getDataCaducitat().getDay()) 
 				);
-		// Un cop veiem que són iguals, la copiem del vell al
+		// Un cop veiem que sï¿½n iguals, la copiem del vell al
 		// nou per no tenir problemes amb l'equals
 		xNou.setDataCaducitat(x.getDataCaducitat());
-		// Miro que els dos objectes són iguals
+		// Miro que els dos objectes sï¿½n iguals
 		Assert.assertEquals(x, xNou);
 	}
 	
@@ -65,7 +65,7 @@ public class XecDAOTest extends AbstractDAOTest {
 		// El modifico
 		x.setNumPunts((short)5);
 		dao.modificar(x);
-		// El recupero i comprobo que està modificat
+		// El recupero i comprobo que estï¿½ modificat
 		Xec xNou = dao.obtenirPerId(1l);
 		Assert.assertEquals(x, xNou);
 	}
@@ -74,7 +74,7 @@ public class XecDAOTest extends AbstractDAOTest {
 	public void eliminacioCorrecta() throws SQLException {
 		XecDAO dao = new XecDAO(createDataSource());
 		// Recuperem l'objecte que esborrarem
-		// per assegurar-nos que hi és
+		// per assegurar-nos que hi es
 		Xec x = dao.obtenirPerId(1l);
 		Assert.assertNotNull(x);
 		// Esborrem l'objecte
@@ -91,7 +91,7 @@ public class XecDAOTest extends AbstractDAOTest {
 		List<Xec> tots = dao.obtenirTots();
 		// Comprovem que hem rebut tres xec
 		Assert.assertEquals(3, tots.size());
-		// Comprovem un a un que són correctos
+		// Comprovem un a un que sï¿½n correctos
 		Assert.assertEquals(tots.get(0).getId(), (Long)1l);
 		Assert.assertEquals((short)tots.get(0).getNumPunts(), (short)4);
 		Assert.assertTrue(sonIguals(tots.get(0).getDataCaducitat(), 2015, 5, 1, 0, 0, 0));

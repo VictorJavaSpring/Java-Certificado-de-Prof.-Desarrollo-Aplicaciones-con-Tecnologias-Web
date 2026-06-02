@@ -20,7 +20,7 @@ public class Client {
 	/**
 	 * Retorna l'id del client.
 	 * @return L'id del client. 
-	 * Retornarà null si el client no queda en la base de dades,
+	 * Retornarï¿½ null si el client no queda en la base de dades,
 	 */
 	public Long getId() {
 		return nId;
@@ -28,7 +28,7 @@ public class Client {
 	
 	/**
 	 * Assigna l'id al client.
-	 * @param id és l'id que s'assignarà.
+	 * @param id es l'id que s'assignarï¿½.
 	 * 
 	 */
 	public void setId(Long id) {
@@ -45,7 +45,7 @@ public class Client {
 	
 	/**
 	 * Assigna un nom al client.
-	 * @param nom és el nom que s'assignarà
+	 * @param nom es el nom que s'assignarï¿½
 	 * @throws IllegalArgumentException En cas que el nom sigui null o buit
 	 */
 	public void setNom(String nom) {
@@ -65,23 +65,23 @@ public class Client {
 	
 	/**
 	 * Assigna cognoms al client.
-	 * @param cognoms són els cognoms que s'assignaran	 
+	 * @param cognoms sï¿½n els cognoms que s'assignaran	 
 	 */
 	public void setCognoms(String cognoms) {		
 		sCognoms = cognoms;
 	}
 	
 	/**
-	 * Retorna un string amb el número de telèfon del client 
-	 * @return el telèfon del client
+	 * Retorna un string amb el nï¿½mero de telï¿½fon del client 
+	 * @return el telï¿½fon del client
 	 */
 	public String getTelefon() {
 		return sTelefon;
 	}
 	
 	/**
-	 * Assigna un telèfon al client en format String	
-	 * @param telefon és el número de telèfon que s'assignarà al client
+	 * Assigna un telï¿½fon al client en format String	
+	 * @param telefon es el nï¿½mero de telï¿½fon que s'assignarï¿½ al client
 	 */
 	public void setTelefon(String telefon) {
 		sTelefon = telefon;
@@ -89,7 +89,7 @@ public class Client {
 	
 	/**
 	 * Retorna un string amb l'email de contacte del client
-	 * @return email és l'adreça d'eMail del client
+	 * @return email es l'adreï¿½a d'eMail del client
 	 */
 	public String getEmail() {
 		return sEmail;
@@ -97,15 +97,15 @@ public class Client {
 	
 	/**
 	 * Assigna un eMail al client 
-	 * @param email és l'adreça d'eMail que s'assignarà al client
+	 * @param email es l'adreï¿½a d'eMail que s'assignarï¿½ al client
 	 */
 	public void setEmail(String email) {
 		sEmail = email;
 	}
 	
 	/**
-	 * Retorna la data en què es va donar d'alta el client
-	 * @return dataAlta és la data d'alta del client
+	 * Retorna la data en quï¿½ es va donar d'alta el client
+	 * @return dataAlta es la data d'alta del client
 	 */
 	public Date getDataAlta() {
 		return dDataAlta;
@@ -113,7 +113,7 @@ public class Client {
 	
 	/**
 	 * Assigna una data d'alta al client
-	 * @param dataAlta és la data d'alta que s'assignarà al client
+	 * @param dataAlta es la data d'alta que s'assignarï¿½ al client
 	 */
 	public void setDataAlta(Date dataAlta) {
 		dDataAlta = dataAlta;
@@ -121,7 +121,7 @@ public class Client {
 	
 	/**
 	 * Retorna un string amb el document d'identitat del client
-	 * @return dni és el DNI del client
+	 * @return dni es el DNI del client
 	 */
 	public String getDni() {
 		return sDni;
@@ -129,7 +129,7 @@ public class Client {
 	
 	/**
 	 * Assigna un DNI al client
-	 * @param dni és el dni que s'assignarà al client
+	 * @param dni es el dni que s'assignarï¿½ al client
 	 */
 	public void setDni(String dni) {
 		sDni = dni;
@@ -137,7 +137,7 @@ public class Client {
 	
 	/**
 	 * Retorna l'id del usuari que es correspon amb el client
-	 * @return idUsuari és l'id del usuari d'aquest client
+	 * @return idUsuari es l'id del usuari d'aquest client
 	 */
 	public String getIdUsuari() {
 		return sIdUsuari;
@@ -145,7 +145,7 @@ public class Client {
 	
 	/**
 	 * Assigna un id d'usuari al client
-	 * @param idUsuari és l'id d'usuari que s'assignarà al client
+	 * @param idUsuari es l'id d'usuari que s'assignarï¿½ al client
 	 */
 	public void setIdUsuari(String idUsuari) {
 		sIdUsuari = idUsuari;

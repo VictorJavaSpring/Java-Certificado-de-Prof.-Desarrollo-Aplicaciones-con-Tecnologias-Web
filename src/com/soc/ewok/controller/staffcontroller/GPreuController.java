@@ -99,12 +99,12 @@ public class GPreuController extends SeccioController {
 			doLlistatPreu(request, response);			
 			return;
 		}
-		// Si no hem obtingut id, hem acabat, perquè el getId,
-		// ja haurà redirigit cap al llistat
+		// Si no hem obtingut id, hem acabat, perquï¿½ el getId,
+		// ja haurï¿½ redirigit cap al llistat
 		if (nId == null) {
 			return;
 		}
-		// Obtenim el preu a través del DAO
+		// Obtenim el preu a traves del DAO
 		Preu p;
 		try {
 			p = preuDao.obtenirPerId(nId);
@@ -137,12 +137,12 @@ public class GPreuController extends SeccioController {
 			// Intento obtenir el preu
 			Preu p = extreurePreu(request, response, true);
 			
-			// Si no l'he obtingut no fem res, extreurePreu ja haurà redirigit on calgui
+			// Si no l'he obtingut no fem res, extreurePreu ja haurï¿½ redirigit on calgui
 			if (p == null) {
 				return;
 			}
 			
-			// Modifiquem el preu a través del DAO
+			// Modifiquem el preu a traves del DAO
 			try {
 				preuDao.modificar(p);
 			} catch (SQLException e) {
@@ -176,13 +176,13 @@ public class GPreuController extends SeccioController {
 			Preu p = extreurePreu(request, response, false);
 			
 			// Si no l'he obtingu no faig res
-			// (extrePreu ja haurà redirigit on calgui)
+			// (extrePreu ja haurï¿½ redirigit on calgui)
 			if (p == null) {
 				return;
 			}
 
-			// Si tot ha anat bé
-			// Donem d'alta la Preu a través del DAO
+			// Si tot ha anat bï¿½
+			// Donem d'alta la Preu a traves del DAO
 			try {
 				preuDao.alta(p);
 			} catch (SQLException e) {
@@ -282,8 +282,8 @@ public class GPreuController extends SeccioController {
 		}
 		
 		// VALIDACIONS
-		// Les dades i hores d'inici i de fi vigencia no són obligatories però
-		// si ens informen de la hora ens han d'informar també del dia
+		// Les dades i hores d'inici i de fi vigencia no sï¿½n obligatories perï¿½
+		// si ens informen de la hora ens han d'informar tambï¿½ del dia
 		
 		// Agafem la data d'inici vigencia del formulari per fer les validacions
 		Date dDataInici = null;
@@ -301,7 +301,7 @@ public class GPreuController extends SeccioController {
 			request.setAttribute(PARAM_ERROR_HORAINICI, true);
 		}
 		
-		// Si ens informen de la hora però no de la data, pintem un error
+		// Si ens informen de la hora perï¿½ no de la data, pintem un error
 		if (dDataInici == null && dHoraInici != null) {
 			request.setAttribute(PARAM_ERROR_DATAINICI_NN, true);
 		}
@@ -324,18 +324,18 @@ public class GPreuController extends SeccioController {
 			request.setAttribute(PARAM_ERROR_HORAFINAL, true);
 		}
 		
-		// Si ens informen de la hora però no de la data, pintem un error
+		// Si ens informen de la hora perï¿½ no de la data, pintem un error
 		if (dDataFinal == null && dHoraFinal != null) {
 			request.setAttribute(PARAM_ERROR_DATAFINAL_NN, true);
 		}
 		
-		// Si hi ha algun error de validació, retornem al formulari
+		// Si hi ha algun error de validaciï¿½, retornem al formulari
 		if ((extreureId && nId == null) || 
 				nPreu == null || 
 				nIdProducte == null || 
 				(dDataInici == null && dHoraInici != null) || 
 				(dDataFinal == null && dHoraFinal != null)) {
-			// Si hi ha algun error i era una modificació (extreuId == true),
+			// Si hi ha algun error i era una modificaciï¿½ (extreuId == true),
 			// llavors necessitem posar un Preu com a flag
 			if (extreureId) {
 				request.setAttribute(MODEL_PREU, p);
@@ -353,7 +353,7 @@ public class GPreuController extends SeccioController {
 		try {
 			nId = getId(request, response);
 		} catch (ParameterException e1) {
-			// Si getId em llença un ParameterException retorno un missatge d'error
+			// Si getId em llenï¿½a un ParameterException retorno un missatge d'error
 			// i redirigim al llistat de preus
 			EWokController.addI18nMessage(ETipusMissatge.error, ERROR_ESBORRAR, request);
 			doLlistatPreu(request, response);
@@ -402,7 +402,7 @@ public class GPreuController extends SeccioController {
 		
 
 		if (p == null) {
-			// Si el preu p és null retorno un missatge d'error i redirigim al llistat de preus
+			// Si el preu p es null retorno un missatge d'error i redirigim al llistat de preus
 			EWokController.addI18nMessage(ETipusMissatge.error, null, ERROR_PREU_NO_TROBAT_AMBPARAM, new String[]{nId.toString()}, request);
 			doLlistatPreu(request, response);
 			return;
@@ -442,7 +442,7 @@ public class GPreuController extends SeccioController {
 			doLlistatPreu(request, response);
 			return null;
 		}
-		// Si tot ha anat bé, retorno l'id
+		// Si tot ha anat bï¿½, retorno l'id
 		return nId;
 	}
 	

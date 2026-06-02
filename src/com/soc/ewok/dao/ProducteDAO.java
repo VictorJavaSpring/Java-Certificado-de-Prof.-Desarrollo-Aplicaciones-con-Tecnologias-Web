@@ -32,7 +32,7 @@ public class ProducteDAO {
 	private static final String ALIAS_TPRODCOMPONENT = "pc";
 	private static final String ALIAS_TPRODUCTES = "p";
 
-	/** Arrays amb noms de camps de les Entitats més usades */
+	/** Arrays amb noms de camps de les Entitats mes usades */
 	private static final String[] PRODUCTE_CAMPS = {
 			ConstantsSQL.PRODUCTE_CAMP_ID, ConstantsSQL.PRODUCTE_CAMP_NOM,
 			ConstantsSQL.PRODUCTE_CAMP_DESCRIPCIO_CURTA,
@@ -174,7 +174,7 @@ public class ProducteDAO {
 	}
 
 	/**
-	 * Dóna d'alta un registre a base de dades. Actualitzarà l'id amb el valor
+	 * Dï¿½na d'alta un registre a base de dades. Actualitzarï¿½ l'id amb el valor
 	 * generat pel gestor
 	 * 
 	 * @param p
@@ -233,8 +233,8 @@ public class ProducteDAO {
 	 * Modifica un producte a la base de dades
 	 * 
 	 * @param p
-	 *            El producte a modificar. Usarà l'id per buscar el registre i
-	 *            actualitzarà tots els seus camps
+	 *            El producte a modificar. Usarï¿½ l'id per buscar el registre i
+	 *            actualitzarï¿½ tots els seus camps
 	 * @throws SQLException
 	 *             En cas que es produeixi un error de base de dades
 	 */
@@ -279,10 +279,10 @@ public class ProducteDAO {
 			public boolean processRow(Connection con, PreparedStatement st,
 					ResultSet rset) throws SQLException {
 				// Obtinc el registre de la fila actual
-				// i el fico a l'objecte que retornaré
+				// i el fico a l'objecte que retornarï¿½
 				crearProducte(rset, elProducte);
 				// Indico al DBWrapper que segueixi amb el
-				// següent registre
+				// segï¿½ent registre
 				return false;
 			}
 		});
@@ -317,7 +317,7 @@ public class ProducteDAO {
 							throws SQLException {
 						// Si l'objecte no s'ha omplert ja:
 						// Obtinc el registre de la fila actual
-						// i el fico a l'objecte que retornaré
+						// i el fico a l'objecte que retornarï¿½
 						if (elProducte.getId() == null) {
 							crearProducte(rset, elProducte);
 						}
@@ -326,9 +326,9 @@ public class ProducteDAO {
 								+ ConstantsSQL.COMPONENTS_CAMP_QUANTITAT);
 
 						if (rset.wasNull()) {
-							// si no hi ha component cridem al mètode
+							// si no hi ha component cridem al mï¿½tode
 							// addComponent amb null
-							// així carregarà una llista de compnents buida
+							// Aixo carregarï¿½ una llista de compnents buida
 							// (obligatori)
 							elProducte.addComponent(null);
 						} else {
@@ -338,7 +338,7 @@ public class ProducteDAO {
 									rset, ALIAS_TPRODCOMPONENT));
 						}
 						// Indico al DBWrapper que segueixi amb el
-						// següent registre
+						// segï¿½ent registre
 						return true;
 					}
 				});
@@ -348,7 +348,7 @@ public class ProducteDAO {
 	/**
 	 * Recupera de base de dades tots els productes ordenats per nom
 	 * 
-	 * @return La llista de productes. Si no n'hi ha, retornarà una llista buida
+	 * @return La llista de productes. Si no n'hi ha, retornarï¿½ una llista buida
 	 * @throws SQLException
 	 *             En cas que es produeixi un error de base de dades
 	 */
@@ -362,7 +362,7 @@ public class ProducteDAO {
 				// i el fico a la llista
 				elsProductes.add(crearProducte(rset));
 				// Indico al DBWrapper que segueixi amb el
-				// següent registre
+				// segï¿½ent registre
 				return true;
 			}
 		});
@@ -373,7 +373,7 @@ public class ProducteDAO {
 	 * Recupera de base de dades els productes filtrats per tipus de producte
 	 * ordenats per nom
 	 * 
-	 * @return La llista de productes. Si no n'hi ha, retornarà una llista buida
+	 * @return La llista de productes. Si no n'hi ha, retornarï¿½ una llista buida
 	 * @throws SQLException
 	 *             En cas que es produeixi un error de base de dades
 	 * @author JordiM
@@ -395,7 +395,7 @@ public class ProducteDAO {
 				// i el fico a la llista
 				elsProductes.add(crearProducte(rset));
 				// Indico al DBWrapper que segueixi amb el
-				// següent registre
+				// segï¿½ent registre
 				return true;
 			}
 		});
@@ -408,9 +408,9 @@ public class ProducteDAO {
 	 * 
 	 * @param codi
 	 *            Identificador dels tipus de producte a filtrar
-	 * @return La llista de productes. Si no n'hi ha, retornarà una llista
-	 *         buida. La llista està composada per objectes ProducteComponent
-	 *         que deriven de Producte i incorporen més var membre
+	 * @return La llista de productes. Si no n'hi ha, retornarï¿½ una llista
+	 *         buida. La llista estï¿½ composada per objectes ProducteComponent
+	 *         que deriven de Producte i incorporen mes var membre
 	 * @throws SQLException
 	 *             En cas que es produeixi un error de base de dades
 	 * @author JordiM
@@ -442,7 +442,7 @@ public class ProducteDAO {
 						// i el fico a la llista
 						elsProductes.add(crearProducteComponent(rset));
 						// Indico al DBWrapper que segueixi amb el
-						// següent registre
+						// segï¿½ent registre
 						return true;
 					}
 				});
@@ -450,12 +450,12 @@ public class ProducteDAO {
 	}
 
 	/**
-	 * métode per modificar les dades relacionades d'un producte compost
-	 * eliminarà la relacio de components actuals per inserir les noves
-	 * inserirà un nou preu relacionat amb el productecompost
+	 * mï¿½tode per modificar les dades relacionades d'un producte compost
+	 * eliminarï¿½ la relacio de components actuals per inserir les noves
+	 * inserirï¿½ un nou preu relacionat amb el productecompost
 	 * @param pr nou Preu a inserir
 	 * @param lc llista de objectes Components a inserir
-	 * @throws SQLException Error en la acció sql
+	 * @throws SQLException Error en la acciï¿½ sql
 	 * @author JordiM
 	 */
 	public void modificaProducteCompost(
@@ -464,7 +464,7 @@ public class ProducteDAO {
 					throws SQLException {
 
 		// alta de preu
-		dw.executeSql( 				//executeSql#1, inicia la transacció
+		dw.executeSql( 				//executeSql#1, inicia la transacciï¿½
 				SQL_ALTA_PREU,
 				new IPrepareStatement() {
 
@@ -568,7 +568,7 @@ public class ProducteDAO {
 //	}
 //
 	/**
-	 * Dóna d'alta un registre a base de dades.
+	 * Dï¿½na d'alta un registre a base de dades.
 	 * 
 	 * @param c
 	 *            Components a donar d'alta
@@ -589,7 +589,7 @@ public class ProducteDAO {
 //	}
 
 	/**
-	 * Dóna d'alta un registre a base de dades. Actualitzarà l'id amb el valor
+	 * Dï¿½na d'alta un registre a base de dades. Actualitzarï¿½ l'id amb el valor
 	 * generat pel gestor
 	 * 
 	 * @param p
@@ -624,7 +624,7 @@ public class ProducteDAO {
 //	}
 
 	/**
-	 * Funció d'utilitat per crear un objecte Producte a partir de la fila
+	 * Funciï¿½ d'utilitat per crear un objecte Producte a partir de la fila
 	 * actual d'un resultset
 	 * 
 	 * @param rset
@@ -634,12 +634,12 @@ public class ProducteDAO {
 	 *             En cas que es produeixi un error de base de dades
 	 */
 	private Producte crearProducte(ResultSet rset) throws SQLException {
-		// cas d'ús 1 . només em passen el resultset
+		// cas d'es 1 . nomes em passen el resultset
 		return crearProducte(rset, null, null);
 	}
 
 	/**
-	 * Funció d'utilitat per crear un objecte Producte a partir de la fila
+	 * Funciï¿½ d'utilitat per crear un objecte Producte a partir de la fila
 	 * actual d'un resultset
 	 * 
 	 * @param rset
@@ -652,19 +652,19 @@ public class ProducteDAO {
 	 */
 	private Producte crearProducte(ResultSet rset, Producte p)
 			throws SQLException {
-		// cas d'ús 2 . em passen el resultset i el producte a omplir amb les
+		// cas d'es 2 . em passen el resultset i el producte a omplir amb les
 		// dades del rset
 		return crearProducte(rset, p, null);
 	}
 
 	/**
-	 * Funció d'utilitat per omplir un objecte Producte amb els valors de la
+	 * Funciï¿½ d'utilitat per omplir un objecte Producte amb els valors de la
 	 * fila actual d'un resultset
 	 * 
 	 * @param rset
 	 *            El resultset d'on treurem el Producte
 	 * @param r
-	 *            El Producte a omplir. Pot ser null i es crearà un Producte nou
+	 *            El Producte a omplir. Pot ser null i es crearï¿½ un Producte nou
 	 * @param prefix
 	 *            Prefix per a obtenir dades de la segona taula PRODUCTE en la
 	 *            query SQL_SELECT_PRODUCTE_COMPONENTS
@@ -675,7 +675,7 @@ public class ProducteDAO {
 	 */
 	private Producte crearProducte(ResultSet rset, Producte p, String prefix)
 			throws SQLException {
-		// cas d'ús 3. em passen tots els paràmetres
+		// cas d'es 3. em passen tots els parï¿½metres
 
 		// Si no em passen Producte, el creo
 		if (p == null) {
@@ -684,7 +684,7 @@ public class ProducteDAO {
 
 		// per als productes compostos usem dues taules Producte i en distingim
 		// els camps amb el prefix "pc"
-		// per als camps dels productes component. si no hi ha prefix és que
+		// per als camps dels productes component. si no hi ha prefix es que
 		// s'ha de crear el producte principal
 		if (prefix == null)
 			prefix = "";
@@ -713,7 +713,7 @@ public class ProducteDAO {
 	}
 
 	/**
-	 * Funció d'utilitat per omplir un objecte ProducteComponent amb els valors
+	 * Funciï¿½ d'utilitat per omplir un objecte ProducteComponent amb els valors
 	 * de la fila actual d'un resultset
 	 * 
 	 * @param rset
@@ -726,7 +726,7 @@ public class ProducteDAO {
 	private ProducteComponent crearProducteComponent(ResultSet rset,
 			String alias) {
 		// creem un ProducteRelacions i l'assignem a un contenidor pare Producte
-		// per poder usar els métodes del pare
+		// per poder usar els mï¿½todes del pare
 		ProducteComponent pr = new ProducteComponent();
 
 		// omplo amb les dades de producte
@@ -737,7 +737,7 @@ public class ProducteDAO {
 			e1.printStackTrace();
 		}
 
-		// omplo les dades de la relació
+		// omplo les dades de la relaciï¿½
 
 		// preu
 		try {

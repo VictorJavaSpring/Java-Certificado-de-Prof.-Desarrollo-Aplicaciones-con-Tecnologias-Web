@@ -13,10 +13,10 @@ public class RolDataDAOTest extends AbstractDAOTest {
 
 	@Override
 	public void preparaBD() throws SQLException {
-		// Creem l'esquema a través de la classe base
+		// Creem l'esquema a traves de la classe base
 		super.preparaBD();
-		// Executem l'script de càrrega de dades de rol
-		// (En aquest cas també crea la taula associada)
+		// Executem l'script de cï¿½rrega de dades de rol
+		// (En aquest cas tambï¿½ crea la taula associada)
 		executaScript("test/com/soc/ewok/test/model/exemple/RolDataScript.sql"); 
 	}
 
@@ -34,7 +34,7 @@ public class RolDataDAOTest extends AbstractDAOTest {
 		// Recupero de nou el rol
 		// (alta m'ha d'haver assignat el nou id)
 		RolData nou = dao.obtenirPerId(r.getId());
-		// Miro que els dos objectes són iguals
+		// Miro que els dos objectes sï¿½n iguals
 		Assert.assertEquals(r, nou);
 	}
 	
@@ -46,7 +46,7 @@ public class RolDataDAOTest extends AbstractDAOTest {
 		// El modifico
 		r.setNom("Un altre");
 		dao.modificar(r);
-		// El recupero i comprobo que està modificat
+		// El recupero i comprobo que estï¿½ modificat
 		RolData nou = dao.obtenirPerId(1l);
 		Assert.assertEquals(r, nou);
 	}
@@ -55,7 +55,7 @@ public class RolDataDAOTest extends AbstractDAOTest {
 	public void eliminacioCorrecta() throws SQLException {
 		RolDataDAO dao = new RolDataDAO(createDataSource());
 		// Recuperem l'objecte que esborrarem
-		// per assegurar-nos que hi és
+		// per assegurar-nos que hi es
 		RolData r = dao.obtenirPerId(1l);
 		Assert.assertNotNull(r);
 		// Esborrem l'objecte
@@ -72,7 +72,7 @@ public class RolDataDAOTest extends AbstractDAOTest {
 		List<RolData> tots = dao.obtenirTots();
 		// Comprovem que hem rebut tres rols
 		Assert.assertEquals(3, tots.size());
-		// Comprovem que el un a un són correctes
+		// Comprovem que el un a un sï¿½n correctes
 		Assert.assertEquals(tots.get(0).getId(), (Long)1l);
 		Assert.assertEquals(tots.get(0).getNom(), "Administrador");
 		Assert.assertTrue(sonIguals(tots.get(0).getDataCreacio(), 2015, 4, 1, 21, 0, 0));

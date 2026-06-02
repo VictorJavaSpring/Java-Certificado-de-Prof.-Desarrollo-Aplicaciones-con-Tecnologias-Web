@@ -34,8 +34,8 @@ public class ExemplePublicEsborrar extends PublicController {
 		int nUsuaris;
 		try {
 			nUsuaris = daoUsu.obtenirTots().size();
-			request.setAttribute("msg", "Hola, això és un exemple. A la base de dades hi ha " + nUsuaris + " usuaris.");
-			addMessage(ETipusMissatge.info, "L'accés a base de dades ha estat correcte", request);						
+			request.setAttribute("msg", "Hola, Aixo es un exemple. A la base de dades hi ha " + nUsuaris + " usuaris.");
+			addMessage(ETipusMissatge.info, "L'acces a base de dades ha estat correcte", request);						
 			addI18nMessage(ETipusMissatge.warning, "ex1.normal", request);
 			addI18nMessage(ETipusMissatge.warning, null, "ex1.ambparams", new String[]{"hola", "adeu"}, request);
 			addI18nMessage(ETipusMissatge.warning, "ex1.nohies", request);

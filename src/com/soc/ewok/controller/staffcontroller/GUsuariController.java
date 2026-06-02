@@ -58,7 +58,7 @@ public class GUsuariController extends SeccioController{
 	
 	
 	public GUsuariController() {
-		// Creo un DAO que anirà contra BD
+		// Creo un DAO que anirï¿½ contra BD
 	daoUsuari = new UsuariDAO(EWokController.getGlobalDatasource());
 	// Afegir els rols que poden usar aquest controller
 //			addRols2Controller(Rol.ROL_CODI_ADMINISTRADOR);
@@ -80,7 +80,7 @@ public class GUsuariController extends SeccioController{
 	public void doGet (String accio, HttpServletRequest request, HttpServletResponse response)
 			throws ServletException, IOException {
 		
-		// Mètode principal per servir totes les peticions
+		// Mï¿½tode principal per servir totes les peticions
 				// relatives a OfertaPunts
 		if (ACCIO_VEURE.equals(accio)) {
 			doVeureUsuari(request, response);
@@ -113,13 +113,13 @@ public class GUsuariController extends SeccioController{
 				Usuari usuari = extreureUsuari(request, response, false);
 				
 				// Si no l'he obtingu no faig res
-				// (extreureusuari ja haurà redirigit on calgui)
+				// (extreureusuari ja haurï¿½ redirigit on calgui)
 				if (usuari == null) {
 					return;
 				}
 				
-				// Si tot ha anat bé
-				// Donem d'alta la persona a través del DAO
+				// Si tot ha anat bï¿½
+				// Donem d'alta la persona a traves del DAO
 				try {
 					daoUsuari.alta(usuari);
 				} catch (SQLException e) {
@@ -194,7 +194,7 @@ public class GUsuariController extends SeccioController{
 //			doLlistatUsuari(request, response);
 //			return null;
 //		}
-//		// Si tot ha anat bé, retorno l'id
+//		// Si tot ha anat bï¿½, retorno l'id
 //		return pw;
 //	}
 
@@ -296,10 +296,10 @@ public class GUsuariController extends SeccioController{
 			usuari.setActiu(extreureEmail);
 		
 		
-		// Si hi ha algun error de validació, retornem al formulari
+		// Si hi ha algun error de validaciï¿½, retornem al formulari
 		if (extreureEmail && mail == null) {
 			if (extreureEmail) {
-				// Si hi ha algun error i era una modificació
+				// Si hi ha algun error i era una modificaciï¿½
 				// (extreureEmail == true), llavors cal posar un usuari
 //				// com a flag
 				request.setAttribute(MODEL_USUARI, usuari);
@@ -361,7 +361,7 @@ public class GUsuariController extends SeccioController{
 						request);
 			}
 			
-			// Hagi anat bé o malament, pintem el llistat de persones
+			// Hagi anat bï¿½ o malament, pintem el llistat de persones
 			doLlistatUsuari(request, response);
 			}
 	
@@ -379,12 +379,12 @@ public class GUsuariController extends SeccioController{
 		
 		String mail = obtenirPerEmail(request, response, "veure");
 		if (mail == null){
-			// Redirigim cap a la pàgina de llistat
+			// Redirigim cap a la pï¿½gina de llistat
 			doLlistatUsuari(request, response);
 			return;
 		}
 		
-		// no és null: intentem recuperar-lo de la bd
+		// no es null: intentem recuperar-lo de la bd
 		Usuari u = null;
 		try {
 			u = daoUsuari.obtenirPerEmail(mail);
@@ -422,14 +422,14 @@ public class GUsuariController extends SeccioController{
 							PARAM_EMAIL,  
 							request);
 				} catch (ParameterException e) {
-					EWokController.addMessage(ETipusMissatge.error, "Cal especificar un email per " + ACCIO_MISSATGE + " una persona i L'Email especificat no és correcte", request);
+					EWokController.addMessage(ETipusMissatge.error, "Cal especificar un email per " + ACCIO_MISSATGE + " una persona i L'Email especificat no es correcte", request);
 				}
 				if (mail == null || mail.trim().equals("")) {
 					// Si ha hagut algun error, vaig al llistat de persones
 					doLlistatUsuari(request, response);
 					return null;
 				}
-				// Si tot ha anat bé, retorno l'id
+				// Si tot ha anat bï¿½, retorno l'id
 				return mail;
 		
 	}

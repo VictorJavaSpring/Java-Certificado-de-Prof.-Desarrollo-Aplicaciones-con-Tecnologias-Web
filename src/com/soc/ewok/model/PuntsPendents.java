@@ -4,9 +4,9 @@ import java.util.Date;
  
 /**
  * Classe que representa els punts pendents dels usuaris.
- * Als usuaris se li assignarà uns punts per cada comanda (si gasta un mínim).
+ * Als usuaris se li assignarï¿½ uns punts per cada comanda (si gasta un mï¿½nim).
  * Els punts del mateix usuari i que tinguin la mateixa data de caducitat
- * estaràn agrupats amb un mateix id. 
+ * estarï¿½n agrupats amb un mateix id. 
  * @author Sara
  */
 
@@ -33,22 +33,22 @@ public class PuntsPendents {
 	}
 	
 	/**
-	 * Retorna el número de punts pendents (relacionats amb un mateix id).
-	 * @return Número de punts pendents. No pot ser null.
+	 * Retorna el nï¿½mero de punts pendents (relacionats amb un mateix id).
+	 * @return Nï¿½mero de punts pendents. No pot ser null.
 	 */
 	public Short getNumPunts() {
 		return nNumPunts;
 	}
 	
 	/**
-	 * Assigna el número de punts pendents, dela mateix client amb
+	 * Assigna el nï¿½mero de punts pendents, dela mateix client amb
 	 * la mateixa data de caducitat (agrupats amb el mateix id).
 	 * @param nNumPunts El num de punts a assignar
-	 * @throws IllegalArgumentException En cas que el número de punts sigui null
+	 * @throws IllegalArgumentException En cas que el nï¿½mero de punts sigui null
 	 */
 	public void setNumPunts(Short nNumPunts) {
 		if (nNumPunts == null) {
-			throw new IllegalArgumentException("El número de punts ha d'estar informat");
+			throw new IllegalArgumentException("El nï¿½mero de punts ha d'estar informat");
 		}
 		this.nNumPunts = nNumPunts;
 	}
@@ -83,7 +83,7 @@ public class PuntsPendents {
 	
 	/**
 	 * Assigna l'id del client al qui pertanyen els punts
-	 * @param nIdClient És l'id del client
+	 * @param nIdClient es l'id del client
 	 * @throws IllegalArgumentException En cas que l'id del client sigui null
 	 */
 	public void setIdClient(Long nIdClient) {

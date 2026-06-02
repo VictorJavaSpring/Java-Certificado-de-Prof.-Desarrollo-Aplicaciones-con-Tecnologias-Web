@@ -28,7 +28,7 @@ import com.soc.ewok.model.MenuItem;
 /**
  * MainController de la zona privada.
  * Gestiona el login i reparteix la resta d'accions
- * cap al controlador de secció adecuat
+ * cap al controlador de secciï¿½ adecuat
  */
 public class StaffController extends EWokController {
 	private static final long serialVersionUID = 1L;
@@ -55,7 +55,7 @@ public class StaffController extends EWokController {
 	
 
 	/**
-	 * Llista de controladors de secció actuals
+	 * Llista de controladors de secciï¿½ actuals
 	 */
     List<ISectionController> controllers;
     
@@ -124,11 +124,11 @@ public class StaffController extends EWokController {
     
     @Override
 	public void init(ServletConfig config) throws ServletException {
-		// Obtinc del fitxer de configuració el nom de la classe
+		// Obtinc del fitxer de configuraciï¿½ el nom de la classe
 		// a usar per autentificar usuaris
 		String classeAut = config.getInitParameter(CONF_AUTENTIFICADOR);
 
-		// Usem el paràmetre:
+		// Usem el parï¿½metre:
 		// creem un autentificador a partir del nom de la seva classe
 		@SuppressWarnings("rawtypes")
 		Class clAut;
@@ -143,7 +143,7 @@ public class StaffController extends EWokController {
 			e.printStackTrace();
 		}
 
-		// Si falla la configuració de l'autentificador,
+		// Si falla la configuraciï¿½ de l'autentificador,
 		if (autentificador == null) {
 			autentificador = new AutentificadorBD();
 		}
@@ -177,32 +177,32 @@ public class StaffController extends EWokController {
 	}
 
 	/**
-	 * Processa una request en una sessió d'un usuari loguejat
-	 * Mira si es pretén fer logout, i si no és així redirigeix
-	 * cap al controlador de secció adequat
+	 * Processa una request en una sessio d'un usuari loguejat
+	 * Mira si es preten fer logout, i si no es aixo redirigeix
+	 * cap al controlador de seccio adequat
 	 * @param request La request actual
 	 * @param response La response actual
-	 * @throws ServletException Excepció genèrica de servlet
-	 * @throws IOException Excepció genèrica de servlet
+	 * @throws ServletException Excepcio generica de servlet
+	 * @throws IOException Excepcio generica de servlet
 	 */
 	private void processarSessioLoguejada(HttpServletRequest request,
 			HttpServletResponse response) throws ServletException, IOException {
-		// Busquem el controlador que respon a l'acció
+		// Busquem el controlador que respon a l'acciï¿½
 		// que ens hagin passat
 		for(ISectionController contr : controllers) {
 			String accioNom = contr.getNomAccio();
 			String accioValor = request.getParameter(accioNom);
 			if (accioValor != null) {
 				//Ja hem trobat el controlador
-				//Comprovem si l'acció és permesa per al controller i
+				//Comprovem si l'accio es permesa per al controller i
 				//usuari actual
 				if(esAccioPermesa(request, contr, accioValor)){				
 					// Enviem l'accio al controlador
 					contr.doGet(accioValor, request, response);
 					return;
 				}
-				//si arriba a aquest punt és accio no permesa
-				EWokController.addMessage(ETipusMissatge.error, "No tens permisos per realitzar aquesta acció", request);
+				//si arriba a aquest punt es accio no permesa
+				EWokController.addMessage(ETipusMissatge.error, "No tens permisos per realitzar aquesta accio", request);
 				EWokController.forward("staff/home.jsp", request, response);
 				return;
 			}
@@ -215,24 +215,24 @@ public class StaffController extends EWokController {
 	}
 
 	/**
-	 * Funció d'utilitat que comprova que una acció és permesa
+	 * Funciï¿½ d'utilitat que comprova que una acciï¿½ es permesa
 	 * per a un parell controller-usuari
-	 * @param request petició request actual
+	 * @param request peticiï¿½ request actual
 	 * @param contr controller actual
-	 * @param accioValor acció a realitzar per l'usuari
-	 * @return True si l'acció és permesa, False si no és permesa 
+	 * @param accioValor acciï¿½ a realitzar per l'usuari
+	 * @return True si l'acciï¿½ es permesa, False si no es permesa 
 	 */
 	private boolean esAccioPermesa(HttpServletRequest request,
 			ISectionController contr, String accioValor) {
 		//comparem rols de controller amb rols de usuari
-		//per autoritzar o no l'acció
+		//per autoritzar o no l'acciï¿½
 		List<String> ctrollerRols = contr.getRolsValids(accioValor);
 		if(ctrollerRols == null){
-			//si contr no te rols associats: permetem l'acció
+			//si contr no te rols associats: permetem l'acciï¿½
 			return true;
 		}else{
-			//si contr té rols associats: comparem amb els rols d'usuari
-			//si hi ha coincidència pot fer l'acció
+			//si contr tï¿½ rols associats: comparem amb els rols d'usuari
+			//si hi ha coincidï¿½ncia pot fer l'acciï¿½
 			List<Rol> userRols = getUsuariActual(request).getRols();
 			for(String rl : ctrollerRols ){
 				for(Rol r : userRols){
@@ -243,19 +243,19 @@ public class StaffController extends EWokController {
 				}
 			}
 		}
-		//arribats aquest punt és que el controller requereix rols
-		// o no hi ha coincidència: no es permet l'acció
+		//arribats aquest punt es que el controller requereix rols
+		// o no hi ha coincidï¿½ncia: no es permet l'acciï¿½
 		return false;
 	}
 	
 	/**
-	 * Processa una request d'una sessió no loguejada
-	 * Mira si es demana fer un login, i si no és així
-	 * redirigeix cap a la part pública
+	 * Processa una request d'una sessio no loguejada
+	 * Mira si es demana fer un login, i si no es Aixo
+	 * redirigeix cap a la part pï¿½blica
 	 * @param request La request actual
 	 * @param response La response actual
-	 * @throws ServletException Excepció genèrica de servlet
-	 * @throws IOException Excepció genèrica de servlet
+	 * @throws ServletException Excepciï¿½ genï¿½rica de servlet
+	 * @throws IOException Excepciï¿½ genï¿½rica de servlet
 	 */
 	private void processarSessioNoLoguejada(HttpServletRequest request,
 			HttpServletResponse response) throws ServletException, IOException {
@@ -272,7 +272,7 @@ public class StaffController extends EWokController {
 			HttpServletRequest request,
 			HttpServletResponse response) 
 					throws ServletException, IOException {
-		// He de veure si rebo informaciósuficient per intentar
+		// He de veure si rebo informaciesuficient per intentar
 		// fer un login
 		String sUsuari = null;
 		String sPwd = null;
@@ -289,14 +289,14 @@ public class StaffController extends EWokController {
 			request.setAttribute(PARAM_ERR_PASSWD, true);
 		}
 		if (sUsuari == null || sPwd == null) {
-			// Hi ha error de validació decideixo redirigir a login
+			// Hi ha error de validaciï¿½ decideixo redirigir a login
 			// No he de fer res amb el model
 			// Redirigeixo a login
 			EWokController.forward("staff/login.jsp", request, response);
 			return;
 		}
 		// Intentar fer login
-		// Demanem al model si usr/pwd està autoritzat
+		// Demanem al model si usr/pwd estï¿½ autoritzat
 		if (autentificador.isUsuariAutoritzat(sUsuari, sPwd)) {
 			//Fico l'usuari al EWokController
 			UsuariDAO usu = new UsuariDAO(ds);
@@ -306,7 +306,7 @@ public class StaffController extends EWokController {
 				e.printStackTrace();
 				return;
 			}
-			// Fico l'usuari a la sessió
+			// Fico l'usuari a la sessio
 			request.getSession().setAttribute(SESS_USUARI, sUsuari);
 			// Creem una cookie amb el darrer usuari loguejat
 			Cookie cuqui = new Cookie(COOKIE_LASTUSER, sUsuari);
@@ -314,7 +314,7 @@ public class StaffController extends EWokController {
 			response.addCookie(cuqui);
 			EWokController.forward("staff/home.jsp", request, response);
 		} else {
-			// Error de validació
+			// Error de validaciï¿½
 			EWokController.addI18nMessage(ETipusMissatge.error, "log001.UserPwd", request);
 			EWokController.forward("staff/login.jsp", request, response);
 		}
@@ -322,9 +322,9 @@ public class StaffController extends EWokController {
 	
 	
 	/**
-	 * funcio per afegir el controlador a la llista de controladors + afegir-lo després al menu ADMINISTRACIO de Staff
+	 * funcio per afegir el controlador a la llista de controladors + afegir-lo despres al menu ADMINISTRACIO de Staff
 	 * @param url String amb la url per accedir al controlador
-	 * @param iKey clau del Tag d´internacionalització de l´element del Menu
+	 * @param iKey clau del Tag dï¿½internacionalitzaciï¿½ de lï¿½element del Menu
 	 */
 	
 	private void addController (ISectionController controller,String url, String key) {
@@ -335,7 +335,7 @@ public class StaffController extends EWokController {
 	// creem un nou objecte MenuItem
 		MenuItem nou = new MenuItem();
 		
-	// omplim els valors de l´objecte MenuItem
+	// omplim els valors de lï¿½objecte MenuItem
 		nou.setUrl(url);
 		nou.setKey(key);
 	//afegim el MenuItem a la llista "items"
@@ -350,17 +350,17 @@ public class StaffController extends EWokController {
 	
 	
 	/**
-	 * funcio per afegir el controlador a la llista de controladors + afegir-lo després al menu ADMINISTRACIO de Staff
+	 * funcio per afegir el controlador a la llista de controladors + afegir-lo despres al menu ADMINISTRACIO de Staff
 	 * @param controller String amb el nom del controlador
 	 * @param url String amb la url per accedir al controlador
-	 * @param iKey clau del Tag d´internacionalització de l´element del Menu
+	 * @param iKey clau del Tag dï¿½internacionalitzaciï¿½ de lï¿½element del Menu
 	 */
 	private void addController(ISectionController controller, String key) {
 	
 	// afegim el controlador a la llista de "controllers"
 		controllers.add(controller);
 	
-	// obtenim l´accio del controlador
+	// obtenim lï¿½accio del controlador
 		String accio = controller.getNomAccio();
 	// creem la linia de la url
 		StringBuilder linia = new StringBuilder();
@@ -370,7 +370,7 @@ public class StaffController extends EWokController {
 		String sLinia = linia.toString();
 	// creem un nou objecte MenuItem
 		MenuItem nou = new MenuItem();
-	// omplim els valors de l´objecte MenuItem
+	// omplim els valors de lï¿½objecte MenuItem
 		nou.setUrl(sLinia);
 		nou.setKey(key);
 	//afegim el MenuItem a la llista "items"

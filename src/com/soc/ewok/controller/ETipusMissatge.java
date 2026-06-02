@@ -6,7 +6,7 @@ package com.soc.ewok.controller;
  *
  */
 public enum ETipusMissatge {
-	/** Missatge d'informació */
+	/** Missatge d'informacio */
 	info,
 	/** Missatge de perill */
 	warning,

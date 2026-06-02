@@ -21,7 +21,7 @@ import com.soc.ewok.model.Usuari;
 /**
  * Servlet base de tots els servlets del projecte
  * Inclou funcionalitat standard per a tots els servlets
- * i funcions estàtiques per ser usades pels controladors 
+ * i funcions estï¿½tiques per ser usades pels controladors 
  * que no siguin servlets
  * @author Administrador
  *
@@ -38,12 +38,12 @@ public class EWokController extends HttpServlet {
 	public static final String GENERAL_BUNDLE = "com.soc.ewok.recursos.controlador.general";
 	static protected Map<String, ResourceBundle> mBundles = new Hashtable<String, ResourceBundle>();
 	
-	/** Connexió a base de dades compartida per tots els daos */
+	/** Connexiï¿½ a base de dades compartida per tots els daos */
 	static DataSource globalDatasource = null;
 
 	/**
-	 * Funció per a fer forward d'una pàgina
-	 * @param path Adreça de la pàgina a redirigir. Cal posar 
+	 * Funciï¿½ per a fer forward d'una pï¿½gina
+	 * @param path Adreï¿½a de la pï¿½gina a redirigir. Cal posar 
 	 * el path a partir de /WEB-INF/jsp
 	 * @param request El request usat pel forward
 	 * @param response El response usat pel forward
@@ -57,7 +57,7 @@ public class EWokController extends HttpServlet {
 	}
 
 	/**
-	 * Assigna el datasource a usar a tota la aplicació
+	 * Assigna el datasource a usar a tota la aplicaciï¿½
 	 * @param ds El datasource
 	 */
 	public static void setGlobalDatasource(DataSource ds) {
@@ -65,7 +65,7 @@ public class EWokController extends HttpServlet {
 	}
 	
 	/**
-	 * Retorna el datasuource a usar desde tota la aplicació
+	 * Retorna el datasuource a usar desde tota la aplicaciï¿½
 	 * @return El datasource a usar
 	 */
 	public static DataSource getGlobalDatasource() {
@@ -74,7 +74,7 @@ public class EWokController extends HttpServlet {
 	
 	/**
 	 * Afegeix un missatge a la llista de missatges
-	 * que es mostraran a la propera pàgina
+	 * que es mostraran a la propera pï¿½gina
 	 * @param tipus El tipus del missatge a mostrar
 	 * @param message El text del missatge 
 	 * @param request La request en curs
@@ -91,7 +91,7 @@ public class EWokController extends HttpServlet {
 
 	/**
 	 * Afegeix un missatge a la llista de missatges.
-	 * El missatge s'obté un missatge internacionalitzat del bundle com.soc.ewok.recursos.controlador.general
+	 * El missatge s'obtï¿½ un missatge internacionalitzat del bundle com.soc.ewok.recursos.controlador.general
 	 * @param tipus El tipus del missatge a mostrar
 	 * @param idMessage L'id del missatge dins el fitxer de bundle
 	 * @param request La request actual
@@ -102,13 +102,13 @@ public class EWokController extends HttpServlet {
 	
 	/**
 	 * Afegeix un missatge a la llista de missatges.
-	 * El missatge s'obté un missatge internacionalitzat del indicat 
-	 * i amb la possibilitat d'afegir paràmetres
+	 * El missatge s'obtï¿½ un missatge internacionalitzat del indicat 
+	 * i amb la possibilitat d'afegir parï¿½metres
 	 * @param tipus El tipus del missatge a mostrar
 	 * @param bundle El bundle d'on s'ha d'obtenir el missatge. Si es passa null
-	 * s'usarà com.soc.ewok.recursos.controlador.general
+	 * s'usarï¿½ com.soc.ewok.recursos.controlador.general
 	 * @param idMessage L'id del missatge dins el fitxer de bundle
-	 * @param params Els paràmetres a aplicar. Pot ser null si no hi ha paràmetres
+	 * @param params Els parï¿½metres a aplicar. Pot ser null si no hi ha parï¿½metres
 	 * @param request La request actual
 	 */
 	public static void addI18nMessage(ETipusMissatge tipus, String bundle, String idMessage, String []params, HttpServletRequest request) {
@@ -121,14 +121,14 @@ public class EWokController extends HttpServlet {
 		// Busquem el bundle
 		ResourceBundle bnd = mBundles.get(name);
 		try {
-			// Si no està al mapa, l'obrim i l'afegim al mapa de bundles
+			// Si no estï¿½ al mapa, l'obrim i l'afegim al mapa de bundles
 			if (bnd == null) {
 				bnd = ResourceBundle.getBundle(bundle, new Locale(idioma));
 				mBundles.put(getBundleName(bundle, idioma), bnd);
 			}
 			// Obtenim el missatge
 			message = bnd.getString(idMessage);
-			// Si ens passen paràmetres els hem d'aplicar
+			// Si ens passen parï¿½metres els hem d'aplicar
 			if (params != null) {
 				MessageFormat msf = new MessageFormat(message);
 				message = msf.format(params);
@@ -146,8 +146,8 @@ public class EWokController extends HttpServlet {
 	}
 
 	/**
-	 * Funció de soport per obtenir una llista de missatges
-	 * a partir del nom que tindrà al request. La llista és creada
+	 * Funciï¿½ de soport per obtenir una llista de missatges
+	 * a partir del nom que tindrï¿½ al request. La llista es creada
 	 * si no existeix encara
 	 * @param name El nom de la llista a buscar
 	 * @param request La request actual
@@ -172,7 +172,7 @@ public class EWokController extends HttpServlet {
     }
 
     /**
-     * Obté l'usuari actual o null si no hi ha cap usuari loguejat
+     * Obtï¿½ l'usuari actual o null si no hi ha cap usuari loguejat
      * @param request La request actual
      * @return L'usuari actual o null si no hi ha cap usuari loguejat
      */
@@ -181,7 +181,7 @@ public class EWokController extends HttpServlet {
 	}
 
     /**
-     * Assigna l'usuari loguejat a la sessió actual
+     * Assigna l'usuari loguejat a la sessio actual
      * @param usuari L'usuari que s'acaba de loguejar
      * @param request La request actual
      */
@@ -197,12 +197,12 @@ public class EWokController extends HttpServlet {
 	}
 
 	public static void setIdioma(String sIdioma, ServletRequest request) {
-		// Posem a la sessió l'idioma que rebem del filtre
+		// Posem a la sessio l'idioma que rebem del filtre
 		((HttpServletRequest) request).getSession().setAttribute(SESS_IDIOMA, sIdioma);
 	}
 
 	public static String getIdioma(ServletRequest request) {
-		// Demanem a la sessió quin és l'idioma que tenim a la sessió
+		// Demanem a la sessio quin es l'idioma que tenim a la sessio
 		return (String) ((HttpServletRequest) request).getSession().getAttribute(SESS_IDIOMA);
 	}
 	

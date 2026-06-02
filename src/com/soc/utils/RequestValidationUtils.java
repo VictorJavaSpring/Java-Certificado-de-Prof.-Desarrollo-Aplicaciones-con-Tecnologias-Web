@@ -7,38 +7,38 @@ import java.util.Date;
 import javax.servlet.http.HttpServletRequest;
 
 /**
- * Classe d'utilitats per extraure paràmetres del request
+ * Classe d'utilitats per extraure parï¿½metres del request
  *
  */
 public class RequestValidationUtils {
 	
 	/**
-	 * Busca un paràmetre de tipus string i obligatori
-	 * @param paramName El nom del paràmetre a buscar
+	 * Busca un parï¿½metre de tipus string i obligatori
+	 * @param paramName El nom del parï¿½metre a buscar
 	 * @param request La request actual
 	 * @return El valor trobat
 	 * @throws ParameterException En cas que no es trobi
-	 * el paràmetre o sigui espais en blanc
+	 * el parï¿½metre o sigui espais en blanc
 	 */
 	public static String getMandatoryString(
 			String paramName,
 			HttpServletRequest request
 			) throws ParameterException {
 		
-		// Intento obtenir el paràmetre demanat
+		// Intento obtenir el parï¿½metre demanat
 		String str = request.getParameter(paramName);
 		if (str == null || str.trim().equals("")) {
-			// Si detecto un error, construeixo una excepció i la llenço
+			// Si detecto un error, construeixo una excepciï¿½ i la llenï¿½o
 			throw createParameterException("S'ha de introduir una cadena de texte. ", paramName, str);
-//			throw createParameterException("No s'ha trobat el paràmetre indicat", paramName, str);
+//			throw createParameterException("No s'ha trobat el parï¿½metre indicat", paramName, str);
 		}
-		// Si tot ha anat bé, retorno el valor trobat
+		// Si tot ha anat bï¿½, retorno el valor trobat
 		return str;
 	}
 	
 	/**
-	 * Busca un paràmetre de tipus String i no obligatori
-	 * @param paramName El nom del paràmetre a buscar
+	 * Busca un parï¿½metre de tipus String i no obligatori
+	 * @param paramName El nom del parï¿½metre a buscar
 	 * @param request La request actual
 	 * @return El valor String trobat o null
 	 */
@@ -46,10 +46,10 @@ public class RequestValidationUtils {
 			String paramName,
 			HttpServletRequest request ) {
 
-		// Intento obtenir el paràmetre demanat
+		// Intento obtenir el parï¿½metre demanat
 		String str = request.getParameter(paramName);
 		if (str == null || str.trim().equals("")) {
-			// No hi ha error, però no tinc valor a retornar
+			// No hi ha error, perï¿½ no tinc valor a retornar
 			return null;
 		}
 		// No hi ha error i tinc valor per retornar
@@ -57,19 +57,19 @@ public class RequestValidationUtils {
 	}
 	
 	/**
-	 * Busca un paràmetre de tipus Long i no obligatori
-	 * @param paramName El nom del paràmetre a buscar
+	 * Busca un parï¿½metre de tipus Long i no obligatori
+	 * @param paramName El nom del parï¿½metre a buscar
 	 * @param request La request actual
 	 * @return El valor trobat
 	 * @throws ParameterException En cas que es trobi el valor
-	 * però no pugui ser convertit a long
+	 * perï¿½ no pugui ser convertit a long
 	 */
 	public static Long getNonMandatoryLong(
 			String paramName,
 			HttpServletRequest request) throws ParameterException {
 		String str = request.getParameter(paramName);
 		if (str == null || str.trim().equals("")) {
-			// No hi ha error, però no tinc valor a retornar
+			// No hi ha error, perï¿½ no tinc valor a retornar
 			return null;
 		}
 		Long l;
@@ -77,56 +77,56 @@ public class RequestValidationUtils {
 			l = Long.parseLong(str);
 		} catch(NumberFormatException ex) {
 			// Hi ha error
-			throw createParameterException("El valor no s'ha pogut convertir a un número vàlid", paramName, str);
+			throw createParameterException("El valor no s'ha pogut convertir a un nï¿½mero vï¿½lid", paramName, str);
 		}
 		// No hi ha error i tinc valor per retornar
 		return l;
 	}
 	
 	/**
-	 * Busca un paràmetre de tipus Long i obligatori
-	 * @param paramName El nom del paràmetre a buscar
+	 * Busca un parï¿½metre de tipus Long i obligatori
+	 * @param paramName El nom del parï¿½metre a buscar
 	 * @param request La request actual
 	 * @return El valor trobat
-	 * @throws ParameterException En cas que no es trobi o el valor o bé que
-	 * es trobi però no pugui ser convertit a long
+	 * @throws ParameterException En cas que no es trobi o el valor o bï¿½ que
+	 * es trobi perï¿½ no pugui ser convertit a long
 	 */
 	public static Long getMandatoryLong(
 			String paramName,
 			HttpServletRequest request) throws ParameterException {
-		// Obtenim el paràmetre desitjat
+		// Obtenim el parï¿½metre desitjat
 		String sParam = request.getParameter(paramName);
 		if (sParam == null || sParam.trim().equals("")) {
-			// Si no em passen el paràmetre
+			// Si no em passen el parï¿½metre
 			// escric el missatge d'error i retorno
-			throw createParameterException("No s'ha trobat el paràmetre indicat", paramName, sParam);
+			throw createParameterException("No s'ha trobat el parï¿½metre indicat", paramName, sParam);
 		}
 		Long nValor;
 		try { 
-			// Intentem parsejar el número
+			// Intentem parsejar el nï¿½mero
 			nValor = Long.parseLong(sParam);
 		} catch(NumberFormatException e) {
 			// Si no ho aconseguim, cal indicar l'error i acabar
-			throw createParameterException("El valor no s'ha pogut convertir a un número vàlid", paramName, sParam);
+			throw createParameterException("El valor no s'ha pogut convertir a un nï¿½mero vï¿½lid", paramName, sParam);
 		}
-		// Si tot ha anat bé, retornem el valor obtingut
+		// Si tot ha anat bï¿½, retornem el valor obtingut
 		return nValor;
 	}
 
 	/**
-	 * Busca un paràmetre de tipus float i no obligatori
-	 * @param paramName El nom del paràmetre a buscar
+	 * Busca un parï¿½metre de tipus float i no obligatori
+	 * @param paramName El nom del parï¿½metre a buscar
 	 * @param request La request actual
 	 * @return El valor trobat
 	 * @throws ParameterException En cas que es trobi el valor
-	 * però no pugui ser convertit a float
+	 * perï¿½ no pugui ser convertit a float
 	 */
 	public static Float getNonMandatoryFloat(
 			String paramName,
 			HttpServletRequest request) throws ParameterException {
 		String str = request.getParameter(paramName);
 		if (str == null || str.trim().equals("")) {
-			// No hi ha error, però no tinc valor a retornar
+			// No hi ha error, perï¿½ no tinc valor a retornar
 			return null;
 		}
 		Float f;
@@ -134,48 +134,48 @@ public class RequestValidationUtils {
 			f = Float.parseFloat(str);
 		} catch(NumberFormatException ex) {
 			// Hi ha error
-			throw createParameterException("El valor no s'ha pogut convertir a un número vàlid", paramName, str);
+			throw createParameterException("El valor no s'ha pogut convertir a un nï¿½mero vï¿½lid", paramName, str);
 		}
 		// No hi ha error i tinc valor per retornar
 		return f;
 	}
 	
 	/**
-	 * Busca un paràmetre de tipus Float i obligatori
-	 * @param paramName El nom del paràmetre a buscar
+	 * Busca un parï¿½metre de tipus Float i obligatori
+	 * @param paramName El nom del parï¿½metre a buscar
 	 * @param request La request actual
 	 * @return El valor trobat
-	 * @throws ParameterException En cas que no es trobi o el valor o bé que
-	 * es trobi però no pugui ser convertit a float
+	 * @throws ParameterException En cas que no es trobi o el valor o bï¿½ que
+	 * es trobi perï¿½ no pugui ser convertit a float
 	 */
 	public static Float getMandatoryFloat(
 			String paramName,
 			HttpServletRequest request) throws ParameterException {
-		// Obtenim el paràmetre desitjat
+		// Obtenim el parï¿½metre desitjat
 		String sParam = request.getParameter(paramName);
 		if (sParam == null || sParam.trim().equals("")) {
-			// Si no em passen el paràmetre
+			// Si no em passen el parï¿½metre
 			// escric el missatge d'error i retorno
-			throw createParameterException("No s'ha trobat el paràmetre indicat", paramName, sParam);
+			throw createParameterException("No s'ha trobat el parï¿½metre indicat", paramName, sParam);
 		}
 		Float nValor;
 		try { 
-			// Intentem parsejar el número
+			// Intentem parsejar el nï¿½mero
 			nValor = Float.parseFloat(sParam);
 		} catch(NumberFormatException e) {
 			// Si no ho aconseguim, cal indicar l'error i acabar
-			throw createParameterException("El valor no s'ha pogut convertir a un número vàlid", paramName, sParam);
+			throw createParameterException("El valor no s'ha pogut convertir a un nï¿½mero vï¿½lid", paramName, sParam);
 		}
-		// Si tot ha anat bé, retornem el valor obtingut
+		// Si tot ha anat bï¿½, retornem el valor obtingut
 		return nValor;
 	}
 	
 	/**
-	 * Funció de soport per crear una excepció de paràmetre
+	 * Funciï¿½ de soport per crear una excepciï¿½ de parï¿½metre
 	 * @param message El missatge explicatiu
-	 * @param paramName El paràmetre buscat
+	 * @param paramName El parï¿½metre buscat
 	 * @param paramValue El valor trobat o null si no se n'ha trobat
-	 * @return L'excepció generada
+	 * @return L'excepciï¿½ generada
 	 */
 	private static ParameterException createParameterException(
 			String message, String paramName, String paramValue) {
@@ -187,20 +187,20 @@ public class RequestValidationUtils {
 	}
 	
 	/**
-	 * Busca un paràmetre de tipus Date i obligatori
-	 * @param paramName El nom del paràmetre a buscar
+	 * Busca un parï¿½metre de tipus Date i obligatori
+	 * @param paramName El nom del parï¿½metre a buscar
 	 * @param request La request actual
 	 * @return El valor trobat
-	 * @throws ParameterException En cas que no es trobi o el valor o bé que
-	 * es trobi però no pugui ser convertit a Date
+	 * @throws ParameterException En cas que no es trobi o el valor o bï¿½ que
+	 * es trobi perï¿½ no pugui ser convertit a Date
 	 */
 	public static Date getMandatoryDate(
 			String paramName,
 			HttpServletRequest request) throws ParameterException {
-		// Obtenim el paràmetre desitjat
+		// Obtenim el parï¿½metre desitjat
 		String sParam = request.getParameter(paramName);
 		if (sParam == null || sParam.trim().equals("")) {
-			// Si no em passen el paràmetre
+			// Si no em passen el parï¿½metre
 			// escric el missatge d'error i retorno
 			throw createParameterException("Cal indicar una data", paramName, sParam);
 		}
@@ -210,27 +210,27 @@ public class RequestValidationUtils {
 	    	dParam = new SimpleDateFormat("yyyy-MM-dd").parse(sParam.trim());
 	    } catch (ParseException pe) {
 	    	// Si no ho aconseguim, indiquem l'error i acabem
-	    	throw createParameterException("La data ha de tenir un format vàlid (dd-mm-yyyy)", paramName, sParam);	     
+	    	throw createParameterException("La data ha de tenir un format vï¿½lid (dd-mm-yyyy)", paramName, sParam);	     
 	    }
 
 	    return dParam;
 	  }
 	
 	/**
-	 * Rep un Date obligatori i torna true si és vàlida i fals si no
-	 * @param paramName El nom del paràmetre a buscar
+	 * Rep un Date obligatori i torna true si es vï¿½lida i fals si no
+	 * @param paramName El nom del parï¿½metre a buscar
 	 * @param request La request actual
 	 * @return El valor trobat
-	 * @throws ParameterException En cas que no es trobi o el valor o bé que
-	 * es trobi però no pugui ser convertit a Date
+	 * @throws ParameterException En cas que no es trobi o el valor o bï¿½ que
+	 * es trobi perï¿½ no pugui ser convertit a Date
 	 */
 	public static boolean isMandatoryDateValid(
 			String paramName,
 			HttpServletRequest request) throws ParameterException {
-		// Obtenim el paràmetre desitjat
+		// Obtenim el parï¿½metre desitjat
 		String sParam = request.getParameter(paramName);
 		if (sParam == null || sParam.trim().equals("")) {
-			// Si no em passen el paràmetre
+			// Si no em passen el parï¿½metre
 			// escric el missatge d'error i retorno
 			throw createParameterException("Cal indicar una data", paramName, sParam);
 		}
@@ -241,21 +241,21 @@ public class RequestValidationUtils {
 	      dateFormat.parse(sParam.trim());
 	    } catch (ParseException pe) {
 	    	// Si no ho aconseguim, indiquem l'error i acabem
-	    	throw createParameterException("La data ha de tenir un format vàlid (dd-MM-yyyy)", paramName, sParam);
+	    	throw createParameterException("La data ha de tenir un format vï¿½lid (dd-MM-yyyy)", paramName, sParam);
 	     
 	    }
 	    return true;
 	  }
 	/**
 	 * 
-	 * @param paramName Nom del paràmetre a buscar al request
+	 * @param paramName Nom del parï¿½metre a buscar al request
 	 * @param request La request actual
 	 * @return Una Date o null
-	 * @throws ParameterException Si el format de la data no és vàlid
+	 * @throws ParameterException Si el format de la data no es vï¿½lid
 	 */
 	public static Date getNonMandatoryDate(String paramName,
 			HttpServletRequest request) throws ParameterException {
-		// Obtenim el paràmetre desitjat
+		// Obtenim el parï¿½metre desitjat
 		String sParam = request.getParameter(paramName);
 		if (sParam == null || sParam.trim().equals("")) {
 			// No hi ha error, es retorna null
@@ -267,22 +267,22 @@ public class RequestValidationUtils {
 	    	dParam = new SimpleDateFormat("yyyy-MM-dd").parse(sParam.trim());
 	    } catch (ParseException pe) {
 	    	// Si no ho aconseguim, indiquem l'error i acabem
-	    	throw createParameterException("La data ha de tenir un format vàlid (yyyy-MM-dd)", paramName, sParam);	     
+	    	throw createParameterException("La data ha de tenir un format vï¿½lid (yyyy-MM-dd)", paramName, sParam);	     
 	    }
 	    return dParam;
 	}
 	
 	/**
 	 * 
-	 * @param paramName Nom del paràmetre a buscar al request
+	 * @param paramName Nom del parï¿½metre a buscar al request
 	 * @param request La request actual
 	 * @return Una Date o null
-	 * @throws ParameterException Si el format de la data no és vàlid
+	 * @throws ParameterException Si el format de la data no es vï¿½lid
 	 */
 	public static Date getNonMandatoryTime(String paramName,
 			HttpServletRequest request) throws ParameterException {
 		SimpleDateFormat sdf = new SimpleDateFormat();
-		// Obtenim el paràmetre desitjat
+		// Obtenim el parï¿½metre desitjat
 		String sParam = request.getParameter(paramName);
 		if (sParam == null || sParam.trim().equals("")) {
 			// No hi ha error, es retorna null
@@ -295,25 +295,25 @@ public class RequestValidationUtils {
 	    	dParam = sdf.parse(sParam.trim());
 	    } catch (ParseException pe) {
 	    	// Si no ho aconseguim, indiquem l'error i acabem
-	    	throw createParameterException("L'hora ha de tenir un format vàlid (HH:mm)", paramName, sParam);	     
+	    	throw createParameterException("L'hora ha de tenir un format vï¿½lid (HH:mm)", paramName, sParam);	     
 	    }
 	    return dParam;
 	}
 	
 	/**
 	 * 
-	 * @param paramName Nom del paràmetre a buscar al request
+	 * @param paramName Nom del parï¿½metre a buscar al request
 	 * @param request La request actual
 	 * @return Una Date
-	 * @throws ParameterException Si és null o el format de la data no és vàlid
+	 * @throws ParameterException Si es null o el format de la data no es vï¿½lid
 	 */
 	public static Date getMandatoryTime(String paramName,
 			HttpServletRequest request) throws ParameterException {
 		SimpleDateFormat sdf = new SimpleDateFormat();
-		// Obtenim el paràmetre desitjat
+		// Obtenim el parï¿½metre desitjat
 		String sParam = request.getParameter(paramName);
 		if (sParam == null || sParam.trim().equals("")) {
-			// No ens passen el paràmetre
+			// No ens passen el parï¿½metre
 			// escric el missatge d'error i retorno
 			throw createParameterException("Cal indicar una hora", paramName, sParam);
 		}
@@ -324,18 +324,18 @@ public class RequestValidationUtils {
 	    	dParam = sdf.parse(sParam.trim());
 	    } catch (ParseException pe) {
 	    	// Si no ho aconseguim, indiquem l'error i acabem
-	    	throw createParameterException("L'hora ha de tenir un format vàlid (HH:mm)", paramName, sParam);	     
+	    	throw createParameterException("L'hora ha de tenir un format vï¿½lid (HH:mm)", paramName, sParam);	     
 	    }
 	    return dParam;
 	}
 	
 		/**
 		 * 
-		 * @param paramData Nom del paràmetre per buscar la data al formulari
-		 * @param paramHora Nom del paràmetre per buscar la hora al formulari
+		 * @param paramData Nom del parï¿½metre per buscar la data al formulari
+		 * @param paramHora Nom del parï¿½metre per buscar la hora al formulari
 		 * @param request La request actual
-		 * @return null o un Date: data + hora (si no ens informen de la hora, retornarà 00:00 per defecte)
-		 * @throws ParameterException Si el format de la data no és vàlid
+		 * @return null o un Date: data + hora (si no ens informen de la hora, retornarï¿½ 00:00 per defecte)
+		 * @throws ParameterException Si el format de la data no es vï¿½lid
 		 */
 	public static Date obtenirDateTime(String paramData, String paramHora, HttpServletRequest request) 
 			throws ParameterException {
@@ -371,32 +371,32 @@ public class RequestValidationUtils {
 		// Transformem el String DataIHora en una Data
 		Date dDataIHora = null;
 		
-		// Si el string conté només la data (perquè la hora és null), li appliquem el pattern yyyy-MM-dd 
-		// així al parsejar no obtindrem null sino la data amb hora 00:00 com hora per defecte
+		// Si el string contï¿½ nomes la data (perquï¿½ la hora es null), li appliquem el pattern yyyy-MM-dd 
+		// Aixo al parsejar no obtindrem null sino la data amb hora 00:00 com hora per defecte
 		if (l > 9 && l < 12) {
 			sdf.applyPattern("yyyy-MM-dd");
 			try {
 				dDataIHora = sdf.parse(sDataIHora);
 			} catch (ParseException e) {}
 		} else {
-			// Si el string conté data i hora, li apliquem el pattern yyyy-MM-dd HH:mm:ss
-			// així obtindrem un objecte Date amb la data i hora que hem rebut pel formulari
+			// Si el string contï¿½ data i hora, li apliquem el pattern yyyy-MM-dd HH:mm:ss
+			// Aixo obtindrem un objecte Date amb la data i hora que hem rebut pel formulari
 			sdf.applyPattern("yyyy-MM-dd HH:mm:ss");
 			try {
 				dDataIHora = sdf.parse(sDataIHora);
 			} catch (ParseException e) {}
 		}
-		// Si el string conté només la hora, retornarà null
+		// Si el string contï¿½ nomes la hora, retornarï¿½ null
 		return dDataIHora;
 	}
 	
 	/**
 	 * 
-	 * @param paramData Nom del paràmetre per buscar la data al formulari
-	 * @param paramHora Nom del paràmetre per buscar la hora al formulari
+	 * @param paramData Nom del parï¿½metre per buscar la data al formulari
+	 * @param paramHora Nom del parï¿½metre per buscar la hora al formulari
 	 * @param request La request actual
-	 * @return un Date: data + hora (si no ens informen de la hora, retornarà 00:00 per defecte)
-	 * @throws ParameterException Si és null o el format de la data no és vàlid
+	 * @return un Date: data + hora (si no ens informen de la hora, retornarï¿½ 00:00 per defecte)
+	 * @throws ParameterException Si es null o el format de la data no es vï¿½lid
 	 */
 public static Date obtenirMandatoryDateTime(String paramData, String paramHora, HttpServletRequest request) 
 		throws ParameterException {
@@ -432,22 +432,22 @@ public static Date obtenirMandatoryDateTime(String paramData, String paramHora, 
 	// Transformem el String DataIHora en una Data
 	Date dDataIHora = null;
 	
-	// Si el string conté només la data (perquè la hora és null), li appliquem el pattern yyyy-MM-dd 
-	// així al parsejar no obtindrem null sinó la data amb hora 00:00 com hora per defecte
+	// Si el string contï¿½ nomes la data (perquï¿½ la hora es null), li appliquem el pattern yyyy-MM-dd 
+	// Aixo al parsejar no obtindrem null sinï¿½ la data amb hora 00:00 com hora per defecte
 	if (l > 9 && l < 12) {
 		sdf.applyPattern("yyyy-MM-dd");
 		try {
 			dDataIHora = sdf.parse(sDataIHora);
 		} catch (ParseException e) {}
 	} else {
-		// Si el string conté data i hora, li apliquem el pattern yyyy-MM-dd HH:mm:ss
-		// així obtindrem un objecte Date amb la data i hora que hem rebut pel formulari
+		// Si el string contï¿½ data i hora, li apliquem el pattern yyyy-MM-dd HH:mm:ss
+		// Aixo obtindrem un objecte Date amb la data i hora que hem rebut pel formulari
 		sdf.applyPattern("yyyy-MM-dd HH:mm:ss");
 		try {
 			dDataIHora = sdf.parse(sDataIHora);
 		} catch (ParseException e) {}
 	}
-	// Si el string conté només la hora, retornarà null
+	// Si el string contï¿½ nomes la hora, retornarï¿½ null
 	return dDataIHora;
 }
 }
@@ -458,7 +458,7 @@ public static Date obtenirMandatoryDateTime(String paramData, String paramHora, 
 //		
 //		String sParam = request.getParameter(paramActiu);
 //		if (sParam == null || sParam.trim().equals("")) {
-//			// Si no em passen el paràmetre
+//			// Si no em passen el parï¿½metre
 //			// escric el missatge d'error i retorno
 //			throw createParameterException("Cal indicar un Rol", paramActiu, sParam);
 //		}

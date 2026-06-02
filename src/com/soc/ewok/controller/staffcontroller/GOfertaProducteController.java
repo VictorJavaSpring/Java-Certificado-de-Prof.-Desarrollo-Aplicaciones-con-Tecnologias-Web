@@ -29,7 +29,7 @@ public class GOfertaProducteController extends SeccioController {
 
 
 	//** Constants de la classe **//
-	//nom de la acció del controller
+	//nom de la acciï¿½ del controller
 	private static final String ACCIO_OFERTAPRODUCTE = "accioOfertaProducte";
 
 	// Constants de model
@@ -40,7 +40,7 @@ public class GOfertaProducteController extends SeccioController {
 	private static final String MODEL_TIPUSPRO = "tipusprodlist";
 	private static final String MODEL_PRODUCTE = "producte";
 
-	//path per afegir a totes les pagines de secció staff OfertaProducte
+	//path per afegir a totes les pagines de secciï¿½ staff OfertaProducte
 	private static final String PATH2STAFFOFERTAPRODUCTE = "staff/gOfertaProducte/";
 	//path per al directori del bundle de internacionalitzacio de l'entitat
 	private static final String PATH_BUNDLE_OFERTAPRODUCTE = "com.soc.ewok.recursos.jsp.ofertaproducte.";
@@ -52,7 +52,7 @@ public class GOfertaProducteController extends SeccioController {
 	private static final String REQ_ERRORESBORRAT = "No s'ha pogut eliminar de la base de dades";
 	private static final String REQ_ERRORMODIFICAR = "No s'ha pogut modificar a la base de dades";
 	private static final String REQ_ERRORALTA = "ErrorAlta: Hi ha errors a les dades del formulari";
-	//Errors de validació -missatge genèric
+	//Errors de validaciï¿½ -missatge genï¿½ric
 	private static final String REQ_ERRORMODIFICACIO = "Hi ha errors a les dades del formulari";
 	
 
@@ -65,11 +65,11 @@ public class GOfertaProducteController extends SeccioController {
 	private static final String REQ_ERROR_PRODUCTENOTROBAT = "errorProducte";
 
 	
-	//errors de paràmetres a formulari - missatge de camp
+	//errors de parï¿½metres a formulari - missatge de camp
 	private static final String REQ_ERROR_DESCOMPTE_TEXT = "No hi ha valor descompte";
 	private static final String REQ_ERROR_VALOR_DESCOMPTE_TEXT = "El valor no pot ser negatiu";
-	private static final String REQ_ERROR_INIVIGENCIA_TEXT = "El valor Inici Vigència no és vàlid";
-	private static final String REQ_ERROR_FIVIGENCIA_TEXT = "El valor Fi Vigència no és vàlid";
+	private static final String REQ_ERROR_INIVIGENCIA_TEXT = "El valor Inici Vigï¿½ncia no es vï¿½lid";
+	private static final String REQ_ERROR_FIVIGENCIA_TEXT = "El valor Fi Vigï¿½ncia no es vï¿½lid";
 	private static final String REQ_ERROR_IDPRODUCTE_TEXT = "No s'ha trobat el Producte amb id: ";
 	private static final String REQ_ERROR_PRODUCTENOTROBAT_TEXT = "Cal informar un Producte";
 	
@@ -88,7 +88,7 @@ public class GOfertaProducteController extends SeccioController {
 	OfertaProducteDAO daoOP = null;
 	
 	public GOfertaProducteController() {
-		// Creo un DAO que anirà contra BD
+		// Creo un DAO que anirï¿½ contra BD
 		daoOP = new OfertaProducteDAO(EWokController.getGlobalDatasource());
 		//afegeixo els rols que poden usar aquest controller
 		addRols2Controller(Rol.ROL_CODI_ADMINISTRADOR);
@@ -104,7 +104,7 @@ public class GOfertaProducteController extends SeccioController {
 	public void doGet(String accio, HttpServletRequest request,
 			HttpServletResponse response) throws ServletException, IOException {
 		
-		//Mètode per servir les peticions relatives a OfertaProducte
+		//Mï¿½tode per servir les peticions relatives a OfertaProducte
 		if (ACCIO_LLISTAT.equals(accio)){
 			doLlistatOfertaProducte(request, response);
 		}else if(ACCIO_VEURE.equals(accio)){
@@ -132,7 +132,7 @@ public class GOfertaProducteController extends SeccioController {
 			return;
 		}
 		
-		// Si tot ha anat bé
+		// Si tot ha anat bï¿½
 		// modifiquem l'objecte amb el dao
 		try {
 			daoOP.modificar(op);
@@ -146,41 +146,41 @@ public class GOfertaProducteController extends SeccioController {
 	}
 	
 	/**
-	 * Funció d'utilitat per omplir un Objecte OfertaProducte amb les dades
+	 * Funciï¿½ d'utilitat per omplir un Objecte OfertaProducte amb les dades
 	 * del request actual.
 	 * @param request La request actual
 	 * @param response La response actual
 	 * @return un Objecte OfertaProducte amb les dades del request o null en cas
-	 * de error en les dades obligatòries
+	 * de error en les dades obligatï¿½ries
 	 * @throws IOException
 	 * @throws ServletException 
 	 */
 	private OfertaProducte extreureOfertaProducte(HttpServletRequest request, HttpServletResponse response) throws ServletException, IOException {
-		//Aquesta versió s'usa quan estem fent una alta nova  i no cal obtenir un id de l'objecte
-		//crida a la versió amb implementació completa amb el paràmetre extreureId false
+		//Aquesta versiï¿½ s'usa quan estem fent una alta nova  i no cal obtenir un id de l'objecte
+		//crida a la versiï¿½ amb implementaciï¿½ completa amb el parï¿½metre extreureId false
 		return	extreureOfertaProducte(request, response, false);
 	}
 	/**
-	 * Funció d'utilitat per omplir un Objecte OfertaProducte amb les dades
+	 * Funciï¿½ d'utilitat per omplir un Objecte OfertaProducte amb les dades
 	 * del request actual
 	 * @param request La request actual
 	 * @param response La response actual
-	 * @param extreureId Boleà que indica si cal extreure l'id del request
+	 * @param extreureId Boleï¿½ que indica si cal extreure l'id del request
 	 * @return un Objecte OfertaProducte amb les dades del request o null en cas
-	 * de error en les dades obligatòries
+	 * de error en les dades obligatï¿½ries
 	 * @throws IOException
 	 * @throws ServletException 
 	 */
 	private OfertaProducte extreureOfertaProducte(HttpServletRequest request, HttpServletResponse response, boolean extreureId ) throws ServletException, IOException {
 		//obtenir tots els valors del request
 		
-		//id	(SI és obligatori per a modificació)
+		//id	(SI es obligatori per a modificaciï¿½)
 		Long nId = null;
 		if (extreureId){
 			nId = getidFromRequest(request, null);
 		}
 
-		//descompte (SI és obligatori)
+		//descompte (SI es obligatori)
 		Float nPctDescompte = null;
 		try {
 			nPctDescompte = RequestValidationUtils.getMandatoryFloat(PARAM_DESCOMPTE, request);
@@ -192,27 +192,27 @@ public class GOfertaProducteController extends SeccioController {
 		}
 		
 		
-		//nom (no és obligatori)
+		//nom (no es obligatori)
 		String sOnom = RequestValidationUtils.getNonMandatoryString(PARAM_NOM, request);
 
-		//inici vigencia (no és obligatori)
+		//inici vigencia (no es obligatori)
 		Date dIniciVigencia = null;
 		try {
 			dIniciVigencia = RequestValidationUtils.getNonMandatoryDate(PARAM_INI_VIGENCIA, request);
 		} catch (ParameterException e) {
 			request.setAttribute(REQ_ERROR_INIVIGENCIA, REQ_ERROR_INIVIGENCIA_TEXT);
 		}
-		//fi vigencia (no és obligatori)
+		//fi vigencia (no es obligatori)
 		Date dFiVigencia = null;
 		try {
 			dFiVigencia = RequestValidationUtils.getNonMandatoryDate(PARAM_FI_VIGENCIA, request);
 		} catch (ParameterException e) {
 			request.setAttribute(REQ_ERROR_FIVIGENCIA, REQ_ERROR_FIVIGENCIA_TEXT);
 		}
-		//descripcio (no és obligatori)
+		//descripcio (no es obligatori)
 		String sOtext = RequestValidationUtils.getNonMandatoryString(PARAM_DESCRIPCIO, request);;
 		
-		//id del producte relacionat (SI és obligatori)
+		//id del producte relacionat (SI es obligatori)
 		Long nIdP = null;
 		try{
 			nIdP = RequestValidationUtils.getMandatoryLong(PARAM_PRODUCTE, request);
@@ -237,20 +237,20 @@ public class GOfertaProducteController extends SeccioController {
 		if(nIdP != null){
 			op.setIdProducte(nIdP);}
 	
-		//Opcionals. els inserim si o sí atès que l'objecte accepta nulls en aquest camps
+		//Opcionals. els inserim si o sï¿½ ates que l'objecte accepta nulls en aquest camps
 		op.setNom(sOnom);
 		op.setIniciVigencia(dIniciVigencia);
 		op.setFiVigencia(dFiVigencia);
 		op.setOtext(sOtext);
 		
-		// Si hi ha algun error de validació, retornem al formulari
+		// Si hi ha algun error de validaciï¿½, retornem al formulari
 		if (
 				(extreureId && nId == null) ||
 				nPctDescompte == null ||
 				nPctDescompte < 0 ||
 				nIdP == null
 			){
-			// hi ha algun error i era una modificació
+			// hi ha algun error i era una modificaciï¿½
 						// (extreuId == true), llavor necessitem posar un objecte
 						// com a flag per al formulari jsp
 			if (extreureId) {
@@ -258,13 +258,13 @@ public class GOfertaProducteController extends SeccioController {
 				EWokController.addMessage(ETipusMissatge.error,
 						REQ_ERRORMODIFICACIO, request);
 			}
-			//és error en dades de alta
+			//es error en dades de alta
 			request.setAttribute(MODEL_OFERPRODUCTEALTA, op);
 
 			//inserim dades de tipus de productes
 			inserirEntitatRelacionadaRequest(request);
 
-			// Redirigim cap a la pàgina corresponent
+			// Redirigim cap a la pï¿½gina corresponent
 			
 			forward("formOfertaProducte.jsp", request, response);
 			return null;
@@ -293,17 +293,17 @@ public class GOfertaProducteController extends SeccioController {
 
 	private void doPreparaModifOfertaProducte(HttpServletRequest request,
 			HttpServletResponse response) throws ServletException, IOException {
-		// carregar el formulari amb les dades de l'objecte sol·licitat
+		// carregar el formulari amb les dades de l'objecte solï¿½licitat
 		Long nId = getidFromRequest(request, response);
 		if (nId == null){
 			doLlistatOfertaProducte(request, response);
 		}
-		// no és null: intentem recuperar-lo de la bd
+		// no es null: intentem recuperar-lo de la bd
 		OfertaProducte op = null;
 		try{
 			op = daoOP.obtenirPerId(nId);
 			if (op == null){
-				// Redirigim cap a la pàgina de llistat
+				// Redirigim cap a la pï¿½gina de llistat
 				doLlistatOfertaProducte(request, response);
 			}
 		}catch(SQLException e){
@@ -314,7 +314,7 @@ public class GOfertaProducteController extends SeccioController {
 		// l'inserim al request
 		request.setAttribute(MODEL_OFERPRO, op);
 		
-		//obtenim les dades de la relació ofertaproducte-> producte -> tipus producte
+		//obtenim les dades de la relaciï¿½ ofertaproducte-> producte -> tipus producte
 		//1.- busquem el producte relacionat que ensenyarem al select
 		ProducteDAO pdao = new ProducteDAO(EWokController.getGlobalDatasource());
 		Producte p = null;
@@ -328,7 +328,7 @@ public class GOfertaProducteController extends SeccioController {
 		request.setAttribute(MODEL_PRODUCTE, p);
 		
 		inserirEntitatRelacionadaRequest(request);
-		// Redirigim cap a la pàgina corresponent
+		// Redirigim cap a la pï¿½gina corresponent
 		forward("formOfertaProducte.jsp", request, response);
 
 		
@@ -344,7 +344,7 @@ public class GOfertaProducteController extends SeccioController {
 			return;
 		}
 		
-		// Si tot ha anat bé
+		// Si tot ha anat bï¿½
 		// modifiquem l'objecte amb el dao
 		try {
 			daoOP.alta(op);
@@ -372,7 +372,7 @@ public class GOfertaProducteController extends SeccioController {
 		// obtenir l'identificador d'objecte
 		Long nId = getidFromRequest(request, response);
 		if(nId == null){
-			// Redirigim cap a la pàgina de llistat
+			// Redirigim cap a la pï¿½gina de llistat
 			doLlistatOfertaProducte(request, response);
 			return;
 		}
@@ -390,16 +390,16 @@ public class GOfertaProducteController extends SeccioController {
 	private void doVeureOfertaProducte(HttpServletRequest request,
 			HttpServletResponse response)throws ServletException, IOException {
 		// obtenir l'identificador d'objecte i carregar les dades 
-		// al pàgina de presentació.
+		// al pï¿½gina de presentaciï¿½.
 		
 		//provem d'obtenir un id del request
 		Long nId = getidFromRequest(request, response);
 		if (nId == null){
-			// Redirigim cap a la pàgina de llistat
+			// Redirigim cap a la pï¿½gina de llistat
 			doLlistatOfertaProducte(request, response);
 			return;
 		}
-		// no és null: intentem recuperar-lo de la bd
+		// no es null: intentem recuperar-lo de la bd
 		OfertaProducte op = null;
 		try{
 			op = daoOP.obtenirPerId(nId);
@@ -409,7 +409,7 @@ public class GOfertaProducteController extends SeccioController {
 				EWokController.addI18nMessage(ETipusMissatge.error,
 						PATH_BUNDLE_OFERTAPRODUCTE+"veureOfertaProducte",
 						REQ_ERRORVEURE,params, request);
-				// Redirigim cap a la pàgina de llistat
+				// Redirigim cap a la pï¿½gina de llistat
 				doLlistatOfertaProducte(request, response);
 			}
 		}catch(SQLException e){
@@ -421,7 +421,7 @@ public class GOfertaProducteController extends SeccioController {
 		// l'inserim al request
 		request.setAttribute(MODEL_OFERPRO, op);
 		//obtinc el nom del producte relacionat i el poso al request
-		//per mostrar-lo a la pàgina
+		//per mostrar-lo a la pï¿½gina
 		ProducteDAO daoP = new ProducteDAO(EWokController.getGlobalDatasource());
 		try {
 			request.setAttribute(MODEL_PRODUCTE_NOM, daoP.obtenirPerId(op.getIdProducte()).getNom());
@@ -430,14 +430,14 @@ public class GOfertaProducteController extends SeccioController {
 			e.printStackTrace();
 		}
 		
-		// Redirigim cap a la pàgina corresponent
+		// Redirigim cap a la pï¿½gina corresponent
 		forward("veureOfertaProducte.jsp", request, response);
 	}
 
 
 	private void doLlistatOfertaProducte(HttpServletRequest request,
 			HttpServletResponse response)throws ServletException, IOException {
-		// redirigir a pàgina de llistat de ofertes de productes amb
+		// redirigir a pï¿½gina de llistat de ofertes de productes amb
 		//les dades de totes les ofertaproducte
 		
 		// Obtenim les dades del DAO
@@ -453,14 +453,14 @@ public class GOfertaProducteController extends SeccioController {
 		// Fiquem les dades al request
 		request.setAttribute(MODEL_OFERPROLIST, ofps);
 		
-		// Redirigim cap a la pàgina corresponent
+		// Redirigim cap a la pï¿½gina corresponent
 		forward("llistatOfertaProducte.jsp", request, response);		
 	}
 	
 	/**
-	 * Utilitat per redirigir a la pàgina jsp corresponent amb el nom de 
-	 * la pàgina
-	 * @param pagNom Cal posar el nom de la pàgina jsp.
+	 * Utilitat per redirigir a la pï¿½gina jsp corresponent amb el nom de 
+	 * la pï¿½gina
+	 * @param pagNom Cal posar el nom de la pï¿½gina jsp.
 	 * @param request El request usat pel forward
 	 * @param response El response usat pel forward
 	 * @throws ServletException Error standard d'HttpServlet
