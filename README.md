@@ -64,19 +64,15 @@ soctardes
 
 ## 1. Gestión de dependencias
 
-- [ ] Migrar a Maven
-- [ ] Eliminar jars manuales en `WEB-INF/lib`
-- [ ] Versionado centralizado
-
----
+- [x] Migrar a Maven
+- [ ] Eliminar jars manuales en WEB-INF/lib
+- [x] Versionado centralizado
 
 ## 2. Actualización Java
 
-- [ ] Validar compatibilidad Java 11
+- [x] Validar compatibilidad Java 11
 - [ ] Migrar posteriormente a Java 17 o 21
 - [ ] Revisar APIs deprecated
-
----
 
 ## 3. Modernización backend
 
@@ -86,24 +82,21 @@ soctardes
 - [ ] Mejorar manejo de excepciones
 - [ ] Revisar pooling de conexiones
 
----
-
 ## 4. Migración web
 
+- [x] JSF funcionando
+- [x] PrimeFaces funcionando
+- [x] Primera pantalla XHTML operativa
 - [ ] Revisar JSP legacy
-- [ ] Evaluar Thymeleaf
-- [ ] Revisar JSTL
+- [ ] Migrar pantallas prioritarias
 - [ ] Modernizar frontend
-
----
+- [ ] Revisar JSTL
 
 ## 5. REST API
 
 - [ ] Sustituir Jersey 1.x
 - [ ] Migrar a JAX-RS moderno o Spring REST
 - [ ] Revisar serialización JSON
-
----
 
 ## 6. Seguridad
 
@@ -112,16 +105,12 @@ soctardes
 - [ ] Revisar autenticación
 - [ ] Revisar sesiones
 
----
-
 ## 7. DevOps
 
 - [ ] Dockerizar aplicación
 - [ ] Docker Compose para MariaDB
 - [ ] GitHub Actions
 - [ ] Pipeline CI/CD
-
----
 
 ## 8. Limpieza técnica
 
@@ -130,6 +119,17 @@ soctardes
 - [ ] Revisar naming
 - [ ] Revisar encoding UTF-8
 - [ ] Corregir warnings Eclipse
+
+## 9. Migraciones completadas
+
+- [x] mostraProdCateg.jsp → mostraProdCateg.xhtml
+
+Notas:
+- DAO reutilizado: ProducteDAO
+- Bean JSF funcional
+- PrimeFaces funcional
+- Acceso MariaDB funcional
+- Incidencia pendiente: imágenes (PATH_FITXERS hardcodeado)
 
 ---
 
