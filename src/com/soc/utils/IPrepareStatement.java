@@ -5,15 +5,15 @@ import java.sql.PreparedStatement;
 import java.sql.SQLException;
 
 /**
- * Métode de callback per preparar un statement.
- * Típicament l'usarem per indicar els paràmetres
+ * metode de callback per preparar un statement.
+ * tepicament l'usarem per indicar els parametres
  * @author Administrador
  *
  */
 public interface IPrepareStatement {
 	/**
-	 * Métode per preparar el statement
-	 * @param con Connexió usada per executar la query
+	 * metode per preparar el statement
+	 * @param con Connexio usada per executar la query
 	 * @param st Statement usat per executar la query
 	 * @throws SQLException En cas que hi hagi algun problema amb la base de dades
 	 */

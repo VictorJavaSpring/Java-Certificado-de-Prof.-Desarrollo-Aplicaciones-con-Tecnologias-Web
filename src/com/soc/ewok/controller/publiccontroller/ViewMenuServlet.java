@@ -68,11 +68,11 @@ public class ViewMenuServlet extends PublicController {
 		
 		String sCodi = getCodiTipusProd(request, response);
 		// Si el codi "sCodi" és null no cal fer res doncs ja ho haurà fet
-		// el m�tode "getCodiTipusProd"
+		// el metode "getCodiTipusProd"
 		
 		if (sCodi != null) {
-			// Si tinc codi de tipus de producte, tamb� tinc un producte,
-			// perqu� el codi de tipus de producte l'obtinc a partir del producte
+			// Si tinc codi de tipus de producte, tambe tinc un producte,
+			// perque el codi de tipus de producte l'obtinc a partir del producte
 			if (CODI_PLAT.equals(sCodi)) {
 				// Deso el codi al request
 				request.setAttribute(CODI_PLAT, sCodi);
@@ -101,9 +101,9 @@ public class ViewMenuServlet extends PublicController {
 		Long nId = getIdTipusProd(request, response);
 		
 		if (nId == null) {
-			// Si no tinc Id, no llen�o error perqu� ja ho fa el m�tode "getIdTipusProd"
-			// a traves del m�tode "getIdProd"
-			// Llavors redirigeixo cap a la jsp de men� i retorno "null"
+			// Si no tinc Id, no llenço error perque ja ho fa el metode "getIdTipusProd"
+			// a traves del metode "getIdProd"
+			// Llavors redirigeixo cap a la jsp de menu i retorno "null"
 			EWokController.forward("/viewMenuServlet/viewMenuServlet.jsp", request, response);
 			return null;
 		}
@@ -113,11 +113,11 @@ public class ViewMenuServlet extends PublicController {
 			tp = daoTipusProducte.obtenirPerId(nId);
 			EWokController.addI18nMessage(ETipusMissatge.info, PARAM_TIPUSPRODFOUND, request);
 		} catch (SQLException e1) {
-			// Si hi ha error, el capturo, llen�o l'excepci�
+			// Si hi ha error, el capturo, llenço l'excepcio
 			// i retorno un missatge d'error i un "null"
 			EWokController.addI18nMessage(ETipusMissatge.error, null, PARAM_ERROR_TIPUSPRODNOTFOUND, 
 										  new String[]{nId.toString()}, request);
-			// Redirigeixo a la jsp de men�
+			// Redirigeixo a la jsp de menu
 			EWokController.forward("/viewMenuServlet/viewMenuServlet.jsp", request, response);
 			return null;
 		}
@@ -150,9 +150,9 @@ public class ViewMenuServlet extends PublicController {
 		Producte prod = getProd(request, response);
 		
 		// Si no l'he obtingut, no retorno un missatge d'error
-		// perqu� ja ho fa el m�tode "doGetProd"
+		// perque ja ho fa el metode "doGetProd"
 		if (prod == null) {
-			// Llavors redirigeixo a la jsp de men�
+			// Llavors redirigeixo a la jsp de menu
 			//EWokController.forward("/viewMenuServlet/viewMenuServlet.jsp", request, response);
 			return null;
 		}
@@ -164,11 +164,11 @@ public class ViewMenuServlet extends PublicController {
 //			// retorno un missatge d'error 
 //			EWokController.addI18nMessage(ETipusMissatge.error, null, PARAM_ERROR_IDNOTFOUND, 
 //										  new String[]{"null"}, request);
-//			// Redirigeixo a la jsp de men�
+//			// Redirigeixo a la jsp de menu
 //			EWokController.forward("/viewMenuServlet/viewMenuServlet.jsp", request, response);
 //			return null;
 //		}
-		// Si tot ha anat b�, obtinc l'id del tipus de producte
+		// Si tot ha anat be, obtinc l'id del tipus de producte
 		EWokController.addI18nMessage(ETipusMissatge.info, PARAM_IDFOUND, request);
 		return nId;		
 	}
@@ -189,8 +189,8 @@ public class ViewMenuServlet extends PublicController {
 		Long nId = getIdProd(request, response);
 		
 		if (nId == null) {
-			// Si no tinc Id, no llen�o error perqu� ja ho fa el m�tode "getIdProd"
-			// Llavors redirigeixo cap a la jsp de men� i retorno "null"
+			// Si no tinc Id, no llenço error perque ja ho fa el metode "getIdProd"
+			// Llavors redirigeixo cap a la jsp de menu i retorno "null"
 //			EWokController.forward("/viewMenuServlet/viewMenuServlet.jsp", request, response);
 			return null;
 		}
@@ -200,7 +200,7 @@ public class ViewMenuServlet extends PublicController {
 			p = daoProducte.obtenirPerId(nId);
 			EWokController.addI18nMessage(ETipusMissatge.info, PARAM_PRODFOUND, request);
 		} catch (SQLException e1) {
-			// Si hi ha error, el capturo, llen�o l'excepci�
+			// Si hi ha error, el capturo, llenço l'excepcio
 			// i retorno un missatge d'error i un "null"
 			EWokController.addI18nMessage(ETipusMissatge.error, null, PARAM_ERROR_PRODNOTFOUND, 
 										  new String[]{nId.toString()}, request);
@@ -234,7 +234,7 @@ public class ViewMenuServlet extends PublicController {
 		try {
 			nId = RequestValidationUtils.getMandatoryLong(IDPROD, request);
 		} catch (ParameterException e) {
-			// Si hi ha error, el capturo, llen�o l'excepci�
+			// Si hi ha error, el capturo, llenço l'excepcio
 			// i retorno un missatge d'error
 			EWokController.addI18nMessage(ETipusMissatge.error,	null, PARAM_ERROR_IDPRODNOTFOUND, 
 										  new String[]{"null"}, request);

@@ -7,7 +7,7 @@ import org.junit.Test;
 import com.soc.ewok.model.Producte;
 
 public class ProducteTest {
-	//necessito assignar dates persistents per a poder compararla des de els mètodes test
+	//necessito assignar dates persistents per a poder compararla des de els metodes test
 	Date d1 = new Date(); 
 	Date d2 = new Date(d1.getTime()+1000000);
 	
@@ -20,8 +20,8 @@ public class ProducteTest {
 		Producte p = new Producte();
 		p.setId(1l);
 		p.setNom("Chicha");
-		p.setDescripcioCurta("Complement amb substància");
-		p.setDescripcio("Complement amb substància per als plats de wok definits i des de zero");
+		p.setDescripcioCurta("Complement amb substencia");
+		p.setDescripcio("Complement amb substencia per als plats de wok definits i des de zero");
 		p.setIniciVigencia(d1);
 		p.setFiVigencia(d2);
 		p.setIdUnitat(2l);
@@ -36,8 +36,8 @@ public class ProducteTest {
 		p.setId(null);
 		Assert.assertNull(p.getId());
 		Assert.assertEquals("Chicha", p.getNom());
-		Assert.assertEquals("Complement amb substància", p.getDescripcioCurta());
-		Assert.assertEquals("Complement amb substància per als plats de wok definits i des de zero", p.getDescripcio());
+		Assert.assertEquals("Complement amb substencia", p.getDescripcioCurta());
+		Assert.assertEquals("Complement amb substencia per als plats de wok definits i des de zero", p.getDescripcio());
 		Assert.assertEquals(d1,p.getIniciVigencia());
 		Assert.assertEquals(d2, p.getFiVigencia());
 		Assert.assertEquals((Long)2l, p.getIdUnitat());

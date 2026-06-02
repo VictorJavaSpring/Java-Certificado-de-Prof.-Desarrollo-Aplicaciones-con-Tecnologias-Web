@@ -21,8 +21,8 @@ public class GRolController extends SeccioController {
 	private static final String MODEL_ROL = "rol";
 	
 	private static final String REQ_ERRORLLISTAT = "No s'ha pogut obtenir el llistat de Rols";
-	private static final String REQ_ERRORPARAM = "Error en el par�metre";
-	private static final String REQ_ERRORGENERIC = "No s'ha pogut trobar el Rol mitjan�ant la id";
+	private static final String REQ_ERRORPARAM = "Error en el parametre";
+	private static final String REQ_ERRORGENERIC = "No s'ha pogut trobar el Rol mitjançant la id";
 	private static final String REQ_ERRORBORRAR = "No s'ha pogut esborrar el Rol";
 	private static final String REQ_ERRORALTA = "No s'ha pogut donar d'alta el Rol";
 	private static final String REQ_ERRORMODIFICACIO = "No s'ha pogut modificar la informacio";
@@ -39,7 +39,7 @@ public class GRolController extends SeccioController {
 		return ACCIO_ROL;
 	}
 	
-	// M�tode principal per servir totes les peticions relatives a Rols
+	// metode principal per servir totes les peticions relatives a Rols
 	@Override
 	public void doGet(String accio, HttpServletRequest request,
 			HttpServletResponse response) throws ServletException, IOException {
@@ -98,11 +98,11 @@ public class GRolController extends SeccioController {
 		} catch (ParameterException e) {
 			EWokController.addMessage(ETipusMissatge.error, REQ_ERRORPARAM, request);
 		}
-		// Si no l'hem obtingut no fem res, extreureRol ja haur� redirigit on calgui
+		// Si no l'hem obtingut no fem res, extreureRol ja haura redirigit on calgui
 		if (rol == null) {
 			return;
 		}
-		// Si tot ha anat b� donem d'alta el Rol mitjan�ant el DAO
+		// Si tot ha anat be donem d'alta el Rol mitjançant el DAO
 		try {
 			daoRol.modificar(rol);
 		} catch (SQLException e) {
@@ -117,11 +117,11 @@ public class GRolController extends SeccioController {
 			HttpServletResponse response) throws ServletException, IOException {
 		// Obtenim l'id
 		Long nId = getId(request, response, "prepararModificacio");
-		// Si no obtenim id no cal fer res ja que el getId haur� redirigit cap al llistat
+		// Si no obtenim id no cal fer res ja que el getId haura redirigit cap al llistat
 		if (nId == null) {
 			return;
 		}
-		// Obtenim el Rol mitjan�ant el DAO
+		// Obtenim el Rol mitjançant el DAO
 		Rol rol = null;
 		try {
 			rol = daoRol.obtenirPerId(nId);
@@ -150,11 +150,11 @@ public class GRolController extends SeccioController {
 		} catch (ParameterException e) {
 			EWokController.addMessage(ETipusMissatge.error, REQ_ERRORPARAM, request);
 		}
-		// Si no hem obtingut el Rol no fem res, estreureRol ja redirigir� on calgui
+		// Si no hem obtingut el Rol no fem res, estreureRol ja redirigira on calgui
 		if (rol == null) {
 			return;
 		}
-		// Si tot ha anat b� donem d'alta el Rol mitjan�ant el DAO
+		// Si tot ha anat be donem d'alta el Rol mitjançant el DAO
 		try {
 			daoRol.alta(rol);
 		} catch (SQLException e1) {
@@ -263,7 +263,7 @@ public class GRolController extends SeccioController {
 			doLlistatRol(request, response);
 			return null;
 			}
-		// Si tot ha anat b�, retorno l'id
+		// Si tot ha anat be, retorno l'id
 		return nId;	}
 	}
 

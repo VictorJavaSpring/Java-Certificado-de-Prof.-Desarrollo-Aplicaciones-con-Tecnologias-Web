@@ -66,8 +66,8 @@ public class ShoppingCart extends PublicController {
 		Integer quantitat = getQuantitatProd(request, response);
 		
 		if (producteId == null || quantitat == null) {
-			// No faig res i redirigeixo a la pàgina.
-			// getQuantitatProd i getProducteId ja hauràn afegit l'error / els errors
+			// No faig res i redirigeixo a la pagina.
+			// getQuantitatProd i getProducteId ja hauran afegit l'error / els errors
 			EWokController.forward("/shoppingCart/shoppingCart.jsp", request, response);
 		}
  
@@ -121,13 +121,13 @@ public class ShoppingCart extends PublicController {
 		Long producteId = getProducteId(request, response);
 				
 		if (producteId == null) {
-			// No faig res i redirigeixo a la pàgina.
-			// getQuantitatProd i getProducteId ja hauràn afegit l'error / els errors
+			// No faig res i redirigeixo a la pagina.
+			// getQuantitatProd i getProducteId ja hauran afegit l'error / els errors
 			EWokController.forward("/shoppingCart/shoppingCart.jsp", request, response);
 			return;
 		}
 		
-		// Si no hi ha comanda, pintem un error i redirigim a la pàgina Shopping Cart
+		// Si no hi ha comanda, pintem un error i redirigim a la pagina Shopping Cart
 		if (comanda == null) {
 			EWokController.addMessage(ETipusMissatge.error, "El producte que intentes esborrar no existeix", request);
 			EWokController.forward("/shoppingCart/shoppingCart.jsp", request, response);

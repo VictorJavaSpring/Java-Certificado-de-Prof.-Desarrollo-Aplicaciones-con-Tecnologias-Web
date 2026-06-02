@@ -35,7 +35,7 @@ public class FormaPagament {
 	 * Retorna la id de la Forma de Pagament
 	 * @return La nId de la Forma de Pagament,
 	 * Si la Forma de Pagament no s'ha grabat a la BBDD
-	 * retornarà null. 
+	 * retornara null. 
 	 */
 	public Long getnId() {
 		return nId;
@@ -61,7 +61,7 @@ public class FormaPagament {
 	 */
 	 public void setsNom(String sNom) {
 		 if (sNom == null || sNom.trim().equals("")) {
-			 throw new IllegalArgumentException("la descripció ha d'esta informada");
+			 throw new IllegalArgumentException("la descripcio ha d'esta informada");
 		 }		 
 			this.sNom = sNom;
 	}

@@ -63,7 +63,7 @@ public class FiltreIdioma implements Filter {
 		if (isIdiomaValid(sIdioma)) {
 			EWokController.setIdioma(sIdioma, request);
 			
-			// Enviem cookie amb la preferència de l'usuari
+			// Enviem cookie amb la preferencia de l'usuari
 			Cookie cookieIdioma = new Cookie(COOKIE_LASTIDIOMA, sIdioma);
 			cookieIdioma.setMaxAge(COOKIE_LASTIDIOMA_AGE);
 			httpResp.addCookie(cookieIdioma);

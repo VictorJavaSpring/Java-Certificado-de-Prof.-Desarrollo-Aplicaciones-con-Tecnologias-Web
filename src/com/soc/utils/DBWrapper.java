@@ -9,20 +9,20 @@ import java.sql.Timestamp;
 import javax.sql.DataSource;
 
 /**
- * Classe gen�rica per a la gesti� de connexions 
- * a base de dades i execuci� de querys amb resultat o sense
+ * Classe generica per a la gestio de connexions 
+ * a base de dades i execucio de querys amb resultat o sense
  * @author Administrador
  *
  */
 public class DBWrapper {
 	/**
-	 * Funci� d'utilitat per convertir una java.util.Date en una
-	 * java.sql.date per poder ser usat en un par�metre
+	 * Funcio d'utilitat per convertir una java.util.Date en una
+	 * java.sql.date per poder ser usat en un parametre
 	 * @param d La java.util.date
 	 * @return La java.sql.date equivalent
 	 */
 	public static Timestamp getParameterFromDate(java.util.Date d) {
-		//les dates poden ser null en alguns camps. protegim la funci� de accessos a null
+		//les dates poden ser null en alguns camps. protegim la Funcio de accessos a null
 		if (d==null) return null;
 
 		//si no es null
@@ -53,7 +53,7 @@ public class DBWrapper {
 	 * Executa una query que no rep resultat amb la possibilitat
 	 * de passar un objecte de callback per a preparar l'statement
 	 * @param sql La query a executar
-	 * @param prep L'objecte de callback de preparaci� d'statement
+	 * @param prep L'objecte de callback de preparacio d'statement
 	 * @throws SQLException En cas que hi hagi un error de base de dades
 	 */
 	public void executeSql(
@@ -66,7 +66,7 @@ public class DBWrapper {
 	 * de passar un objecte de callback per a preparar l'statement i un
 	 * altre per a fer pre/post-proces
 	 * @param sql La query a executar
-	 * @param prep L'objecte de callback de preparaci� d'statement
+	 * @param prep L'objecte de callback de preparacio d'statement
 	 * @param proc L'objecte de callback per fer pre/post-proces
 	 * @throws SQLException En cas que hi hagi un error de base de dades
 	 */
@@ -81,9 +81,9 @@ public class DBWrapper {
 	 * de passar un objecte de callback per a preparar l'statement i un
 	 * altre per a fer pre/post-proces
 	 * @param sql La query a executar
-	 * @param prep L'objecte de callback de preparaci� d'statement
+	 * @param prep L'objecte de callback de preparacio d'statement
 	 * @param proc L'objecte de callback per fer pre/post-proces
-	 * @param con Objecte conexi� 
+	 * @param con Objecte conexio 
 	 * @throws SQLException En cas que hi hagi un error de base de dades
 	 */
 	public void executeSql(
@@ -100,7 +100,7 @@ public class DBWrapper {
 			//nomes si con es null
 			if(con == null){
 				con = ds.getConnection();
-				//iniciem transacci�
+				//iniciem transaccio
 				con.setAutoCommit(false);
 				connexioPropia = true;
 			}
@@ -121,7 +121,7 @@ public class DBWrapper {
 			if (proc != null) {
 				proc.doPostProcess(con, st);
 			}
-			//nomes si no ens han passat connexi�
+			//nomes si no ens han passat connexio
 			if(connexioPropia)
 				con.commit();
 			
@@ -131,7 +131,7 @@ public class DBWrapper {
 					st.close();
 			} catch (SQLException e) {}
 			
-			//si no ens han passat connexi�
+			//si no ens han passat connexio
 			if(connexioPropia){
 				try {
 					if (con != null){
@@ -182,7 +182,7 @@ public class DBWrapper {
 		ResultSet rs = null;
 		try {
 			con = ds.getConnection();
-			//iniciem transacci�
+			//iniciem transaccio
 			con.setAutoCommit(false);
 			
 			st = con.prepareStatement(sql);

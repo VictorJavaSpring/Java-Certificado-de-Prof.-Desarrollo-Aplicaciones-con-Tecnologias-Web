@@ -17,7 +17,7 @@ public class TipusProducteDAOTest extends AbstractDAOTest {
 		// Creem l'esquema a traves de la classe base
 		super.preparaBD();
 		
-		// Executem l'script de c�rrega de dades de TipusProducte
+		// Executem l'script de carrega de dades de TipusProducte
 		executaScript("test/resources/scripts/TipusProducteData.sql"); 
 	}
 
@@ -40,7 +40,7 @@ public class TipusProducteDAOTest extends AbstractDAOTest {
 		// (alta m'ha d'haver assignat el nou id)
 		TipusProducte nou = dao.obtenirPerId(tp.getId());
 		
-		// Miro que els dos objectes s�n iguals
+		// Miro que els dos objectes sin iguals
 		Assert.assertEquals(tp, nou);
 	}
 	
@@ -57,7 +57,7 @@ public class TipusProducteDAOTest extends AbstractDAOTest {
 		tp.setCodi("Codi Nou");
 		dao.modificar(tp);
 		
-		// El recupero i comprobo que est� modificat
+		// El recupero i comprobo que este modificat
 		TipusProducte nou = dao.obtenirPerId(1l);
 		Assert.assertEquals(tp, nou);
 	}
@@ -89,7 +89,7 @@ public class TipusProducteDAOTest extends AbstractDAOTest {
 		// Comprovem que hem rebut totas les unitat
 		Assert.assertEquals(3, tots.size());
 		
-		// Comprovem que el un a un s�n correctes
+		// Comprovem que el un a un sin correctes
 		Assert.assertEquals(tots.get(0).getId(), (Long)1l);
 		Assert.assertEquals(tots.get(0).getNom(), "Ingredientes");
 		Assert.assertEquals(tots.get(0).getCodi(), "01");

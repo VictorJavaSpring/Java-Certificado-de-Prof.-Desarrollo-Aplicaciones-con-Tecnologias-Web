@@ -33,19 +33,19 @@ public class CopyOfDataSourceManagerMemoryLeaks implements ServletContextListene
 	}
 
 	/**
-	 * Inicialitza el datasource global que far� servir tota l'aplicaci�
+	 * Inicialitza el datasource global que fara servir tota l'aplicacio
 	 * @see ServletContextListener#contextInitialized(ServletContextEvent)
 	 */
 	public void contextInitialized(ServletContextEvent srvEv) {
 		// De moment creem el datasource a partir de constants
-		// Cal fer-ho per par�metres de configuraci�
+		// Cal fer-ho per parametres de configuracio
 		BasicDataSource bsd = new BasicDataSource();
 		bsd.setDriverClassName(CON_DRIVER_CLASS);
 		bsd.setUrl(CON_URL);
 		bsd.setUsername(CON_USER);
 		bsd.setPassword(CON_PASSWORD);	
 		bsd.setMaxActive(CON_MAX_ACTIVE);
-		// Posem el datasource a la aplicaci�
+		// Posem el datasource a la aplicacio
 		EWokController.setGlobalDatasource(bsd);
 	}
 

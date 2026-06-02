@@ -7,7 +7,7 @@ import org.junit.Test;
 import com.soc.ewok.model.Adreca;
 
 /**
- * clase que representa el test d'una adreça.
+ * clase que representa el test d'una AdreÃ§a.
  * @author Jose
  *
  */
@@ -16,14 +16,14 @@ public class AdrecaTest {
 	private Adreca crearAdreca(){
 		Adreca ad = new Adreca();
 		ad.setId(1l);
-		ad.setLinia1("Primera linia de l'adreça");
-		ad.setLinia2("Segona linia de l'adreça");
+		ad.setLinia1("Primera linia de l'AdreÃ§a");
+		ad.setLinia2("Segona linia de l'AdreÃ§a");
 		ad.setCp("08009");
 		ad.setCiutat("Ciutat");
-		ad.setNotes("Notes de l'adreça");
+		ad.setNotes("Notes de l'AdreÃ§a");
 		ad.setTelefon("666999333");
 		ad.setIdClient(2l);
-		ad.setAlias("Alias adreça");
+		ad.setAlias("Alias AdreÃ§a");
 		return ad;	
 	}
 	
@@ -32,14 +32,14 @@ public class AdrecaTest {
 	public void comprovacioGettersISetters() {
 		Adreca ad = crearAdreca();
 		Assert.assertEquals((Long)1l, ad.getId());
-		Assert.assertEquals("Primera linia de l'adreça", ad.getLinia1());
-		Assert.assertEquals("Segona linia de l'adreça", ad.getLinia2());
+		Assert.assertEquals("Primera linia de l'AdreÃ§a", ad.getLinia1());
+		Assert.assertEquals("Segona linia de l'AdreÃ§a", ad.getLinia2());
 		Assert.assertEquals("08009", ad.getCp());
 		Assert.assertEquals("Ciutat", ad.getCiutat());
-		Assert.assertEquals("Notes de l'adreça", ad.getNotes());
+		Assert.assertEquals("Notes de l'AdreÃ§a", ad.getNotes());
 		Assert.assertEquals("666999333", ad.getTelefon());
 		Assert.assertEquals((Long)2l, ad.getIdClient());
-		Assert.assertEquals("Alias adreça", ad.getAlias());
+		Assert.assertEquals("Alias AdreÃ§a", ad.getAlias());
 		
 		ad.setId(null);
 		Assert.assertNull(ad.getId());

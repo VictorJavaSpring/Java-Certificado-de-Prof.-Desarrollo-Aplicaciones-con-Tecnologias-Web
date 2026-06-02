@@ -21,7 +21,7 @@ public class Preu {
 	/**
 	 * Retorna l'id del preu.
 	 * @return L'id del preu. Si el preu no s'ha grabat a base de dades,
-	 * retornarà null. 
+	 * retornara null. 
 	 */
 	public Long getId() {
 		return nId;
@@ -55,32 +55,32 @@ public class Preu {
 	}
 	
 	/**
-	 * Retorna la data d'inici de vigència.
-	 * @return la data d'incici de vigència.
+	 * Retorna la data d'inici de Vigencia.
+	 * @return la data d'incici de Vigencia.
 	 */
 	public Date getIniciVigencia() {
 		return dIniciVigencia;
 	}
 	
 	/**
-	 * Assigna la data d'inici de vigència.
-	 * @param iniciVigencia. La data d'inici de vigència a assignar.
+	 * Assigna la data d'inici de Vigencia.
+	 * @param iniciVigencia. La data d'inici de Vigencia a assignar.
 	 */
 	public void setIniciVigencia(Date iniciVigencia) {
 		this.dIniciVigencia = iniciVigencia;
 	}
 	
 	/**
-	 * Retorna la data de final de vigència.
-	 * @return la data de final de vigència.
+	 * Retorna la data de final de Vigencia.
+	 * @return la data de final de Vigencia.
 	 */
 	public Date getFinalVigencia() {
 		return dFinalVigencia;
 	}
 	
 	/**
-	 * Assigna la data de final de vigència.
-	 * @param finalVigencia. La data de final de vigència a assignar.
+	 * Assigna la data de final de Vigencia.
+	 * @param finalVigencia. La data de final de Vigencia a assignar.
 	 */
 	public void setFinalVigencia(Date finalVigencia) {
 		this.dFinalVigencia = finalVigencia;
@@ -89,7 +89,7 @@ public class Preu {
 	/**
 	 * Retorna l'id del producte.
 	 * @return l'id del producte. Si el producte no s'ha grabat a base de dades,
-	 * retornarà null. 
+	 * retornara null. 
 	 */
 	public Long getIdProducte() {
 		return nIdProducte;

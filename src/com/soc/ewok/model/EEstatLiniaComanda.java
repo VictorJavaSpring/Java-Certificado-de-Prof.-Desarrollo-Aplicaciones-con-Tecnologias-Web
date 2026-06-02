@@ -5,9 +5,9 @@ public enum EEstatLiniaComanda {
 	 * Encara no s'ha fet res amb la linia 
 	 * */
 	inicial,
-	/** S'està cuinant el producte */
+	/** S'este cuinant el producte */
 	enPreparacio,
-	/** El producte està cuinat */
+	/** El producte este cuinat */
 	preparat,
 	/** El producte s'ha ficat al paquet */
 	entregat

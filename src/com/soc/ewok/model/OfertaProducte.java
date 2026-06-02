@@ -20,14 +20,14 @@ public class OfertaProducte {
 	/**
 	 * Retorna l'id d' oferta de Producte.
 	 * @return L'id de la oferta. Si l'oferta no s'ha grabat a base de dades,
-	 * retornar� null.
+	 * retornara null.
 	 */
 	public Long getId() {
 		return nId;
 	}
 	/**
 	 * Assigna l'id de la oferta
-	 * @param nId es l'id que s'assignar� a la oferta de producte
+	 * @param nId es l'id que s'assignara a la oferta de producte
 	 */
 	public void setId(Long nId) {
 		this.nId = nId;
@@ -69,14 +69,14 @@ public class OfertaProducte {
 		sOnom = onom;
 	}
 	/**
-	 * Retorna la data d'inici de vig�ncia de l'oferta
+	 * Retorna la data d'inici de Vigencia de l'oferta
 	 * @return es la data d'inici de l'oferta
 	 */
 	public Date getIniciVigencia() {
 		return dIniciVigencia;
 	}
 	/**
-	 * Assigna una data d'inici de vig�ncia de l'oferta
+	 * Assigna una data d'inici de Vigencia de l'oferta
 	 * @param iniciVigencia
 	 */
 	public void setIniciVigencia(Date iniciVigencia) {
@@ -90,22 +90,22 @@ public class OfertaProducte {
 		return dFiVigencia;
 	}
 	/**
-	 * Assigna una data de fi de vig�ncia de l'oferta
-	 * @param fiVigencia es la data de fi de vig�ncia de l'oferta
+	 * Assigna una data de fi de Vigencia de l'oferta
+	 * @param fiVigencia es la data de fi de Vigencia de l'oferta
 	 */
 	public void setFiVigencia(Date fiVigencia) {
 		dFiVigencia = fiVigencia;
 	}
 	/**
-	 * Retorna la descripci� de l'oferta
-	 * @return es la descripci� de l'oferta
+	 * Retorna la descripcio de l'oferta
+	 * @return es la descripcio de l'oferta
 	 */
 	public String getOtext() {
 		return sOtext;
 	}
 	/**
-	 * Assigna la descripci� de l'oferta
-	 * @param otext es la descripci� de l'oferta que pot ser null
+	 * Assigna la descripcio de l'oferta
+	 * @param otext es la descripcio de l'oferta que pot ser null
 	 */
 	public void setOtext(String otext) {
 		sOtext = otext;
@@ -118,8 +118,8 @@ public class OfertaProducte {
 		return nIdP;
 	}
 	/**
-	 * Assigna id de relaci� amb l'oferta de producte
-	 * @param nIdP id de relaci� amb l'oferta i el producte
+	 * Assigna id de relacio amb l'oferta de producte
+	 * @param nIdP id de relacio amb l'oferta i el producte
 	 * @throws IllegalArgumentException si es null
 	 */
 	public void setIdProducte(Long nIdP) {

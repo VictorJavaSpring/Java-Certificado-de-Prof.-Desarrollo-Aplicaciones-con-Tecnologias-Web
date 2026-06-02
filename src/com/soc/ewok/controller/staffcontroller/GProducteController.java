@@ -297,7 +297,7 @@ public class GProducteController extends SeccioController {
 	private void doModificaProducteCompost(HttpServletRequest request,
 			HttpServletResponse response) throws ServletException, IOException {
 		// obtenir l'identificador d'objecte i carregar les dades
-		// al p�gina de presentaci�.
+		// al pagina de presentacio.
 
 		// provem d'obtenir un id del request
 		Long nId = getidFromRequest(request, response);
@@ -321,7 +321,7 @@ public class GProducteController extends SeccioController {
 		// l'inserim al request
 		request.setAttribute(MODEL_COMPOST, p);
 
-		// Redirigim cap a la p�gina corresponent
+		// Redirigim cap a la pagina corresponent
 		EWokController.forward("staff/gProducte/modificaProducteCompost.jsp",
 				request, response);
 

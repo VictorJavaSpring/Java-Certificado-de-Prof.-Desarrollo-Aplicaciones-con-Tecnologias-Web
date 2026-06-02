@@ -17,7 +17,7 @@ public class UnitatDAOTest extends AbstractDAOTest {
 		// Creem l'esquema a traves de la classe base
 		super.preparaBD();
 		
-		// Executem l'script de c�rrega de dades de rol
+		// Executem l'script de carrega de dades de rol
 		executaScript("test/resources/scripts/UnitatData.sql"); 
 	}
 
@@ -40,7 +40,7 @@ public class UnitatDAOTest extends AbstractDAOTest {
 		// (alta m'ha d'haver assignat el nou id)
 		Unitat nou = dao.obtenirPerId(u.getId());
 		
-		// Miro que els dos objectes s�n iguals
+		// Miro que els dos objectes sin iguals
 		Assert.assertEquals(u, nou);
 	}
 	
@@ -57,7 +57,7 @@ public class UnitatDAOTest extends AbstractDAOTest {
 		u.setAcron("Acronim");
 		dao.modificar(u);
 		
-		// El recupero i comprobo que est� modificat
+		// El recupero i comprobo que este modificat
 		Unitat nou = dao.obtenirPerId(1l);
 		Assert.assertEquals(u, nou);
 	}
@@ -89,7 +89,7 @@ public class UnitatDAOTest extends AbstractDAOTest {
 		// Comprovem que hem rebut totas les unitat
 		Assert.assertEquals(3, tots.size());
 		
-		// Comprovem que el un a un s�n correctes
+		// Comprovem que el un a un sin correctes
 		Assert.assertEquals(tots.get(0).getId(), (Long)1l);
 		Assert.assertEquals(tots.get(0).getNom(), "Carne");
 		Assert.assertEquals(tots.get(0).getAcron(), "Kg");

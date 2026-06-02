@@ -67,8 +67,8 @@ public class XecDAO {
 	}
 
 	/**
-	 * Dóna d'alta un registre a base de dades.
-	 * Actualitzarà l'id amb el valor generat pel gestor
+	 * d'na d'alta un registre a base de dades.
+	 * Actualitzara l'id amb el valor generat pel gestor
 	 * @param x Xec a donar d'alta
 	 * @throws SQLException En cas que hi hagi un error de base de dades
 	 */
@@ -126,8 +126,8 @@ public class XecDAO {
 	
 	/** 
 	 * Modifica un xec a base de dades
-	 * @param x El xec a modificar. Usarà l'id
-	 * per buscar el registre i actualitzarà tots els seus camps
+	 * @param x El xec a modificar. usara l'id
+	 * per buscar el registre i actualitzara tots els seus camps
 	 * @throws SQLException En cas que es produeixi un error de base de dades
 	 */
 	public void modificar(final Xec x) throws SQLException {
@@ -174,10 +174,10 @@ public class XecDAO {
 				public boolean processRow(Connection con, PreparedStatement st,
 						ResultSet rset) throws SQLException {
 					// Obtinc el registre de la fila actual
-					// i el fico a l'objecte que retornaré
+					// i el fico a l'objecte que retornara
 					crearXec(rset, elXec);
 					// Indico al DBWrapper que segueixi amb el 
-					// següent registre
+					// segÃ¼ent registre
 					return false;
 				}
 			}
@@ -187,7 +187,7 @@ public class XecDAO {
 
 	/**
 	 * Recupera de base de dades tots els xec ordenats per id
-	 * @return La llista de xecs. Si no n'hi ha, retornarà una llista buida
+	 * @return La llista de xecs. Si no n'hi ha, retornara una llista buida
 	 * @throws SQLException En cas que es produeixi un error de base de dades
 	 */
 	public List<Xec> obtenirTots() throws SQLException {
@@ -202,7 +202,7 @@ public class XecDAO {
 					// i el fico a la llista
 					elsXecs.add(crearXec(rset));
 					// Indico al DBWrapper que segueixi amb el 
-					// següent registre
+					// segÃ¼ent registre
 					return true;
 				}
 			}
@@ -211,7 +211,7 @@ public class XecDAO {
 	}
 	
 	/**
-	 * Funció d'utilitat per crear un objecte Xec a partir de la fila actual
+	 * Funcio d'utilitat per crear un objecte Xec a partir de la fila actual
 	 * d'un recordset 
 	 * @param rset El recordset d'on treurem el Xec
 	 * @return El Xec creat
@@ -222,10 +222,10 @@ public class XecDAO {
 	}
 
 	/**
-	 * Funció d'utilitat per omplir un objecte Xec amb els valors
+	 * Funcio d'utilitat per omplir un objecte Xec amb els valors
 	 * de la fila actual d'un recordset
 	 * @param rset El recordset d'on treurem el Xec
-	 * @param x El Xec a omplir. Pot ser null i es crearà un Xec nou
+	 * @param x El Xec a omplir. Pot ser null i es creara un Xec nou
 	 * @return El Xec amb els camps recuperats
 	 * @throws SQLException El recordset d'on treurem el Xec
 	 */

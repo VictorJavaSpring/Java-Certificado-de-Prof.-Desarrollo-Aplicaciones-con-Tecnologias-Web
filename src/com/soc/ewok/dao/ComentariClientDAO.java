@@ -67,8 +67,8 @@ public class ComentariClientDAO {
 		}
 
 		/**
-		 * Dóna d'alta un registre a base de dades.
-		 * Actualitzarà l'id amb el valor generat pel gestor
+		 * d'na d'alta un registre a base de dades.
+		 * Actualitzara l'id amb el valor generat pel gestor
 		 * @param cc Comentari de Client a donar d'alta
 		 * @throws SQLException En cas que hi hagi un error de base de dades
 		 */
@@ -124,8 +124,8 @@ public class ComentariClientDAO {
 
 		/** 
 		 * Modifica un Comentari de Client a la base de dades
-		 * @param cc El Comentari de Client a modificar. Usarà l'id
-		 * per buscar el registre i actualitzarà tots els seus camps
+		 * @param cc El Comentari de Client a modificar. usara l'id
+		 * per buscar el registre i actualitzara tots els seus camps
 		 * @throws SQLException En cas que es produeixi un error de base de dades
 		 */
 		public void modificar(final ComentariClient cc) throws SQLException {
@@ -170,10 +170,10 @@ public class ComentariClientDAO {
 					public boolean processRow(Connection con, PreparedStatement st,
 							ResultSet rset) throws SQLException {
 						// Obtinc el registre de la fila actual
-						// i el fico a l'objecte que retornaré
+						// i el fico a l'objecte que retornara
 						crearComentariClient(rset, elComentari);
 						// Indico al DBWrapper que segueixi amb el 
-						// següent registre
+						// segÃ¼ent registre
 						return false;
 					}
 				} 
@@ -185,7 +185,7 @@ public class ComentariClientDAO {
 
 		/**
 		 * Recupera de base de dades tots els comentaris ordenats per nom
-		 * @return La llista de comentaris. Si no n'hi ha, retornarà una llista buida
+		 * @return La llista de comentaris. Si no n'hi ha, retornara una llista buida
 		 * @throws SQLException En cas que es produeixi un error de base de dades
 		 */
 		public List<ComentariClient> obtenirTots() throws SQLException {
@@ -200,7 +200,7 @@ public class ComentariClientDAO {
 						// i el fico a la llista
 						elsComentaris.add(crearComentariClient(rset));
 						// Indico al DBWrapper que segueixi amb el 
-						// següent registre
+						// segÃ¼ent registre
 						return true;
 					}
 				}
@@ -209,7 +209,7 @@ public class ComentariClientDAO {
 		}
 
 		/**
-		 * Funció d'utilitat per crear un objecte ComentariClient a partir de la fila actual
+		 * Funcio d'utilitat per crear un objecte ComentariClient a partir de la fila actual
 		 * d'un recordset 
 		 * @param rset El recordset d'on treurem el ComentariClient
 		 * @return El ComentariClient creat
@@ -220,10 +220,10 @@ public class ComentariClientDAO {
 		}
 
 		/**
-		 * Funció d'utilitat per omplir un objecte ComentariClient amb els valors
+		 * Funcio d'utilitat per omplir un objecte ComentariClient amb els valors
 		 * de la fila actual d'un recordset
 		 * @param rset El recordset d'on treurem el ComentariClient
-		 * @param cc El ComentariCLient a omplir. Pot ser null i es crearà un ComentariClient nou
+		 * @param cc El ComentariCLient a omplir. Pot ser null i es creara un ComentariClient nou
 		 * @return El ComentariClient amb els camps recuperats
 		 * @throws SQLException El recordset d'on treurem el ComentariClient
 		 */

@@ -223,15 +223,15 @@ public class Comanda {
 	 * @param quantitat
 	 */
 	public Integer afegirOEliminarProducte(Long producteId, Integer quantitat) {
-		// Primer miro si hi ha linees de comanda a la llista, o si est� buida
+		// Primer miro si hi ha linees de comanda a la llista, o si este buida
 		llistaLiniesComanda = getLiniesComanda();
 		if (llistaLiniesComanda == null) {
-			// Si est� buida, creo una linea de comanda amb el producte i la afegeixo a la llista
+			// Si este buida, creo una linea de comanda amb el producte i la afegeixo a la llista
 			addLiniaComanda(crearNovaLiniaComanda(producteId, quantitat));
 			return quantitat;
 		}
 		Integer quantitatActual = -1;
-		// Si no est� buida, miro si ja existeix una linia de comanda per aquest producte
+		// Si no este buida, miro si ja existeix una linia de comanda per aquest producte
 		for (LiniaComanda liComanda: llistaLiniesComanda) {
 			if (liComanda.getIdProducte() == producteId) {
 				// Si la tinc, actualitzo la quantitat
@@ -253,7 +253,7 @@ public class Comanda {
 			return quantitat;
 		} else {
 			// Si la quantitat es < 0 vol dir que l'usuari ha intentat disminuir la cantitat
-			// d'un producte que no existeix, per Aixo retornem quantitatActual que ser� < 0.
+			// d'un producte que no existeix, per Aixo retornem quantitatActual que sera < 0.
 			return quantitatActual;
 		}
 	}
@@ -262,7 +262,7 @@ public class Comanda {
 		LiniaComanda liniaComanda = new LiniaComanda();
 		liniaComanda.setIdProducte(producteId);
 		liniaComanda.setQuantitat(quantitat);
-		// TODO: caldria calcular el preu b� a partir de les taules de preu
+		// TODO: caldria calcular el preu be a partir de les taules de preu
 		Random r = new Random();
 		liniaComanda.setPreuVenda(r.nextInt(12) + 1.0f);
 		
@@ -308,19 +308,19 @@ public class Comanda {
 			return false;
 		}
 		// Si ens la passen, afegim la liniaComanda a la llistaLiniesComanda
-		// amb el m�tode add de la classe List i retornem el boolean resultant
+		// amb el metode add de la classe List i retornem el boolean resultant
 		return llistaLiniesComanda.add(liniaComanda);
 	}
 	
 	/**
 	 * @return la llistaLiniesComanda si existeix
-	 * si llistaLiniesComanda no existeix, llen�a una IllegalStateException
+	 * si llistaLiniesComanda no existeix, llença una IllegalStateException
 	 */
 	public List<LiniaComanda> getLiniesComanda(){
 		// Comprovem si existeix la llistaLiniesComanda
 		if (llistaLiniesComanda == null) {
-			// Si no existeix, llen�em una IllegalStateException
-			throw new IllegalStateException("La comanda amb id "+ this.getId() + " no t� cap linia de comanda");
+			// Si no existeix, llençem una IllegalStateException
+			throw new IllegalStateException("La comanda amb id "+ this.getId() + " no te cap linia de comanda");
 		}
 		// Si existeix, la retornem
 		return llistaLiniesComanda;
@@ -329,7 +329,7 @@ public class Comanda {
 	public Integer getLiniesComandaSize(){
 		// Comprovem si existeix la llistaLiniesComanda
 		if (llistaLiniesComanda == null) {
-			// Si no existeix, llen�em una IllegalStateException
+			// Si no existeix, llençem una IllegalStateException
 			return 0;
 		}
 		// Si existeix, la retornem

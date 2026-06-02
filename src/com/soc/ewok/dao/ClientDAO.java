@@ -79,7 +79,7 @@ public class ClientDAO {
 				public void doPostProcess(Connection con, PreparedStatement st)
 						throws SQLException {
 					// Uso el recordset de camps generats
-					// que em dóna l'statement per assignar
+					// que em d'na l'statement per assignar
 					// l'id al Client original
 					ResultSet keys = st.getGeneratedKeys();
 					keys.next();
@@ -141,10 +141,10 @@ public class ClientDAO {
 				public boolean processRow(Connection con, PreparedStatement st,
 						ResultSet rset) throws SQLException {
 					// Obtinc el registre de la fila actual
-					// i el fico a l'objecte que retornaré
+					// i el fico a l'objecte que retornara
 					crearClient(rset, elClient);
 					// Indico al DBWrapper que segueixi amb el 
-					// següent registre
+					// segÃ¼ent registre
 					return false;
 				}
 			}
@@ -165,7 +165,7 @@ public class ClientDAO {
 					// i el fico a la llista
 					elsClients.add(crearClient(rset));
 					// Indico al DBWrapper que segueixi amb el 
-					// següent registre
+					// segÃ¼ent registre
 					return true;
 				}
 			}

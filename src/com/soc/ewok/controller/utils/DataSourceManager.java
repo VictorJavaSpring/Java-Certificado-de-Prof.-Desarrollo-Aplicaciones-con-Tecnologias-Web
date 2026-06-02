@@ -27,12 +27,12 @@ public class DataSourceManager implements ServletContextListener {
 	}
 
 	/**
-	 * Inicialitza el datasource global que far� servir tota l'aplicaci�
+	 * Inicialitza el datasource global que fara servir tota l'aplicacio
 	 * @see ServletContextListener#contextInitialized(ServletContextEvent)
 	 */
 	public void contextInitialized(ServletContextEvent srvEv) {
 		// De moment creem el datasource a partir de constants
-		// Cal fer-ho per par�metres de configuraci�
+		// Cal fer-ho per parametres de configuracio
 		// @home BasicDataSource bsd = new BasicDataSource();
 		BasicDataSource bsd = new BasicDataSource();
 		bsd.setDriverClassName(CON_DRIVER_CLASS);
@@ -40,7 +40,7 @@ public class DataSourceManager implements ServletContextListener {
 		bsd.setUsername(CON_USER);
 		bsd.setPassword(CON_PASSWORD);	
 		bsd.setMaxIdle(CON_MAX_ACTIVE);
-		// Posem el datasource a la aplicaci�
+		// Posem el datasource a la aplicacio
 		EWokController.setGlobalDatasource(bsd);
 	}
 

@@ -8,7 +8,7 @@ import org.junit.Test;
 import com.soc.ewok.model.OfertaComanda;
 
 public class OfertaComandaTest {
-	//creo dates accessibles des de qualsevol mètode 
+	//creo dates accessibles des de qualsevol metode 
 	//per a provar iniciVigencia i fiVigencia on calgui
 	
 	Date data1 = new Date();

@@ -18,7 +18,7 @@ public class RolData {
 	/**
 	 * Retorna l'id del rol.
 	 * @return L'id del rol. Si el rol no s'ha grabat a base de dades,
-	 * retornarà null. 
+	 * retornara null. 
 	 */
 	public Long getId() {
 		return nId;
@@ -54,16 +54,16 @@ public class RolData {
 	}
 
 	/**
-	 * Obté la data de creació del rol
-	 * @return La data de creació
+	 * Obte la data de creacio del rol
+	 * @return La data de creacio
 	 */
 	public Date getDataCreacio() {
 		return dDataCreacio;
 	}
 
 	/**
-	 * Assigna la data de creació
-	 * @param dataCreacio La data de creació a assignar
+	 * Assigna la data de creacio
+	 * @param dataCreacio La data de creacio a assignar
 	 */
 	public void setDataCreacio(Date dataCreacio) {
 		this.dDataCreacio = dataCreacio;

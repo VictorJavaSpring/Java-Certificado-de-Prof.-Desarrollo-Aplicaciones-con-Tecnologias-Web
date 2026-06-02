@@ -60,8 +60,8 @@ public class FormaPagamentDAO {
 	}
 
 	/**
-	 * Dóna d'alta un registre a base de dades.
-	 * Actualitzarà l'id amb el valor generat pel gestor
+	 * d'na d'alta un registre a base de dades.
+	 * Actualitzara l'id amb el valor generat pel gestor
 	 * @param fp FormaPagament a donar d'alta
 	 * @throws SQLException En cas que hi hagi un error de base de dades
 	 */
@@ -112,8 +112,8 @@ public class FormaPagamentDAO {
 
 	/** 
 	 * Modifica una FormaPagament a base de dades
-	 * @param fp la FormaPagament a modificar. Usarà l'id
-	 * per buscar el registre i actualitzarà tots els seus camps
+	 * @param fp la FormaPagament a modificar. usara l'id
+	 * per buscar el registre i actualitzara tots els seus camps
 	 * @throws SQLException En cas que es produeixi un error de base de dades
 	 */
 	public void modificar(final FormaPagament fp) throws SQLException {
@@ -154,10 +154,10 @@ public class FormaPagamentDAO {
 				public boolean processRow(Connection con, PreparedStatement st,
 						ResultSet rset) throws SQLException {
 					// Obtinc el registre de la fila actual
-					// i el fico a l'objecte que retornaré
+					// i el fico a l'objecte que retornara
 					crearFormaPagament(rset, laFormaPagament);
 					// Indico al DBWrapper que segueixi amb el 
-					// següent registre
+					// segÃ¼ent registre
 					return false;
 				}
 			}
@@ -167,7 +167,7 @@ public class FormaPagamentDAO {
 
 	/**
 	 * Recupera de base de dades tots les FormaPagament ordenats per nom
-	 * @return La llista de FormaPagament. Si no n'hi ha, retornarà una llista buida
+	 * @return La llista de FormaPagament. Si no n'hi ha, retornara una llista buida
 	 * @throws SQLException En cas que es produeixi un error de base de dades
 	 */
 	public List<FormaPagament> obtenirTots() throws SQLException {
@@ -182,7 +182,7 @@ public class FormaPagamentDAO {
 					// i el fico a la llista
 					lesFormaPagament.add(crearFormaPagament(rset));
 					// Indico al DBWrapper que segueixi amb el 
-					// següent registre
+					// segÃ¼ent registre
 					return true;
 				}
 			}
@@ -191,7 +191,7 @@ public class FormaPagamentDAO {
 	}
 
 	/**
-	 * Funció d'utilitat per crear un objecte FormaPagament a partir de la fila actual
+	 * Funcio d'utilitat per crear un objecte FormaPagament a partir de la fila actual
 	 * d'un recordset 
 	 * @param rset El recordset d'on treurem la FormaPagament
 	 * @return La FormaPagament creada
@@ -202,10 +202,10 @@ public class FormaPagamentDAO {
 	}
 
 	/**
-	 * Funció d'utilitat per omplir un objecte Rol amb els valors
+	 * Funcio d'utilitat per omplir un objecte Rol amb els valors
 	 * de la fila actual d'un recordset
 	 * @param rset El recordset d'on treurem el Rol
-	 * @param r El Rol a omplir. Pot ser null i es crearà un Rol nou
+	 * @param r El Rol a omplir. Pot ser null i es creara un Rol nou
 	 * @return El Rol amb els camps recuperats
 	 * @throws SQLException El recordset d'on treurem el Rol
 	 */

@@ -1,7 +1,7 @@
 package com.soc.utils;
 
 /**
- * Excepció produida buscant un paràmetre al request
+ * excepcio produida buscant un parametre al request
  * @author Administrador
  *
  */
@@ -20,7 +20,7 @@ public class ParameterException extends Exception {
 	
 	/**
 	 * Constructor indicant un missatge
-	 * @param message El missatge de l'excepció
+	 * @param message El missatge de l'excepcio
 	 */
 	public ParameterException(String message) {
 		super(message);
@@ -28,9 +28,9 @@ public class ParameterException extends Exception {
 	
 	/**
 	 * Constructor on s'indiquen tots els camps
-	 * de l'excepció
+	 * de l'excepcio
 	 * @param message El missatge
-	 * @param nomPar El paràmetre pel qual s'ha produit una excepció
+	 * @param nomPar El parametre pel qual s'ha produit una excepcio
 	 * @param valor El valor trobat o null si no s'ha trobat
 	 */
 	public ParameterException(
@@ -41,26 +41,26 @@ public class ParameterException extends Exception {
 	}	
 	
 	/**
-	 * Obté el nom del paràmetre pel qual s'ha produit 
-	 * una excepció
-	 * @return El nom del paràmetre
+	 * Obte el nom del parametre pel qual s'ha produit 
+	 * una excepcio
+	 * @return El nom del parametre
 	 */
 	public String getNomParametre() {
 		return nomParametre;
 	}
 	
 	/**
-	 * Assigna el nom del paràmetre pel qual s'ha produit 
-	 * una excepció
-	 * @param nomParametre el nom del paràmetre
+	 * Assigna el nom del parametre pel qual s'ha produit 
+	 * una excepcio
+	 * @param nomParametre el nom del parametre
 	 */
 	public void setNomParametre(String nomParametre) {
 		this.nomParametre = nomParametre;
 	}
 	
 	/**
-	 * Obté el valor trobat pel paràmetre que ha produit
-	 * l'excepció
+	 * Obte el valor trobat pel parametre que ha produit
+	 * l'excepcio
 	 * @return El valor trobat o null si no se n'ha trobat cap
 	 */
 	public String getValorTrobat() {
@@ -68,8 +68,8 @@ public class ParameterException extends Exception {
 	}
 	
 	/**
-	 * Assigna el valor trobat pel paràmetre que ha produit
-	 * l'excepció
+	 * Assigna el valor trobat pel parametre que ha produit
+	 * l'excepcio
 	 * @param valorTrobat El valor trobat o null si no se n'ha trobat cap
 	 */
 	public void setValorTrobat(String valorTrobat) {

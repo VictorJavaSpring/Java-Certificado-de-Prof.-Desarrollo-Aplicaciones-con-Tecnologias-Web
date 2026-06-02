@@ -1,4 +1,4 @@
-/* +++GESTI� UNITAT (inici)+++ */
+/* +++GESTio UNITAT (inici)+++ */
 
 /* part comuna (inici) */ 
 
@@ -27,7 +27,7 @@
 	}
 	/* barra de gestors (inici) */
 
-	/* cap�alera (inici) */
+	/* capçalera (inici) */
 	div.parlaControlador {
 		font-style: italic;
 	}
@@ -49,7 +49,7 @@
 	div.inner-default-heading h2, div.inner-default-heading p {
 	    text-align: center;
 	}
-	/* cap�alera (fi) */
+	/* capçalera (fi) */
 	
 	/* menu idioma (inici) */
 	div.menuIdioma {
@@ -159,4 +159,4 @@ div.innUnitat, div.cheUnitat, div.con2Unitat {
 /* formUnitat (fi) */
 
 
-/* +++GESTI� UNITAT (fi)+++ */
+/* +++GESTio UNITAT (fi)+++ */

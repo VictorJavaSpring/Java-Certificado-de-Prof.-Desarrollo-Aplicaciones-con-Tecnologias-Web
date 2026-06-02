@@ -15,8 +15,8 @@ public class PuntsPendentsDAOTest extends AbstractDAOTest {
 	public void preparaBD() throws SQLException {
 		// Creem l'esquema a traves de la classe base
 		super.preparaBD();
-		// Executem l'script de c�rrega de dades de PuntsPendents
-		// (En aquest cas tamb� crea la taula associada)
+		// Executem l'script de carrega de dades de PuntsPendents
+		// (En aquest cas tambe crea la taula associada)
 		executaScript("test/resources/scripts/PuntsPendents.sql"); 
 	}
 
@@ -48,10 +48,10 @@ public class PuntsPendentsDAOTest extends AbstractDAOTest {
 						ppNou.getDataCaducitat().getMonth() ,
 						ppNou.getDataCaducitat().getDay()) 
 					);
-			// Un cop veiem que s�n iguals, la copiem del vell al
+			// Un cop veiem que sin iguals, la copiem del vell al
 			// nou per no tenir problemes amb l'equals
 			ppNou.setDataCaducitat(pp.getDataCaducitat());
-		// Miro que els dos objectes s�n iguals
+		// Miro que els dos objectes sin iguals
 		Assert.assertEquals(pp, ppNou);
 	}
 	
@@ -63,7 +63,7 @@ public class PuntsPendentsDAOTest extends AbstractDAOTest {
 		// El modifico
 		pp.setNumPunts((short)2);
 		dao.modificar(pp);
-		// El recupero i comprobo que est� modificat
+		// El recupero i comprobo que este modificat
 		PuntsPendents ppNou = dao.obtenirPerId(1l);
 		Assert.assertEquals(pp, ppNou);
 	}
@@ -89,7 +89,7 @@ public class PuntsPendentsDAOTest extends AbstractDAOTest {
 		List<PuntsPendents> tots = dao.obtenirTots();
 		// Comprovem que hem rebut tres PuntsPendents
 		Assert.assertEquals(3, tots.size());
-		// Comprovem un a un que s�n correctos
+		// Comprovem un a un que sin correctos
 		Assert.assertEquals(tots.get(0).getId(), (Long)1l);
 		Assert.assertEquals((short)tots.get(0).getNumPunts(), (short)3);
 		Assert.assertTrue(sonIguals(tots.get(0).getDataCaducitat(), 2015, 6, 3, 0, 0, 0));

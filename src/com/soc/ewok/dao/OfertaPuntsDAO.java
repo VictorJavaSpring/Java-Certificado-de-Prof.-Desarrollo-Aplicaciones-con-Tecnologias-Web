@@ -85,8 +85,8 @@ public class OfertaPuntsDAO {
 			dw = new DBWrapper(ds);
 			}
 
-			/* Dóna d'alta un registre a base de dades.
-			 * Actualitzarà l'id amb el valor generat pel gestor
+			/* d'na d'alta un registre a base de dades.
+			 * Actualitzara l'id amb el valor generat pel gestor
 			 * @param op OfertaPunts a donar d'alta
 			 * @throws SQLException En cas que hi hagi un error de base de dades
 			 */
@@ -149,8 +149,8 @@ public class OfertaPuntsDAO {
 
 				/** 
 				 * Modifica una Oferta punts a base de dades
-				 * @param op L'oferta punts a modificar. Usarà l'id
-				 * per buscar el registre i actualitzarà tots els seus camps
+				 * @param op L'oferta punts a modificar. usara l'id
+				 * per buscar el registre i actualitzara tots els seus camps
 				 * @throws SQLException En cas que es produeixi un error de base de dades*/
 				 
 				public void modificar(final OfertaPunts op) throws SQLException {
@@ -197,10 +197,10 @@ public class OfertaPuntsDAO {
 							public boolean processRow(Connection con, PreparedStatement st,
 									ResultSet rset) throws SQLException {
 								// Obtinc el registre de la fila actual
-								// i el fico a l'objecte que retornaré
+								// i el fico a l'objecte que retornara
 								crearOfertaPunts(rset, elOfertaPunts);
 								// Indico al DBWrapper que segueixi amb el 
-								// següent registre
+								// segÃ¼ent registre
 								return false;
 							}
 						}
@@ -211,7 +211,7 @@ public class OfertaPuntsDAO {
 
 				
 				/* Recupera de base de dades totes les Ofertes de Punts ordenats per Euros per punt 
-				 * @return La llista Oferta de Punts. Si no n'hi ha, retornarà una llista buida
+				 * @return La llista Oferta de Punts. Si no n'hi ha, retornara una llista buida
 				 * @throws SQLException En cas que es produeixi un error de base de dades */
 				 
 				public List<OfertaPunts> obtenirTots() throws SQLException {
@@ -226,7 +226,7 @@ public class OfertaPuntsDAO {
 								// i el fico a la llista
 								lesOfertesPunts.add(crearOfertaPunts(rset));
 								// Indico al DBWrapper que segueixi amb el 
-								// següent registre
+								// segÃ¼ent registre
 								return true;
 							}
 						}
@@ -236,7 +236,7 @@ public class OfertaPuntsDAO {
 	
 				
 				/**
-				 * Funció d'utilitat per crear un objecte Oferta Punts a partir de la fila actual
+				 * Funcio d'utilitat per crear un objecte Oferta Punts a partir de la fila actual
 				 * d'un recordset 
 				 * @param rset El recordset d'on treurem el Oferta Punts
 				 * @return El Oferta Punts creat
@@ -247,10 +247,10 @@ public class OfertaPuntsDAO {
 				}
 				
 				/**
-				 * Funció d'utilitat per omplir un objecte Oferta Punts  amb els valors
+				 * Funcio d'utilitat per omplir un objecte Oferta Punts  amb els valors
 				 * de la fila actual d'un recordset
 				 * @param rset El recordset d'on treurem el Oferta Punts
-				 * @param r El Oferta Punts a omplir. Pot ser null i es crearà un Oferta PuntsRol nou
+				 * @param r El Oferta Punts a omplir. Pot ser null i es creara un Oferta PuntsRol nou
 				 * @return El Oferta Punts amb els camps recuperats
 				 * @throws SQLException El recordset d'on treurem el Oferta Punts
 				 */

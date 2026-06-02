@@ -62,7 +62,7 @@ public class CheckoutServlet extends PublicController {
 		// Agafem la comanda en curs de la sessio
 		Comanda com = PublicController.getComanda(request);
 
-// Aixo es per treure per pantalla informacio mentre no hi ha comandes a la BdD
+		// Aixo es per treure per pantalla informacio mentre no hi ha comandes a la BdDd
 		try { 
 			com.getLiniesComanda();
 		} catch(IllegalStateException e) {
@@ -71,7 +71,7 @@ public class CheckoutServlet extends PublicController {
 			Producte prod = new Producte(); // Creem un producte
 			prod.setId(1L); // Li posem un Id
 			prod.setNom("Wok complet"); // Li posem un nom
-			prod.setDescripcio("Especialitat de la casa"); // Afegim una descripci� al producte
+			prod.setDescripcio("Especialitat de la casa"); // Afegim una descripcio al producte
 			linCom.setProducte(prod); // Posem el producte a la linia de comanda			
 			linCom.setQuantitat(2); // Posem una quantitat d'unitats
 			linCom.setPreuVenda((float) 9.5); // Posem un preu de venda
@@ -81,16 +81,16 @@ public class CheckoutServlet extends PublicController {
 			Producte pr = new Producte(); // Creem un producte
 			pr.setId(2L); // Li posem un Id
 			pr.setNom("Coca Cola"); // Li posem un nom
-			pr.setDescripcio("Ampolla de 2 litres"); // Afegim una descripci� al producte
+			pr.setDescripcio("Ampolla de 2 litres"); // Afegim una descripcio al producte
 			linCom2.setProducte(pr); // Posem el producte a la linia de comanda			
 			linCom2.setQuantitat(1); // Posem una quantitat d'unitats
 			linCom2.setPreuVenda((float) 2.5); // Posem un preu de venda
 			com.addLiniaComanda(linCom); // Afegim la primera linia de comanda a la llista
 			com.addLiniaComanda(linCom2); // Afegim la segona linia de comanda a la llista
 		}
-// Fins aqu�. Aquesta part anterior s'haur� d'eliminar.
+		// Fins aqui. Aquesta part anterior s'haura d'eliminar.
 
-		// Recuperem la llista de l�nies de comanda corresponents a la comanda
+		// Recuperem la llista de linies de comanda corresponents a la comanda
 		// de la sessio
 //		try {
 //			// Fiquem al request el que volem que es pinti si han demanat
@@ -100,7 +100,7 @@ public class CheckoutServlet extends PublicController {
 //		}
 		
 		// Ja tenim 'comandaActual' a la sessio
-		// Pintem la p�gina
+		// Pintem la pagina
 		forward("checkout/checkout.jsp", request, response);
 		// request.getRequestDispatcher("exemples/checkout.jsp").forward(request,
 		// response);

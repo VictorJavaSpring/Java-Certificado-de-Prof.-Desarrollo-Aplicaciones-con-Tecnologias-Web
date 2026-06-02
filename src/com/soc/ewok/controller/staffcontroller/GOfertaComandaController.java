@@ -33,7 +33,7 @@ public class GOfertaComandaController extends SeccioController {
 	OfertaComandaDAO daoOfertaComanda = null;
 	
 	public GOfertaComandaController() {
-		// De moment creem un dao que anir� contra mem�ria,
+		// De moment creem un dao que anira contra memoria,
 		// en un futur hauriem d'agafar del web.xml
 		// la classe amb la que volem treballar i crear
 		// l'objecte a partir d'aquell nom
@@ -54,7 +54,7 @@ public class GOfertaComandaController extends SeccioController {
 			HttpServletResponse response)
 					throws ServletException, IOException {
 	
-		// M�tode principal per servir totes les peticions
+		// metode principal per servir totes les peticions
 		// relatives a ofertaComanda
 				
 			if(accio.equals(ACCIO_VEURE)){
@@ -86,8 +86,8 @@ public class GOfertaComandaController extends SeccioController {
 				// Obtenim l'id
 				Long nId = getId(request, response, "modificar");
 				
-				// Si no hem obtingut id, hem acabat, perqu� el getId,
-				// ja haur� redirigit cap al llistat
+				// Si no hem obtingut id, hem acabat, perque el getId,
+				// ja haura redirigit cap al llistat
 				if (nId == null) {
 					return;
 				}
@@ -148,12 +148,12 @@ public class GOfertaComandaController extends SeccioController {
 		OfertaComanda oc = extreureOfertaComanda(request, response, true);
 				
 		// Si no l'he obtingu no faig res
-		// (extreOfertaComanda ja haur� redirigit on calgui)
+		// (extreOfertaComanda ja haura redirigit on calgui)
 		if (oc == null) {
 			return;
 		}
 				
-		// Si tot ha anat b�
+		// Si tot ha anat be
 		// Donem d'alta la persona a traves del DAO
 		try {
 			daoOfertaComanda.modificar(oc);
@@ -173,12 +173,12 @@ public class GOfertaComandaController extends SeccioController {
 		// Intento obtenir la persona 
 		OfertaComanda oc = extreureOfertaComanda(request, response, false);
 		// Si no l'he obtingu no faig res
-		// (extrePersona ja haur� redirigit on calgui)
+		// (extrePersona ja haura redirigit on calgui)
 		if (oc == null) {
 			return;
 		}
 		
-		// Si tot ha anat b�
+		// Si tot ha anat be
 		// Donem d'alta la persona a traves del DAO
 		
 		try {
@@ -280,7 +280,7 @@ public class GOfertaComandaController extends SeccioController {
 		ofertaComanda.setIniciVigencia(dIniciVigencia);
 		ofertaComanda.setFiVigencia(dFiVigencia);
 		
-		// Si hi ha algun error de validaci�, retornem al formulari
+		// Si hi ha algun error de validacio, retornem al formulari
 		if (
 				(extreureId && nId == null) || 
 				nLimitInferior == null || 
@@ -288,7 +288,7 @@ public class GOfertaComandaController extends SeccioController {
 				dIniciVigencia == null || 
 				dFiVigencia == null
 			) {
-			// Si hi ha algun error i era una modificaci�
+			// Si hi ha algun error i era una modificacio
 			// (extreuId == true), llavor necessitem posar una persona
 			// com a flag
 			if (extreureId) {
@@ -327,7 +327,7 @@ public class GOfertaComandaController extends SeccioController {
 					".Possiblement ha estat esborrat amb anterioritat.",
 					request);
 			}
-		// Hagi anat b� o malament, pintem el llistat de productes
+		// Hagi anat be o malament, pintem el llistat de productes
 		doLlistatOfertaComanda(request, response);
 		}
 
@@ -340,7 +340,7 @@ public class GOfertaComandaController extends SeccioController {
 		if (nId == null) {
 			// Si no tinc Id, no he de fer res
 			return;
-		// compruebo que no se lanza excepci�n
+		// compruebo que no se lanza excepcion
 		} try {
 		// Obtenim les dades del DAO
 		oc = daoOfertaComanda.obtenirPerId(nId);	
@@ -373,13 +373,13 @@ public class GOfertaComandaController extends SeccioController {
 		
 		// Iniciamos la variable nId
 		Long nId = null;
-		// Comprobamos que no lanza excepci�n sql
+		// Comprobamos que no lanza excepcion sql
 		try {
 			nId = RequestValidationUtils.getMandatoryLong(
 					PARAM_ID, 
 					request);
 		} catch (ParameterException e) {
-		// Si hay errores, lazamos excepci�n
+		// Si hay errores, lazamos excepcion
 			EWokController.addMessage(ETipusMissatge.error, 
 					"No s'ha trobat el producte amb id" + nId, request);
 		}
@@ -389,7 +389,7 @@ public class GOfertaComandaController extends SeccioController {
 			doLlistatOfertaComanda(request, response);
 			return null;
 		}
-		// Si tot ha anat b�, retorno l'id
+		// Si tot ha anat be, retorno l'id
 		return nId;
 	}
 }

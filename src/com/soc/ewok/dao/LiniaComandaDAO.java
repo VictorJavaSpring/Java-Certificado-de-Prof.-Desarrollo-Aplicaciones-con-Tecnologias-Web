@@ -114,10 +114,10 @@ public class LiniaComandaDAO {
 	
 	
 	/**
-	 * Dóna d'alta un registre de la taula LiniaComanda de la BD
-	 * Actualitzarà l'id amb el valor generat pel gestor
-	 * @param l objecte LiniaComanda a donar d´alta
-	 * @throws SQLException es llençara en cas d´error de conexió a BD
+	 * d'na d'alta un registre de la taula LiniaComanda de la BD
+	 * Actualitzara l'id amb el valor generat pel gestor
+	 * @param l objecte LiniaComanda a donar d'alta
+	 * @throws SQLException es llenÃ§ara en cas d'error de conexio a BD
 	 */
 	public void alta(final LiniaComanda l) throws SQLException {
 		alta(l, null);
@@ -177,7 +177,7 @@ public class LiniaComandaDAO {
 	/**
 	 * Esborra un registre de la taula LiniaComanda de la BD
 	 * @param id Identificador del LiniaComanda a Esborrar
-	 * @throws SQLException es llençara en cas d´error de conexió a BD
+	 * @throws SQLException es llenÃ§ara en cas d'error de conexio a BD
 	 */
 	public void esborrar(final long id,final long id2) throws SQLException {
 		dw.executeSql(
@@ -196,9 +196,9 @@ public class LiniaComandaDAO {
 	
 	/** 
 	 * Modifica un registre de la taula LiniaComanda de la BD
-	 * @param l. objecte LiniaComanda a modificar. Usarà l'id
-	 * per buscar el registre i actualitzarà tots els seus camps
-	 * @throws SQLException Es llençara en cas d´error de conexió a BD
+	 * @param l. objecte LiniaComanda a modificar. usara l'id
+	 * per buscar el registre i actualitzara tots els seus camps
+	 * @throws SQLException Es llenÃ§ara en cas d'error de conexio a BD
 	 */
 	public void modificar(final LiniaComanda l) throws SQLException {
 		dw.executeSql(
@@ -223,10 +223,10 @@ public class LiniaComandaDAO {
 	
 	/**
 	 * Recupera un objecte LiniaComanda per id
-	 * @param id de l´objecte Linia Comanda a recuperar
+	 * @param id de l'objecte Linia Comanda a recuperar
 	 * @param id2 Numero de linia
-	 * @return l´objecte si es troba, o null si no existeix
-	 * @throws SQLException Es llençara en cas d´error de conexió a BD
+	 * @return l'objecte si es troba, o null si no existeix
+	 * @throws SQLException Es llenÃ§ara en cas d'error de conexio a BD
 	 */
 	public LiniaComanda obtenirPerId(final long id,final long id2) throws SQLException {
 		final LiniaComanda l = new LiniaComanda();
@@ -246,10 +246,10 @@ public class LiniaComandaDAO {
 				public boolean processRow(Connection con, PreparedStatement st,
 						ResultSet rset) throws SQLException {
 					// Obtinc el registre de la fila actual
-					// i el fico a l'objecte que retornaré
+					// i el fico a l'objecte que retornara
 					crearLiniaComanda(rset, l);
 					// Indico al DBWrapper que segueixi amb el 
-					// següent registre
+					// segÃ¼ent registre
 					return false;
 				}
 			}
@@ -259,8 +259,8 @@ public class LiniaComandaDAO {
 
 	/**
 	 * Recupera de base de dades tots els objectes LiniaComanda ordenats per LiniaComanda
-	 * @return La llista de LiniaComanda. Si no n'hi ha, retornarà una llista buida
-	 * @throws SQLException Es llençara en cas d´error de conexió a BD
+	 * @return La llista de LiniaComanda. Si no n'hi ha, retornara una llista buida
+	 * @throws SQLException Es llenÃ§ara en cas d'error de conexio a BD
 	 */
 	public List<LiniaComanda> obtenirTots() throws SQLException {
 		final List<LiniaComanda> ls = new Vector<LiniaComanda>();
@@ -274,7 +274,7 @@ public class LiniaComandaDAO {
 					// i el fico a la llista
 					ls.add(crearLiniaComanda(rset));
 					// Indico al DBWrapper que segueixi amb el 
-					// següent registre
+					// segÃ¼ent registre
 					return true;
 				}
 			}
@@ -283,30 +283,30 @@ public class LiniaComandaDAO {
 	}
 	
 	/**
-	 * Funció d'utilitat per crear un objecte LiniaComanda a partir de la fila actual
+	 * Funcio d'utilitat per crear un objecte LiniaComanda a partir de la fila actual
 	 * d'un recordset 
-	 * @param rset El recordset d'on treurem l´objecte LiniaComanda
-	 * @return l´objecte LiniaComanda creat
-	 * @throws SQLException es llençara en cas que es produeixi un error de conexió a BD
+	 * @param rset El recordset d'on treurem l'objecte LiniaComanda
+	 * @return l'objecte LiniaComanda creat
+	 * @throws SQLException es llenÃ§ara en cas que es produeixi un error de conexio a BD
 	 */
 	protected LiniaComanda crearLiniaComanda(ResultSet rset) throws SQLException {
 		return crearLiniaComanda(rset, null);
 	}
 	
 	/**
-	 * Funció d'utilitat per crear un objecte LiniaComanda a partir de la fila actual
+	 * Funcio d'utilitat per crear un objecte LiniaComanda a partir de la fila actual
 	 * d'un recordset 
-	 * @param rset El recordset d'on treurem l´objecte LiniaComanda
+	 * @param rset El recordset d'on treurem l'objecte LiniaComanda
 	 * @param l L'objecte LiniaComanda
-	 * @return l´objecte LiniaComanda creat
-	 * @throws SQLException es llençara en cas que es produeixi un error de conexió a BD
+	 * @return l'objecte LiniaComanda creat
+	 * @throws SQLException es llenÃ§ara en cas que es produeixi un error de conexio a BD
 	 */
 	protected LiniaComanda crearLiniaComanda(ResultSet rset, LiniaComanda l) throws SQLException{
-		// Si no em passen l´objecte LiniaComanda, el creo
+		// Si no em passen l'objecte LiniaComanda, el creo
 		if (l == null) {
 			l = new LiniaComanda();
 		}
-		// Omplo l´objecte LiniaComanda desde el recordset
+		// Omplo l'objecte LiniaComanda desde el recordset
 		l.setId(rset.getLong(ConstantsSQL.LINIACOMANDA_CAMP_ID));
 		l.setLinia(rset.getLong(ConstantsSQL.LINIACOMANDA_CAMP_NUMLINIA));
 		l.setIdProducte(rset.getLong(ConstantsSQL.LINIACOMANDA_CAMP_IDPRODUCTE));
@@ -358,7 +358,7 @@ public class LiniaComandaDAO {
 							// Afegeixo la Linia de comanda a la lista
 							ls.add(l);
 							// Indico al DBWrapper que segueixi amb el 
-							// següent registre
+							// segÃ¼ent registre
 							return true;
 						}
 					}
@@ -394,7 +394,7 @@ public class LiniaComandaDAO {
 					// Afegeixo la Linia de comanda a la lista
 					ls.add(l);
 					// Indico al DBWrapper que segueixi amb el 
-					// següent registre
+					// segÃ¼ent registre
 					return true;
 				}
 			}

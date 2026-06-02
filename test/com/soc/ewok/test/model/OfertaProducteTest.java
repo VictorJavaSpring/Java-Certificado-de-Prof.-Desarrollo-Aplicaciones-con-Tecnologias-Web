@@ -21,7 +21,7 @@ public class OfertaProducteTest {
 		ofp.setFiVigencia(datafinal);
 		ofp.setIdProducte((long) 1l);
 		ofp.setNom("Oferta nom");
-		ofp.setOtext("Oferta descripció");			
+		ofp.setOtext("Oferta descripcio");			
 		return ofp;
 	}
 	
@@ -34,7 +34,7 @@ public class OfertaProducteTest {
 		Assert.assertEquals(datafinal, ofp.getFiVigencia());
 		Assert.assertEquals((Long)1l, ofp.getIdProducte());
 		Assert.assertEquals("Oferta nom", ofp.getNom());
-		Assert.assertEquals("Oferta descripció", ofp.getOtext());
+		Assert.assertEquals("Oferta descripcio", ofp.getOtext());
 		ofp.setId(null);
 		Assert.assertNull(ofp.getId());
 		Assert.assertEquals((Long)1l, ofp.getIdProducte());

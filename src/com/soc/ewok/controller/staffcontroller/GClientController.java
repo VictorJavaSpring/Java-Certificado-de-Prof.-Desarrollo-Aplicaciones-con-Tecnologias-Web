@@ -17,13 +17,13 @@ import com.soc.utils.RequestValidationUtils;
 
 public class GClientController extends SeccioController {
 	
-	//Constants de la classe, nom de l'acci� del controller//
+	//Constants de la classe, nom de l'accio del controller//
 	private static final String ACCIO_CLIENT = "accioClients";
 	
 	//Constants de model//
 	private static final String MODEL_CLIENT = "client";
 		
-	//Constants de par�metres//
+	//Constants de parametres//
 	private static final String PARAM_NOM = "nom";
 	private static final String PARAM_COGNOMS = "cognom";
 	private static final String PARAM_TELEFON = "telefon";
@@ -65,7 +65,7 @@ public class GClientController extends SeccioController {
 			HttpServletResponse response)
 					throws ServletException, IOException {
 		
-		// M�tode principal per servir totes les peticions
+		// metode principal per servir totes les peticions
 		// relatives a ofertaComanda
 		
 		if(accio.equals(ACCIO_VEURE)){
@@ -97,7 +97,7 @@ public class GClientController extends SeccioController {
 			HttpServletResponse response)
 			throws ServletException, IOException {
 		
-		// redirigir a p�gina de llistat de clients amb
+		// redirigir a pagina de llistat de clients amb
 				//les dades de tots els clients
 				
 				// Obtenim les dades del DAO
@@ -126,7 +126,7 @@ public class GClientController extends SeccioController {
 
 				
 /**
- * Funci� d'utilitat per omplir un Client amb les dades del request
+ * Funcio d'utilitat per omplir un Client amb les dades del request
  * @param request
  * @param response
  * @param extreureId
@@ -189,12 +189,12 @@ public class GClientController extends SeccioController {
 				client.setIdUsuari(sIdUsuari);
 							
 				
-				// Si hi ha algun error de validaci�, retornem al formulari
+				// Si hi ha algun error de validacio, retornem al formulari
 				if (
 						(extreureId && nId == null) || 
 						sNom == null 
 					) {
-					// Si hi ha algun error i era una modificaci�
+					// Si hi ha algun error i era una modificacio
 					// (extreuId == true), llavor necessitem posar un client
 					// com a flag
 					if (extreureId) {
@@ -217,8 +217,8 @@ public class GClientController extends SeccioController {
 		// Obtenim l'id
 		Long nId = getId(request, response);
 		
-		// Si no hem obtingut id, hem acabat, perqu� el getId,
-		// ja haur� redirigit cap al llistat
+		// Si no hem obtingut id, hem acabat, perque el getId,
+		// ja haura redirigit cap al llistat
 		if (nId == null) {
 			return;
 		}
@@ -258,12 +258,12 @@ public class GClientController extends SeccioController {
 		Client c = extreureClient(request, response, true);
 		
 		// Si no l'he obtingu no faig res
-		// (extreureClient ja haur� redirigit on calgui)
+		// (extreureClient ja haura redirigit on calgui)
 		if (c == null) {
 			return;
 		}
 				
-		// Si tot ha anat b�
+		// Si tot ha anat be
 		// Donem d'alta la persona a traves del DAO
 		try {
 			daoclient.modificar(c);
@@ -345,7 +345,7 @@ public class GClientController extends SeccioController {
 							".Possiblement ha estat esborrat amb anterioritat.",
 							request);
 					}
-				// Hagi anat b� o malament, pintem el llistat de clients
+				// Hagi anat be o malament, pintem el llistat de clients
 				doLlistatClient(request, response);
 		
 	}
@@ -359,7 +359,7 @@ public class GClientController extends SeccioController {
 		if (nId == null) {
 			// Si no tinc Id, no he de fer res
 			return;
-		// compruebo que no se lanza excepci�n
+		// compruebo que no se lanza excepcion
 		} try {
 		// Obtenim les dades del DAO
 		c = daoclient.obtenirPerId(nId);	
@@ -391,13 +391,13 @@ public class GClientController extends SeccioController {
 			HttpServletResponse response)throws ServletException, IOException {
 		// Iniciamos la variable nId
 				Long nId = null;
-				// Comprobamos que no lanza excepci�n sql
+				// Comprobamos que no lanza excepcion sql
 				try {
 					nId = RequestValidationUtils.getMandatoryLong(
 							PARAM_ID, 
 							request);
 				} catch (ParameterException e) {
-				// Si hay errores, lazamos excepci�n
+				// Si hay errores, lazamos excepcion
 					EWokController.addMessage(ETipusMissatge.error, 
 							"No s'ha trobat el client amb id" + nId, request);
 				}
@@ -407,7 +407,7 @@ public class GClientController extends SeccioController {
 					doLlistatClient(request, response);
 					return null;
 				}
-				// Si tot ha anat b�, retorno l'id
+				// Si tot ha anat be, retorno l'id
 				return nId;
 	
 	}

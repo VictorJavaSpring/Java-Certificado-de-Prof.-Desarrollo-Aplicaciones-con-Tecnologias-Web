@@ -18,7 +18,7 @@ public class OfertaPuntsDAOTest extends AbstractDAOTest {
 	public void preparaBD() throws SQLException {
 		// Creem l'esquema a traves de la classe base
 		super.preparaBD();
-		// Executem l'script de c�rrega de dades de rol
+		// Executem l'script de carrega de dades de rol
 		executaScript("test/resources/scripts/OfertaPuntsData.sql"); 
 	}
 	
@@ -40,7 +40,7 @@ public class OfertaPuntsDAOTest extends AbstractDAOTest {
 		// Recupero la nova OfertaPunts
 		// (alta m'ha d'haver assignat el nou id)
 		OfertaPunts nou = dao.obtenirPerId(op.getId());
-		// Miro que els dos objectes s�n iguals
+		// Miro que els dos objectes sin iguals
 		Assert.assertEquals(op, nou);
 	}
 	
@@ -54,7 +54,7 @@ public class OfertaPuntsDAOTest extends AbstractDAOTest {
 		// la modifico
 		op.setEurosPerPunt(1.1F);
 			dao.modificar(op);
-		// La recupero i comprobo que est� modificada
+		// La recupero i comprobo que este modificada
 		OfertaPunts nou = dao.obtenirPerId(1l);
 		Assert.assertEquals(op, nou);
 	}
@@ -83,7 +83,7 @@ public class OfertaPuntsDAOTest extends AbstractDAOTest {
 		// Comprovem que hem rebut 3 Ofertes de  Punts
 		
 		Assert.assertEquals(3, tots.size());
-		// Comprovem que una a una s�n correctes
+		// Comprovem que una a una sin correctes
 				
 		Assert.assertEquals(tots.get(0).getId(), (Long)1l);
 		Assert.assertEquals(tots.get(0).getEurosPerPunt(), (float)1,1f);

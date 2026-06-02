@@ -177,7 +177,7 @@ public class GUnitatController extends SeccioController {
 			return;
 		}
 		
-		// Hagi anat b� o malament, redirigeixo cap al llistat d'unitats
+		// Hagi anat be o malament, redirigeixo cap al llistat d'unitats
 		doLlistatUnitat(request, response);
 		return;
 	}
@@ -200,12 +200,12 @@ public class GUnitatController extends SeccioController {
 		Unitat unitat = extreureUnitat(request, response, false);
 		
 		// Si no l'he obtingut no faig res
-		// (extreureUnitat ja haur� redirigit on calgui)
+		// (extreureUnitat ja haura redirigit on calgui)
 		if (unitat == null) {
 			return;
 		}		
 		
-		// Si tot ha anat b�
+		// Si tot ha anat be
 		// dono d'alta la unitat a traves del DAO
 		try {
 			daoUnitat.alta(unitat);
@@ -213,7 +213,7 @@ public class GUnitatController extends SeccioController {
 			// retorno un missatge informatiu
 			EWokController.addI18nMessage(ETipusMissatge.info, PARAM_INFO_ALTA, request);
 		} catch (SQLException e2) {
-			// Si s'ha produ�t un error "e2" (tipus SQLException),
+			// Si s'ha produït un error "e2" (tipus SQLException),
 			// el capturo, retorno un missatge d'error
 			EWokController.addI18nMessage(ETipusMissatge.error,	PARAM_ERROR_ALTA, request);
 			// i redirigeixo cap al llistat d'unitats
@@ -237,15 +237,15 @@ public class GUnitatController extends SeccioController {
 			nId = getId(request, response);
 		} catch (ParameterException e1) {
 			// Si es produeix un error "e1" (tipus ParameterException),
-			// capturo l'excepci�, retorno un missatge d'error
+			// capturo l'excepcio, retorno un missatge d'error
 			EWokController.addI18nMessage(ETipusMissatge.error, null, PARAM_ERROR_ID, 
 										  new String[]{nId.toString()}, request);
 			// i redirigeixo cap al llistat d'unitats
 			doLlistatUnitat(request, response);			
 			return;
 		}
-		// Si no he obtingut id, he acabat, perqu� el getId
-		// ja haur� redirigit cap al llistat
+		// Si no he obtingut id, he acabat, perque el getId
+		// ja haura redirigit cap al llistat
 		if (nId == null) {
 			return;
 		}
@@ -285,11 +285,11 @@ public class GUnitatController extends SeccioController {
 		// Intento obtenir la unitat
 		Unitat unitat = extreureUnitat(request, response, true);
 		// Si no l'he obtingut no faig res
-		// (extreureUnitat ja haur� redirigit on calgui)
+		// (extreureUnitat ja haura redirigit on calgui)
 		if (unitat == null) {
 			return;
 		}
-		// Si tot ha anat b�,
+		// Si tot ha anat be,
 		// dono d'alta la unitat a través del DAO
 		try {
 			daoUnitat.modificar(unitat);
@@ -298,7 +298,7 @@ public class GUnitatController extends SeccioController {
 			EWokController.addI18nMessage(ETipusMissatge.info, null, PARAM_INFO_MODIFICACIO, 
 					  new String[]{unitat.getId().toString()}, request);
 		} catch (SQLException e) {
-			// Si s'ha produ�t un error "e" (tipus SQLException),
+			// Si s'ha produït un error "e" (tipus SQLException),
 			// el capturo, retorno un missatge d'error
 			EWokController.addI18nMessage(ETipusMissatge.error,	null, PARAM_ERROR_SQL, 
 										  new String[]{unitat.getId().toString()}, request);

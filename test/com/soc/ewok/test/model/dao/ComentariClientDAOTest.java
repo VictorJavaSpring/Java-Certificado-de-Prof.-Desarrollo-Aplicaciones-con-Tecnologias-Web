@@ -16,7 +16,7 @@ public class ComentariClientDAOTest extends AbstractDAOTest{
 	public void preparaBD() throws SQLException {
 		// Creem l'esquema a traves de la classe base
 		super.preparaBD();
-		// Executem l'script de c�rrega de dades de rol
+		// Executem l'script de carrega de dades de rol
 		executaScript("test/resources/scripts/ComentariClientData.sql");
 	}
 
@@ -36,7 +36,7 @@ public class ComentariClientDAOTest extends AbstractDAOTest{
 		// Recupero de nou el comentari
 		// (alta m'ha d'haver assignat el nou id)
 		ComentariClient nou = dao.obtenirPerId(cc.getId());
-		// Miro que els dos objectes s�n iguals
+		// Miro que els dos objectes sin iguals
 		Assert.assertEquals(cc, nou);
 	}
 	
@@ -48,7 +48,7 @@ public class ComentariClientDAOTest extends AbstractDAOTest{
 		// El modifico
 		cc.setComentari("No deixa mai propina");
 		dao.modificar(cc);
-		// El recupero i comprobo que est� modificat
+		// El recupero i comprobo que este modificat
 		ComentariClient nou = dao.obtenirPerId(1l);
 		Assert.assertEquals(cc, nou);
 	}
@@ -74,7 +74,7 @@ public class ComentariClientDAOTest extends AbstractDAOTest{
 		List<ComentariClient> tots = dao.obtenirTots();
 		// Comprovem que hem rebut tres rols
 		Assert.assertEquals(3, tots.size());
-		// Comprovem que el un a un s�n correctes
+		// Comprovem que el un a un sin correctes
 		Assert.assertEquals(tots.get(0).getId(), (Long)1l);
 		Assert.assertEquals(tots.get(0).getIdClient(), 10);
 		Assert.assertEquals(tots.get(0).getComentari(), "Bon Client");

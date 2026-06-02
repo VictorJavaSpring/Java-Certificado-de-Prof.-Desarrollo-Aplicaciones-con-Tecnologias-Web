@@ -19,7 +19,7 @@ public class LiniaComandaDAOTest extends AbstractDAOTest {
 	public void preparaBD() throws SQLException {
 		// Creem l'esquema a traves de la classe base
 		super.preparaBD();
-		// Executem l'script de c�rrega de dades de rol
+		// Executem l'script de carrega de dades de rol
 		executaScript("test/resources/scripts/LiniaComandaData.sql"); 
 	}
 
@@ -42,7 +42,7 @@ public class LiniaComandaDAOTest extends AbstractDAOTest {
 		// Recupero de nou la Linia Comanda
 		// (alta m'ha d'haver assignat el nou id)
 		LiniaComanda nou = dao.obtenirPerId(l.getId(),l.getLinia());
-		// Miro que els dos objectes s�n iguals
+		// Miro que els dos objectes sin iguals
 		Assert.assertEquals(l, nou);
 	}
 	
@@ -58,7 +58,7 @@ public class LiniaComandaDAOTest extends AbstractDAOTest {
 		l.setPreuVenda(7.22f);
 		l.setEstat(EEstatLiniaComanda.enPreparacio);
 		dao.modificar(l);
-		// El recupero i comprobo que est� modificat
+		// El recupero i comprobo que este modificat
 		LiniaComanda nou = dao.obtenirPerId(100l,1000l);
 		Assert.assertEquals(l, nou);
 	}
@@ -84,7 +84,7 @@ public class LiniaComandaDAOTest extends AbstractDAOTest {
 		List<LiniaComanda> tots = dao.obtenirTots();
 		// Comprovem que hem rebut tres rols
 		Assert.assertEquals(3, tots.size());
-		// Comprovem que un a un s�n correctes
+		// Comprovem que un a un sin correctes
 		// objecte 1
 		Assert.assertEquals(tots.get(0).getId(), (Long)100l);
 		Assert.assertEquals(tots.get(0).getLinia(), (Long)1000l);

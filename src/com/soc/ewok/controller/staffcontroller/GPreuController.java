@@ -99,8 +99,8 @@ public class GPreuController extends SeccioController {
 			doLlistatPreu(request, response);			
 			return;
 		}
-		// Si no hem obtingut id, hem acabat, perqu� el getId,
-		// ja haur� redirigit cap al llistat
+		// Si no hem obtingut id, hem acabat, perque el getId,
+		// ja haura redirigit cap al llistat
 		if (nId == null) {
 			return;
 		}
@@ -137,7 +137,7 @@ public class GPreuController extends SeccioController {
 			// Intento obtenir el preu
 			Preu p = extreurePreu(request, response, true);
 			
-			// Si no l'he obtingut no fem res, extreurePreu ja haur� redirigit on calgui
+			// Si no l'he obtingut no fem res, extreurePreu ja haura redirigit on calgui
 			if (p == null) {
 				return;
 			}
@@ -176,12 +176,12 @@ public class GPreuController extends SeccioController {
 			Preu p = extreurePreu(request, response, false);
 			
 			// Si no l'he obtingu no faig res
-			// (extrePreu ja haur� redirigit on calgui)
+			// (extrePreu ja haura redirigit on calgui)
 			if (p == null) {
 				return;
 			}
 
-			// Si tot ha anat b�
+			// Si tot ha anat be
 			// Donem d'alta la Preu a traves del DAO
 			try {
 				preuDao.alta(p);
@@ -282,8 +282,8 @@ public class GPreuController extends SeccioController {
 		}
 		
 		// VALIDACIONS
-		// Les dades i hores d'inici i de fi vigencia no s�n obligatories per�
-		// si ens informen de la hora ens han d'informar tamb� del dia
+		// Les dades i hores d'inici i de fi vigencia no sin obligatories pero
+		// si ens informen de la hora ens han d'informar tambe del dia
 		
 		// Agafem la data d'inici vigencia del formulari per fer les validacions
 		Date dDataInici = null;
@@ -301,7 +301,7 @@ public class GPreuController extends SeccioController {
 			request.setAttribute(PARAM_ERROR_HORAINICI, true);
 		}
 		
-		// Si ens informen de la hora per� no de la data, pintem un error
+		// Si ens informen de la hora pero no de la data, pintem un error
 		if (dDataInici == null && dHoraInici != null) {
 			request.setAttribute(PARAM_ERROR_DATAINICI_NN, true);
 		}
@@ -324,18 +324,18 @@ public class GPreuController extends SeccioController {
 			request.setAttribute(PARAM_ERROR_HORAFINAL, true);
 		}
 		
-		// Si ens informen de la hora per� no de la data, pintem un error
+		// Si ens informen de la hora pero no de la data, pintem un error
 		if (dDataFinal == null && dHoraFinal != null) {
 			request.setAttribute(PARAM_ERROR_DATAFINAL_NN, true);
 		}
 		
-		// Si hi ha algun error de validaci�, retornem al formulari
+		// Si hi ha algun error de validacio, retornem al formulari
 		if ((extreureId && nId == null) || 
 				nPreu == null || 
 				nIdProducte == null || 
 				(dDataInici == null && dHoraInici != null) || 
 				(dDataFinal == null && dHoraFinal != null)) {
-			// Si hi ha algun error i era una modificaci� (extreuId == true),
+			// Si hi ha algun error i era una modificacio (extreuId == true),
 			// llavors necessitem posar un Preu com a flag
 			if (extreureId) {
 				request.setAttribute(MODEL_PREU, p);
@@ -353,7 +353,7 @@ public class GPreuController extends SeccioController {
 		try {
 			nId = getId(request, response);
 		} catch (ParameterException e1) {
-			// Si getId em llen�a un ParameterException retorno un missatge d'error
+			// Si getId em llença un ParameterException retorno un missatge d'error
 			// i redirigim al llistat de preus
 			EWokController.addI18nMessage(ETipusMissatge.error, ERROR_ESBORRAR, request);
 			doLlistatPreu(request, response);
@@ -442,7 +442,7 @@ public class GPreuController extends SeccioController {
 			doLlistatPreu(request, response);
 			return null;
 		}
-		// Si tot ha anat b�, retorno l'id
+		// Si tot ha anat be, retorno l'id
 		return nId;
 	}
 	

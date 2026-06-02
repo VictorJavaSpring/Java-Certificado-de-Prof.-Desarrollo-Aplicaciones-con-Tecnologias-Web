@@ -21,7 +21,7 @@ import com.soc.ewok.model.Usuari;
 /**
  * Servlet base de tots els servlets del projecte
  * Inclou funcionalitat standard per a tots els servlets
- * i funcions est�tiques per ser usades pels controladors 
+ * i funcions estetiques per ser usades pels controladors 
  * que no siguin servlets
  * @author Administrador
  *
@@ -38,12 +38,12 @@ public class EWokController extends HttpServlet {
 	public static final String GENERAL_BUNDLE = "com.soc.ewok.recursos.controlador.general";
 	static protected Map<String, ResourceBundle> mBundles = new Hashtable<String, ResourceBundle>();
 	
-	/** Connexi� a base de dades compartida per tots els daos */
+	/** Connexio a base de dades compartida per tots els daos */
 	static DataSource globalDatasource = null;
 
 	/**
-	 * Funci� per a fer forward d'una p�gina
-	 * @param path Adre�a de la p�gina a redirigir. Cal posar 
+	 * Funcio per a fer forward d'una pagina
+	 * @param path Adreça de la pagina a redirigir. Cal posar 
 	 * el path a partir de /WEB-INF/jsp
 	 * @param request El request usat pel forward
 	 * @param response El response usat pel forward
@@ -57,7 +57,7 @@ public class EWokController extends HttpServlet {
 	}
 
 	/**
-	 * Assigna el datasource a usar a tota la aplicaci�
+	 * Assigna el datasource a usar a tota la aplicacio
 	 * @param ds El datasource
 	 */
 	public static void setGlobalDatasource(DataSource ds) {
@@ -65,7 +65,7 @@ public class EWokController extends HttpServlet {
 	}
 	
 	/**
-	 * Retorna el datasuource a usar desde tota la aplicaci�
+	 * Retorna el datasuource a usar desde tota la aplicacio
 	 * @return El datasource a usar
 	 */
 	public static DataSource getGlobalDatasource() {
@@ -74,7 +74,7 @@ public class EWokController extends HttpServlet {
 	
 	/**
 	 * Afegeix un missatge a la llista de missatges
-	 * que es mostraran a la propera p�gina
+	 * que es mostraran a la propera pagina
 	 * @param tipus El tipus del missatge a mostrar
 	 * @param message El text del missatge 
 	 * @param request La request en curs
@@ -91,7 +91,7 @@ public class EWokController extends HttpServlet {
 
 	/**
 	 * Afegeix un missatge a la llista de missatges.
-	 * El missatge s'obt� un missatge internacionalitzat del bundle com.soc.ewok.recursos.controlador.general
+	 * El missatge s'obte un missatge internacionalitzat del bundle com.soc.ewok.recursos.controlador.general
 	 * @param tipus El tipus del missatge a mostrar
 	 * @param idMessage L'id del missatge dins el fitxer de bundle
 	 * @param request La request actual
@@ -102,13 +102,13 @@ public class EWokController extends HttpServlet {
 	
 	/**
 	 * Afegeix un missatge a la llista de missatges.
-	 * El missatge s'obt� un missatge internacionalitzat del indicat 
-	 * i amb la possibilitat d'afegir par�metres
+	 * El missatge s'obte un missatge internacionalitzat del indicat 
+	 * i amb la possibilitat d'afegir parametres
 	 * @param tipus El tipus del missatge a mostrar
 	 * @param bundle El bundle d'on s'ha d'obtenir el missatge. Si es passa null
-	 * s'usar� com.soc.ewok.recursos.controlador.general
+	 * s'usara com.soc.ewok.recursos.controlador.general
 	 * @param idMessage L'id del missatge dins el fitxer de bundle
-	 * @param params Els par�metres a aplicar. Pot ser null si no hi ha par�metres
+	 * @param params Els parametres a aplicar. Pot ser null si no hi ha parametres
 	 * @param request La request actual
 	 */
 	public static void addI18nMessage(ETipusMissatge tipus, String bundle, String idMessage, String []params, HttpServletRequest request) {
@@ -121,14 +121,14 @@ public class EWokController extends HttpServlet {
 		// Busquem el bundle
 		ResourceBundle bnd = mBundles.get(name);
 		try {
-			// Si no est� al mapa, l'obrim i l'afegim al mapa de bundles
+			// Si no este al mapa, l'obrim i l'afegim al mapa de bundles
 			if (bnd == null) {
 				bnd = ResourceBundle.getBundle(bundle, new Locale(idioma));
 				mBundles.put(getBundleName(bundle, idioma), bnd);
 			}
 			// Obtenim el missatge
 			message = bnd.getString(idMessage);
-			// Si ens passen par�metres els hem d'aplicar
+			// Si ens passen parametres els hem d'aplicar
 			if (params != null) {
 				MessageFormat msf = new MessageFormat(message);
 				message = msf.format(params);
@@ -146,8 +146,8 @@ public class EWokController extends HttpServlet {
 	}
 
 	/**
-	 * Funci� de soport per obtenir una llista de missatges
-	 * a partir del nom que tindr� al request. La llista es creada
+	 * Funcio de soport per obtenir una llista de missatges
+	 * a partir del nom que tindra al request. La llista es creada
 	 * si no existeix encara
 	 * @param name El nom de la llista a buscar
 	 * @param request La request actual
@@ -172,7 +172,7 @@ public class EWokController extends HttpServlet {
     }
 
     /**
-     * Obt� l'usuari actual o null si no hi ha cap usuari loguejat
+     * Obte l'usuari actual o null si no hi ha cap usuari loguejat
      * @param request La request actual
      * @return L'usuari actual o null si no hi ha cap usuari loguejat
      */

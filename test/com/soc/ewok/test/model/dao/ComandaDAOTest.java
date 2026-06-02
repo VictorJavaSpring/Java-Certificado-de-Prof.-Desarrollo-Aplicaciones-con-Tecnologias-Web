@@ -41,7 +41,7 @@ public class ComandaDAOTest extends AbstractDAOTest {
 		// Recupero de nou la comanda
 		// (alta m'ha d'haver assignat el nou id)
 		Comanda nou = dao.obtenirPerId(c.getId());
-		// Miro que els dos objectes són iguals
+		// Miro que els dos objectes sin iguals
 		Assert.assertEquals(c, nou);
 	}
 	
@@ -91,7 +91,7 @@ public class ComandaDAOTest extends AbstractDAOTest {
 		// Comprovem que hem rebut tres comandes
 		// obtenirTots fa servir SQL...(ordenades per IdClient)
 		Assert.assertEquals(3, tots.size());
-		// Comprovem que el un a un són correctes
+		// Comprovem que el un a un sin correctes
 		Assert.assertEquals(tots.get(0).getId(), (Long)1l);
 		Assert.assertEquals(tots.get(0).getIdClient(), (Long)1l);
 		Assert.assertEquals(tots.get(0).getComentaris(),"Timo de comentaris1");

@@ -6,7 +6,7 @@ import java.sql.ResultSet;
 import java.sql.SQLException;
 
 /**
- * Classe abstracta d'implementació buida de {@link IExecuteQueryProcess}
+ * Classe abstracta d'implementacio buida de {@link IExecuteQueryProcess}
  * @author Administrador
  *
  */

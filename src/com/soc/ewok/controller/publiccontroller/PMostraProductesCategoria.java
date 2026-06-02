@@ -36,7 +36,7 @@ public class PMostraProductesCategoria extends PublicController {
 	
 	protected void doGet(HttpServletRequest request,
 			HttpServletResponse response) throws ServletException, IOException {
-		//1.-obtenir el paràmetre codi (de categoria) del request
+		//1.-obtenir el parametre codi (de categoria) del request
 		String codi = null;
 		try {
 			codi = RequestValidationUtils.getMandatoryString(PARAM_CODI, request);
@@ -62,7 +62,7 @@ public class PMostraProductesCategoria extends PublicController {
 		//3.- posar les dades al request
 		request.setAttribute(MODEL_PRODUCTES_FILTRATS, lp);
 
-		//4.- redirigim a pàgina
+		//4.- redirigim a pagina
 		EWokController.forward("/mostraProdCateg/mostraProdCateg.jsp", request, response);
 	}
 }

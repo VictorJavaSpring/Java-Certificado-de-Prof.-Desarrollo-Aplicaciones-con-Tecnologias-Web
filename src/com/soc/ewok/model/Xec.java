@@ -3,9 +3,9 @@ package com.soc.ewok.model;
 import java.util.Date;
  
 /**
- * Classe que representa els xecs que t� cada client.
- * Cada registre es un xec i est� relacionat amb el client al qui pertany i 
- * a la comanda en que s'haur� gastat.
+ * Classe que representa els xecs que te cada client.
+ * Cada registre es un xec i este relacionat amb el client al qui pertany i 
+ * a la comanda en que s'haura gastat.
  * @author Sara
  */
 
@@ -33,21 +33,21 @@ public class Xec {
 	}
 	
 	/**
-	 * Retorna el n�mero de punts per cada xec.
-	 * @return N�mero de punts per cada xec. No pot ser null.
+	 * Retorna el numero de punts per cada xec.
+	 * @return numero de punts per cada xec. No pot ser null.
 	 */
 	public Short getNumPunts() {
 		return nNumPunts;
 	}
 	
 	/**
-	 * Assigna el n�mero de punts per cada xec, 
+	 * Assigna el numero de punts per cada xec, 
 	 * @param nNumPunts El num de punts a assignar a cada xec
-	 * @throws IllegalArgumentException En cas que el n�mero de punts sigui null
+	 * @throws IllegalArgumentException En cas que el numero de punts sigui null
 	 */
 	public void setNumPunts(Short nNumPunts) {
 		if (nNumPunts == null) {
-			throw new IllegalArgumentException("El n�mero de punts per cada xec ha d'estar informat");
+			throw new IllegalArgumentException("El numero de punts per cada xec ha d'estar informat");
 		}
 		this.nNumPunts = nNumPunts;
 	}

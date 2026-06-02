@@ -3,7 +3,7 @@ package com.soc.ewok.model;
 import javax.xml.bind.annotation.XmlRootElement;
 
 /**
- * Classe que exten Producte i hi afegeix var membre necessàries
+ * Classe que exten Producte i hi afegeix var membre necessiries
  * per a mostrar les dades dels Productes Compostos [Menu, Plat]
  * @author JordiM
  *

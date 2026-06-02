@@ -77,19 +77,19 @@ public class Usuari {
 			// si es null retornem fals i no fem res mes
 			return false;
 		}
-		//afegim el rol amb el m�tode add de la classe List i
+		//afegim el rol amb el metode add de la classe List i
 		//retornem el boolean resultat del metode.
 		return llistaRols.add(r);
 	}
 	
 	/**
-	 * Obt� la llista de rols de l'usuari
+	 * Obte la llista de rols de l'usuari
 	 * @return Un objecte List amb objectes Rol
 	 */
 	public List<Rol> getRols(){
-		//si l'objecte no t� llista de rols llen�ar excepci� illegalState
+		//si l'objecte no te llista de rols llençar excepcio illegalState
 		if (llistaRols == null){
-			throw new IllegalStateException("L'usuari "+ this.getMail() +" no t� Rols carregats");
+			throw new IllegalStateException("L'usuari "+ this.getMail() +" no te Rols carregats");
 		}
 		return llistaRols;
 	}

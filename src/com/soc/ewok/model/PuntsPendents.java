@@ -4,9 +4,9 @@ import java.util.Date;
  
 /**
  * Classe que representa els punts pendents dels usuaris.
- * Als usuaris se li assignar� uns punts per cada comanda (si gasta un m�nim).
+ * Als usuaris se li assignara uns punts per cada comanda (si gasta un minim).
  * Els punts del mateix usuari i que tinguin la mateixa data de caducitat
- * estar�n agrupats amb un mateix id. 
+ * estaran agrupats amb un mateix id. 
  * @author Sara
  */
 
@@ -33,22 +33,22 @@ public class PuntsPendents {
 	}
 	
 	/**
-	 * Retorna el n�mero de punts pendents (relacionats amb un mateix id).
-	 * @return N�mero de punts pendents. No pot ser null.
+	 * Retorna el numero de punts pendents (relacionats amb un mateix id).
+	 * @return numero de punts pendents. No pot ser null.
 	 */
 	public Short getNumPunts() {
 		return nNumPunts;
 	}
 	
 	/**
-	 * Assigna el n�mero de punts pendents, dela mateix client amb
+	 * Assigna el numero de punts pendents, dela mateix client amb
 	 * la mateixa data de caducitat (agrupats amb el mateix id).
 	 * @param nNumPunts El num de punts a assignar
-	 * @throws IllegalArgumentException En cas que el n�mero de punts sigui null
+	 * @throws IllegalArgumentException En cas que el numero de punts sigui null
 	 */
 	public void setNumPunts(Short nNumPunts) {
 		if (nNumPunts == null) {
-			throw new IllegalArgumentException("El n�mero de punts ha d'estar informat");
+			throw new IllegalArgumentException("El numero de punts ha d'estar informat");
 		}
 		this.nNumPunts = nNumPunts;
 	}

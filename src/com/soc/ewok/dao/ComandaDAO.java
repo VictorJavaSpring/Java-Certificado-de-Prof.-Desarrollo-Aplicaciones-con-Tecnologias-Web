@@ -115,7 +115,7 @@ public class ComandaDAO {
 	}
 
 	/**
-	 * Dóna d'alta un registre a base de dades.
+	 * d'na d'alta un registre a base de dades.
 	 * Actualitzara l'id amb el valor generat pel gestor
 	 * @param c Comanda a donar d'alta
 	 * @throws SQLException En cas que hi hagi un error de base de dades
@@ -180,7 +180,7 @@ public class ComandaDAO {
 	/** 
 	 * Modifica una comanda a base de dades
 	 * @param c La comanda a modificar. Usara l'id
-	 * 		per buscar el registre i actualitzarà tots els seus camps
+	 * 		per buscar el registre i actualitzara tots els seus camps
 	 * @throws SQLException En cas que es produeixi un error de base de dades
 	 */
 	public void modificar(final Comanda c) throws SQLException {
@@ -296,7 +296,7 @@ public class ComandaDAO {
 	
 	
 	/**
-	 * Obté una llista de les Comandes en curs amb estat validada o preparada
+	 * Obte una llista de les Comandes en curs amb estat validada o preparada
 	 * @return una llista de les Comandes en curs amb estat validada o preparada
 	 * @throws SQLException
 	 */
@@ -321,7 +321,7 @@ public class ComandaDAO {
 				// i el fico a la llista
 				lesComandesEnCursValidPrepa.add(crearComanda(rset));
 				// Indico al DBWrapper que segueixi amb el 
-				// següent registre
+				// segÃ¼ent registre
 				return true;
 			}
 		}
@@ -330,7 +330,7 @@ public class ComandaDAO {
 	}
 	
 	/**
-	 * Obté una llista de les Comandes en curs amb estat Preparada
+	 * Obte una llista de les Comandes en curs amb estat Preparada
 	 * @return una llista de les Comandes en curs amb estat Preparada
 	 * @throws SQLException
 	 */
@@ -355,7 +355,7 @@ public class ComandaDAO {
 				// i el fico a la llista
 				lesComandesEnCursPreparada.add(crearComanda(rset));
 				// Indico al DBWrapper que segueixi amb el 
-				// següent registre
+				// segÃ¼ent registre
 				return true;
 			}
 		}
@@ -366,7 +366,7 @@ public class ComandaDAO {
 	
 	/**
 	 * Recupera de base de dades totes les comandes ordenades per IdClient
-	 * @return La llista de comandes. Si no n'hi ha, retornarà una llista buida
+	 * @return La llista de comandes. Si no n'hi ha, retornara una llista buida
 	 * @throws SQLException En cas que es produeixi un error de base de dades
 	 */
 	public List<Comanda> obtenirTots() throws SQLException {
@@ -390,7 +390,7 @@ public class ComandaDAO {
 	}
 
 	/**
-	 * Funció d'utilitat per crear un objecte Comanda a partir de la fila actual
+	 * Funcio d'utilitat per crear un objecte Comanda a partir de la fila actual
 	 * d'un recordset 
 	 * @param rset El recordset d'on treurem la Comanda
 	 * @return La Comanda creada
@@ -401,10 +401,10 @@ public class ComandaDAO {
 	}
 
 	/**
-	 * Funció d'utilitat per omplir un objecte Comanda amb els valors
+	 * Funcio d'utilitat per omplir un objecte Comanda amb els valors
 	 * de la fila actual d'un recordset
 	 * @param rset El recordset d'on treurem la Comanda
-	 * @param c La Comanda a omplir. Pot ser null i es crearà una Comanda nova
+	 * @param c La Comanda a omplir. Pot ser null i es creara una Comanda nova
 	 * @return La Comanda amb els camps recuperats
 	 * @throws SQLException El recordset d'on treurem la Comanda
 	 */

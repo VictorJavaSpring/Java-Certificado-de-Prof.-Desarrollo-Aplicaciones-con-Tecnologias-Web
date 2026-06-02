@@ -1,8 +1,8 @@
 package com.soc.ewok.model;
 
 /**
- * clase que representa una adreça.
- * Els usuaris podran tenir diversas adreças.
+ * clase que representa una AdreÃ§a.
+ * Els usuaris podran tenir diversas AdreÃ§as.
  * @author Jose
  *
  */
@@ -18,9 +18,9 @@ public class Adreca {
 	private String sAlias;
 	
 	/**
-	 * Retorna l'id de l'adreça.
-	 * @return L'id de l'adreça. Si el rol no s'ha grabat a base de dades,
-	 * retornarà null. 
+	 * Retorna l'id de l'AdreÃ§a.
+	 * @return L'id de l'AdreÃ§a. Si el rol no s'ha grabat a base de dades,
+	 * retornara null. 
 	 */
 	public Long getId() {
 		return nId;
@@ -35,17 +35,17 @@ public class Adreca {
 	}
 	
 	/**
-	 * Retorna la primera linia de l'adreça.
-	 * @return la primera linia de l'adreça. Si l'adreça no s'ha grabat a base de dades,
-	 * retornarà null. 
+	 * Retorna la primera linia de l'AdreÃ§a.
+	 * @return la primera linia de l'AdreÃ§a. Si l'AdreÃ§a no s'ha grabat a base de dades,
+	 * retornara null. 
 	 */
 	public String getLinia1() {
 		return sLinia1;
 	}
 	
 	/**
-	 * Assigna la primera linia de l'adreça.
-	 * @param linia1 La primera linia de l'adreça a assignar.
+	 * Assigna la primera linia de l'AdreÃ§a.
+	 * @param linia1 La primera linia de l'AdreÃ§a a assignar.
 	 */
 	
 	public void setLinia1(String linia1) {
@@ -56,9 +56,9 @@ public class Adreca {
 	}
 	
 	/**
-	 * Retorna la segona linia de l'adreça.
-	 * @return la segona linia de l'adreça. Si l'adreça no s'ha grabat a base de dades,
-	 * retornarà null. 
+	 * Retorna la segona linia de l'AdreÃ§a.
+	 * @return la segona linia de l'AdreÃ§a. Si l'AdreÃ§a no s'ha grabat a base de dades,
+	 * retornara null. 
 	 */
 	
 	public String getLinia2() {
@@ -66,8 +66,8 @@ public class Adreca {
 	}
 	
 	/**
-	 * Assigna la segona linia de l'adreça.
-	 * @param linia2 La segona linia de l'adreça a assignar.
+	 * Assigna la segona linia de l'AdreÃ§a.
+	 * @param linia2 La segona linia de l'AdreÃ§a a assignar.
 	 */
 	public void setLinia2(String linia2) {
 		sLinia2 = linia2;
@@ -76,15 +76,15 @@ public class Adreca {
 	/**
 	 * Retorna el codi postal de l'adreca.
 	 * @return el codi postal de l'adreca. Si el codi postal no s'ha grabat a base de dades,
-	 * retornarà null. 
+	 * retornara null. 
 	 */
 	public String getCp() {
 		return sCp;
 	}
 	
 	/**
-	 * Assigna el codi postal de l'adreça.
-	 * @param cp el codi postal de l'adreça a assignar.
+	 * Assigna el codi postal de l'AdreÃ§a.
+	 * @param cp el codi postal de l'AdreÃ§a a assignar.
 	 */
 	public void setCp(String cp) {
 		if (cp == null || cp.trim().length()!= 5) {
@@ -96,7 +96,7 @@ public class Adreca {
 	/**
 	 * Retorna el nom de la ciutat.
 	 * @return el nom de la ciutat. Si el nom de la ciutat no s'ha grabat a base de dades,
-	 * retornarà null. 
+	 * retornara null. 
 	 */
 	public String getCiutat() {
 		return sCiutat;
@@ -116,7 +116,7 @@ public class Adreca {
 	/**
 	 * Retorna les notes de l'adreca.
 	 * @return les notes de l'adreca. Si les notes de l'adreca no s'han grabat a base de dades,
-	 * retornarà null. 
+	 * retornara null. 
 	 */
 	public String getNotes() {
 		return sNotes;
@@ -133,7 +133,7 @@ public class Adreca {
 	/**
 	 * Retorna el telefon de l'adreca.
 	 * @return el telefon de l'adreca. Si el telefon de l'adreca no s'ha grabat a base de dades,
-	 * retornarà null. 
+	 * retornara null. 
 	 */
 	public String getTelefon() {
 		return nTelefon;
@@ -153,7 +153,7 @@ public class Adreca {
 	/**
 	 * Retorna l'id del client de l'adreca.
 	 * @return l'id del client de l'adreca. Si el rol no s'ha grabat a base de dades,
-	 * retornarà null. 
+	 * retornara null. 
 	 */
 	public Long getIdClient() {
 		return nIdClient;
@@ -170,7 +170,7 @@ public class Adreca {
 	/**
 	 * Retorna l'alias de l'adreca.
 	 * @return l'alias de l'adreca. Si l'alias no s'ha grabat a base de dades,
-	 * retornarà null. 
+	 * retornara null. 
 	 */
 	public String getAlias() {
 		return sAlias;

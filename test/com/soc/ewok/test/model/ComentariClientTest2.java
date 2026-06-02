@@ -46,7 +46,7 @@ public void comprovaGettersSetters(){
 	ComentariClient cc = new ComentariClient();
 	
 	/**
-	 * Comprova equivalència
+	 * Comprova equival'ncia
 	 */
 		Assert.assertEquals((Long)1l, cc.getId());
 		Assert.assertEquals(2, cc.getIdClient());

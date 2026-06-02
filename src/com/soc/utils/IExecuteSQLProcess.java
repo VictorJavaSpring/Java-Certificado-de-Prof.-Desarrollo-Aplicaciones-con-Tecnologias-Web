@@ -13,8 +13,8 @@ import java.sql.SQLException;
  */
 public interface IExecuteSQLProcess {
 	/**
-	 * M�tode callback per a fer el preproces
-	 * @param con Connexi� usada per executar la query
+	 * metode callback per a fer el preproces
+	 * @param con Connexio usada per executar la query
 	 * @param st Statement usat per executar la query
 	 * @throws SQLException En cas que hi hagi algun problema amb la base de dades
 	 */
@@ -23,8 +23,8 @@ public interface IExecuteSQLProcess {
 		PreparedStatement st) throws SQLException;
 	
 	/**
-	 * M�tode callback per a fer el postproces
-	 * @param con Connexi� usada per executar la query
+	 * metode callback per a fer el postproces
+	 * @param con Connexio usada per executar la query
 	 * @param st Statement usat per executar la query
 	 * @throws SQLException En cas que hi hagi algun problema amb la base de dades
 	 */

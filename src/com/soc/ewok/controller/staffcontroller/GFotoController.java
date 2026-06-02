@@ -43,7 +43,7 @@ public class GFotoController extends SeccioController {
 	ProducteDAO prDao = null;
 	
 	public GFotoController() {
-		// Inicialitzaci� del dao de productes
+		// Inicialitzacio del dao de productes
 		prDao = new ProducteDAO(EWokController.getGlobalDatasource());
 	}
 	
@@ -243,7 +243,7 @@ public class GFotoController extends SeccioController {
 	}
 	
 	private String getNomFitxer(String idProd, String name) {
-		// TODO: Si no t� extensi� o si hi ha punts al nom, no funcionar� b�
+		// TODO: Si no te extensio o si hi ha punts al nom, no funcionara be
 		return "p-" + idProd.trim() + "-p" + name.substring(name.indexOf("."));
 	}
 

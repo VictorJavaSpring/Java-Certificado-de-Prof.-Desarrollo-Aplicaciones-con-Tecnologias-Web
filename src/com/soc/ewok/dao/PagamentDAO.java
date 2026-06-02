@@ -71,8 +71,8 @@ public class PagamentDAO {
 	}
 
 	/**
-	 * Dóna d'alta un registre a base de dades.
-	 * Actualitzarà l'id amb el valor generat pel gestor
+	 * d'na d'alta un registre a base de dades.
+	 * Actualitzara l'id amb el valor generat pel gestor
 	 * @param r Pagament a donar d'alta
 	 * @throws SQLException En cas que hi hagi un error de base de dades
 	 */
@@ -128,8 +128,8 @@ public class PagamentDAO {
 
 	/** 
 	 * Modifica un Pagament a base de dades
-	 * @param p El Pagament a modificarà. Usarà l'id
-	 * per buscar el registre i actualitzarà tots els seus camps
+	 * @param p El Pagament a modificara. usara l'id
+	 * per buscar el registre i actualitzara tots els seus camps
 	 * @throws SQLException En cas que es produeixi un error de base de dades
 	 */
 	public void modificar(final Pagament p) throws SQLException {
@@ -173,10 +173,10 @@ public class PagamentDAO {
 				public boolean processRow(Connection con, PreparedStatement st,
 						ResultSet rset) throws SQLException {
 					// Obtinc el registre de la fila actual
-					// i el fico a l'objecte que retornaré
+					// i el fico a l'objecte que retornara
 					crearPagament(rset, elPagament);
 					// Indico al DBWrapper que segueixi amb el 
-					// següent registre
+					// segÃ¼ent registre
 					return false;
 				}
 			}
@@ -186,7 +186,7 @@ public class PagamentDAO {
 
 	/**
 	 * Recupera de base de dades tots els Pagament ordenats per data
-	 * @return La llista de Pagament. Si no n'hi ha, retornarà una llista buida
+	 * @return La llista de Pagament. Si no n'hi ha, retornara una llista buida
 	 * @throws SQLException En cas que es produeixi un error de base de dades
 	 */
 	public List<Pagament> obtenirTots() throws SQLException {
@@ -201,7 +201,7 @@ public class PagamentDAO {
 					// i el fico a la llista
 					elsPagament.add(crearPagament(rset));
 					// Indico al DBWrapper que segueixi amb el 
-					// següent registre
+					// segÃ¼ent registre
 					return true;
 				}
 			}
@@ -210,7 +210,7 @@ public class PagamentDAO {
 	}
 
 	/**
-	 * Funció d'utilitat per crear un objecte Pagament a partir de la fila actual
+	 * Funcio d'utilitat per crear un objecte Pagament a partir de la fila actual
 	 * d'un recordset 
 	 * @param rset El recordset d'on treurem el Pagament
 	 * @return El Pagament creat
@@ -221,10 +221,10 @@ public class PagamentDAO {
 	}
 
 	/**
-	 * Funció d'utilitat per omplir un objecte Pagament amb els valors
+	 * Funcio d'utilitat per omplir un objecte Pagament amb els valors
 	 * de la fila actual d'un recordset
 	 * @param rset El recordset d'on treurem el Pagament
-	 * @param r El Pagament a omplir. Pot ser null i es crearà un Pagament nou
+	 * @param r El Pagament a omplir. Pot ser null i es creara un Pagament nou
 	 * @return El Pagament amb els camps recuperats
 	 * @throws SQLException El recordset d'on treurem el Pagament
 	 */

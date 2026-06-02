@@ -16,7 +16,7 @@ public class FormaPagamentDAOTest extends AbstractDAOTest{
 	public void preparaBD() throws SQLException {
 		// Creem l'esquema a traves de la classe base
 		super.preparaBD();
-		// Executem l'script de c�rrega de dades de rol
+		// Executem l'script de carrega de dades de rol
 		executaScript("test/resources/scripts/FormaPagamentData.sql"); 
 	}
 	
@@ -32,7 +32,7 @@ public class FormaPagamentDAOTest extends AbstractDAOTest{
 		// Recupero de nou la forma de pagament
 		// (alta m'ha d'haver assignat el nou id)
 		FormaPagament nova = dao.obtenirPerId(fp.getnId());
-		// Miro que els dos objectes s�n iguals
+		// Miro que els dos objectes sin iguals
 		Assert.assertEquals(fp, nova);
 	}
 	
@@ -44,7 +44,7 @@ public class FormaPagamentDAOTest extends AbstractDAOTest{
 		// El modifico
 		fp.setsNom("Un altre forma de pagament");
 		dao.modificar(fp);
-		// El recupero i comprobo que est� modificat
+		// El recupero i comprobo que este modificat
 		FormaPagament nova = dao.obtenirPerId(1l);
 		Assert.assertEquals(fp, nova);
 	}
@@ -70,7 +70,7 @@ public class FormaPagamentDAOTest extends AbstractDAOTest{
 		List<FormaPagament> tots = dao.obtenirTots();
 		// Comprovem que hem rebut tres rols
 		Assert.assertEquals(3, tots.size());
-		// Comprovem que el un a un s�n correctes
+		// Comprovem que el un a un sin correctes
 		Assert.assertEquals(tots.get(0).getnId(), (Long)1l);
 		Assert.assertEquals(tots.get(0).getsNom(), "Efectiu");
 		Assert.assertEquals(tots.get(1).getnId(), (Long)2l);

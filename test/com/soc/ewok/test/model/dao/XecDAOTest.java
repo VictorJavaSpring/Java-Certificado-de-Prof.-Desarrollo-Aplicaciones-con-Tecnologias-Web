@@ -16,8 +16,8 @@ public class XecDAOTest extends AbstractDAOTest {
 	public void preparaBD() throws SQLException {
 		// Creem l'esquema a traves de la classe base
 		super.preparaBD();
-		// Executem l'script de c�rrega de dades de xec
-		// (En aquest cas tamb� crea la taula associada)
+		// Executem l'script de carrega de dades de xec
+		// (En aquest cas tambe crea la taula associada)
 		executaScript("test/resources/scripts/Xec.sql"); 
 	}
 
@@ -50,10 +50,10 @@ public class XecDAOTest extends AbstractDAOTest {
 					xNou.getDataCaducitat().getMonth() ,
 					xNou.getDataCaducitat().getDay()) 
 				);
-		// Un cop veiem que s�n iguals, la copiem del vell al
+		// Un cop veiem que sin iguals, la copiem del vell al
 		// nou per no tenir problemes amb l'equals
 		xNou.setDataCaducitat(x.getDataCaducitat());
-		// Miro que els dos objectes s�n iguals
+		// Miro que els dos objectes sin iguals
 		Assert.assertEquals(x, xNou);
 	}
 	
@@ -65,7 +65,7 @@ public class XecDAOTest extends AbstractDAOTest {
 		// El modifico
 		x.setNumPunts((short)5);
 		dao.modificar(x);
-		// El recupero i comprobo que est� modificat
+		// El recupero i comprobo que este modificat
 		Xec xNou = dao.obtenirPerId(1l);
 		Assert.assertEquals(x, xNou);
 	}
@@ -91,7 +91,7 @@ public class XecDAOTest extends AbstractDAOTest {
 		List<Xec> tots = dao.obtenirTots();
 		// Comprovem que hem rebut tres xec
 		Assert.assertEquals(3, tots.size());
-		// Comprovem un a un que s�n correctos
+		// Comprovem un a un que sin correctos
 		Assert.assertEquals(tots.get(0).getId(), (Long)1l);
 		Assert.assertEquals((short)tots.get(0).getNumPunts(), (short)4);
 		Assert.assertTrue(sonIguals(tots.get(0).getDataCaducitat(), 2015, 5, 1, 0, 0, 0));

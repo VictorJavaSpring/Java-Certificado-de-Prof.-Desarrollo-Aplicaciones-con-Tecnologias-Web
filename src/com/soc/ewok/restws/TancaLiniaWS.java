@@ -40,7 +40,7 @@ public class TancaLiniaWS {
 	 * WS per modificar una linia de comanda (afegir o treure productes) de la Comanda Actual
 	 * @param idProducte La id del producte que es vol afegir o eliminar de la linia de comanda
 	 * @param quantitat La quantitat del producte que es vol afegir o eliminar de la linia de comanda
-	 * @return Si tot ha anat b�, retornar� la comanda actualitzada  
+	 * @return Si tot ha anat be, retornara la comanda actualitzada  
 	 */
 	@GET
 	@Path("/modificaLinia/id/{idProducte}/qu/{quantitat}")
@@ -51,7 +51,7 @@ public class TancaLiniaWS {
 	// Agafem la comandaActual, comanda en curs de la sessio
 		Comanda com = PublicController.getComanda(request);
 	
-	// Recuperem la linia que es vol actualitzar (si no existeix, el m�tode la crear�) i fem les modificacions
+	// Recuperem la linia que es vol actualitzar (si no existeix, el metode la creara) i fem les modificacions
 		com.afegirOEliminarProducte(id, qu);		
 		
 	// Retornem la comanda actualitzada un cop hem fet les modificacions a la linia de comanda

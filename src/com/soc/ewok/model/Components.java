@@ -14,7 +14,7 @@ public class Components {
 	/**
 	 * Retorna l'id de producte.
 	 * @return l'id de producte. Si el producte no s'ha grabat a base de dades,
-	 * retornarà null. 
+	 * retornara null. 
 	 */
 	public Long getIdProducte() {
 		return nIdProducte;

@@ -91,7 +91,7 @@ public class VCuinerws {
 			}
 		}
 		// Si estem canviant la linia de comanda a entregat, carregem la llista de linies de comanda de la comanda
-		// i mirem si TOTES les linies de comanda estan en estat entregat, i si ho est�n, canviem l'estat de la comanda a entregada 
+		// i mirem si TOTES les linies de comanda estan en estat entregat, i si ho esten, canviem l'estat de la comanda a entregada 
 		
 		//		EEstatComanda estatComanda = com.getEstat();
 		

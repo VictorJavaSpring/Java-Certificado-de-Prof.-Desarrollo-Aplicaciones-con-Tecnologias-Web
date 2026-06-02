@@ -54,13 +54,13 @@ public class GFormaPagamentController extends SeccioController{
 	}
 	
 	/**
-	 * funcio que rep l´accio del Servlet StaffController i la processa
+	 * funcio que rep l'accio del Servlet StaffController i la processa
 	 */
 	@Override
 	public void doGet(String accio, HttpServletRequest request,
 			HttpServletResponse response) throws ServletException, IOException {
 							
-			// Mètode principal per servir totes les peticions
+			// metode principal per servir totes les peticions
 				// relatives a Forma Pagament
 				if (accio.equals(ACCIO_VEURE)) {
 					doVeureFP(request, response);
@@ -92,7 +92,7 @@ public class GFormaPagamentController extends SeccioController{
 					return;
 				}
 				
-				// si no hi ha accio o l´accio no es cap de les anteriors enviem a llistat de Formes Pagament
+				// si no hi ha accio o l'accio no es cap de les anteriors enviem a llistat de Formes Pagament
 				doLlistatFP(request,response);
 				
 			}
@@ -107,7 +107,7 @@ public class GFormaPagamentController extends SeccioController{
 	private void doVeureFP(HttpServletRequest request,
 			HttpServletResponse response) throws ServletException, IOException {
 		
-		// obtenim l´objecte Forma Pagament a mostrar
+		// obtenim l'objecte Forma Pagament a mostrar
 		FormaPagament fp = null;
 		
 		try {
@@ -116,11 +116,11 @@ public class GFormaPagamentController extends SeccioController{
 			request.setAttribute(REQ_FORMAPAGAMENT, fp);
 			
 		} catch (ParameterException e) {
-			// pintem l´error
+			// pintem l'error
 			EWokController.addI18nMessage(ETipusMissatge.error, "com.soc.ewok.recursos.jsp.formapagament.FPErrors",
 					"fp002.error", null, request);
 		} catch (SQLException e) {
-			//pintem l´error
+			//pintem l'error
 			EWokController.addI18nMessage(ETipusMissatge.info, "com.soc.ewok.recursos.jsp.formapagament.FPErrors",
 			"fp002.error", null, request);
 		}
@@ -150,7 +150,7 @@ public class GFormaPagamentController extends SeccioController{
 			request.setAttribute(REQ_FORMAPAGAMENTLLISTAT,llistafp );
 			
 		} catch (SQLException e) {
-			// pintem l´error
+			// pintem l'error
 			EWokController.addI18nMessage(ETipusMissatge.error, "com.soc.ewok.recursos.jsp.formapagament.FPErrors",
 					"fp003.error", null, request);
 		}
@@ -173,11 +173,11 @@ public class GFormaPagamentController extends SeccioController{
 		Long nId = null;
 		String[] sArray = null;
 		
-		// obtenim l´id de la Forma Pagament a esborrar del formulari
+		// obtenim l'id de la Forma Pagament a esborrar del formulari
 		try {
 			nId = doObtenirId(request,response);
 		} catch (ParameterException e1) {
-			// pintem l´error
+			// pintem l'error
 			sArray[0] = nId.toString(); 
 			EWokController.addI18nMessage(ETipusMissatge.info, "com.soc.ewok.recursos.jsp.formapagament.FPErrors",
 			"fp004.error", sArray, request);	
@@ -186,7 +186,7 @@ public class GFormaPagamentController extends SeccioController{
 		try {
 			dao.esborrar(nId);
 			} catch (SQLException e) {
-			//pintem l´error
+			//pintem l'error
 			sArray[0] = nId.toString(); 
 			EWokController.addI18nMessage(ETipusMissatge.info, "com.soc.ewok.recursos.jsp.formapagament.FPErrors",
 			"fp004.error", sArray, request);	
@@ -197,7 +197,7 @@ public class GFormaPagamentController extends SeccioController{
 	}
 	
 	/**
-	 * funcio per agafar l´objecte de la web i buscar a la BD quin es per modificarlo
+	 * funcio per agafar l'objecte de la web i buscar a la BD quin es per modificarlo
 	 * @param request
 	 * @param response
 	 * @throws ServletException
@@ -211,11 +211,11 @@ public class GFormaPagamentController extends SeccioController{
 		try {
 			fp = doObtenirPerId(request,response);
 		} catch (ParameterException e) {
-			// pintem l´error
+			// pintem l'error
 			EWokController.addI18nMessage(ETipusMissatge.error, "com.soc.ewok.recursos.jsp.formapagament.FPErrors",
 			"fp002.error", null, request);
 		} catch (SQLException e) {
-			// pintem l´error
+			// pintem l'error
 			EWokController.addI18nMessage(ETipusMissatge.error, "com.soc.ewok.recursos.jsp.formapagament.FPErrors",
 			"fp002.error", null, request);
 		}
@@ -230,7 +230,7 @@ public class GFormaPagamentController extends SeccioController{
 	}
 	
 	/**
-	 * funcio que dona d´alta un nou registre Forma Pagament a la BD
+	 * funcio que dona d'alta un nou registre Forma Pagament a la BD
 	 * @param request
 	 * @param response
 	 * @throws ParameterException
@@ -254,7 +254,7 @@ public class GFormaPagamentController extends SeccioController{
 								PARAM_ID, 
 								request);
 					} catch (ParameterException e) {
-						// pintem l´error
+						// pintem l'error
 						EWokController.addI18nMessage(ETipusMissatge.error, "com.soc.ewok.recursos.jsp.formapagament.FPErrors",
 						"fp005.error", null, request);
 						// redirigir a la pagina i return
@@ -268,7 +268,7 @@ public class GFormaPagamentController extends SeccioController{
 							PARAM_NOM, 
 							request);
 				} catch (ParameterException e1) {
-					// pintem l´error
+					// pintem l'error
 					request.setAttribute(REQ_ERRORNOM,"error");
 					// tornem a executar la funcio o carreguem la pagina segons toqui i return
 					if (MODIF_REGISTRE.equals(accio)) {
@@ -280,7 +280,7 @@ public class GFormaPagamentController extends SeccioController{
 					}
 								
 								
-				// assignem els nous valors a l´objecte Forma de Pagament
+				// assignem els nous valors a l'objecte Forma de Pagament
 				fp.setnId(nId);
 				fp.setsNom(sNom);
 				
@@ -291,7 +291,7 @@ public class GFormaPagamentController extends SeccioController{
 					try {
 						dao.alta(fp);
 					} catch (SQLException e) {
-						// pintem l´error
+						// pintem l'error
 						EWokController.addI18nMessage(ETipusMissatge.error, "com.soc.ewok.recursos.jsp.formapagament.FPErrors",
 						"fp007.error", null, request);
 						
@@ -303,7 +303,7 @@ public class GFormaPagamentController extends SeccioController{
 					try {
 						dao.modificar(fp);
 						} catch (SQLException e) {
-							// pintem l´error
+							// pintem l'error
 							String sId = (fp.getnId()).toString();
 							sArray[0]= sId;
 							
@@ -339,7 +339,7 @@ public class GFormaPagamentController extends SeccioController{
 	
 		
 	/**
-	 * funcio que retorna l´objecte Forma Pagament a modificar/posar a la pagina 
+	 * funcio que retorna l'objecte Forma Pagament a modificar/posar a la pagina 
 	 * @param request
 	 * @param response
 	 * @return
@@ -352,7 +352,7 @@ public class GFormaPagamentController extends SeccioController{
 		// creem un objecte Forma Pagament
 		FormaPagament fp = null;
 		
-		// obtenim l´ID de lobjecte a modificar	de la pagina
+		// obtenim l'ID de lobjecte a modificar	de la pagina
 		Long nId = null;
 		nId = RequestValidationUtils.getMandatoryLong(
 			PARAM_ID,
@@ -364,7 +364,7 @@ public class GFormaPagamentController extends SeccioController{
 	
 	
 	/**
-	 * funcio per obtenir l´Id de l´objecte a tractar del formulari
+	 * funcio per obtenir l'Id de l'objecte a tractar del formulari
 	 * @param request
 	 * @param response
 	 * @return
@@ -374,7 +374,7 @@ public class GFormaPagamentController extends SeccioController{
 			HttpServletResponse response) throws ParameterException{
 		
 				
-		// obtenim l´ID de lobjecte a modificar	de la pagina
+		// obtenim l'ID de lobjecte a modificar	de la pagina
 		Long nId = null;
 					
 		nId = RequestValidationUtils.getMandatoryLong(

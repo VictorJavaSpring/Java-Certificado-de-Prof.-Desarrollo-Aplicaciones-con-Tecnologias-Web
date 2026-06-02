@@ -20,7 +20,7 @@ public class OfertaProducteDAOTest extends AbstractDAOTest {
 	public void preparaBD() throws SQLException {
 		// Creem l'esquema a traves de la classe base
 		super.preparaBD();
-		// Executem l'script de c�rrega de dades de ofertaproducte
+		// Executem l'script de carrega de dades de ofertaproducte
 		executaScript("test/resources/scripts/OfertaProducteData.sql");
 	}
 
@@ -44,7 +44,7 @@ public class OfertaProducteDAOTest extends AbstractDAOTest {
 		// Recupero de nou el ofertaproducte
 		// (alta m'ha d'haver assignat el nou id)
 		OfertaProducte nou = dao.obtenirPerId(r.getId());
-		// Miro que els dos objectes s�n iguals
+		// Miro que els dos objectes sin iguals
 		Assert.assertEquals(r, nou);
 	}
 	
@@ -62,7 +62,7 @@ public class OfertaProducteDAOTest extends AbstractDAOTest {
 		r.setIdProducte(4l);
 		// El modifico
 		dao.modificar(r);
-		// El recupero i comprobo que est� modificat
+		// El recupero i comprobo que este modificat
 		OfertaProducte nou = dao.obtenirPerId(1l);
 		Assert.assertEquals(r, nou);
 	}
@@ -88,7 +88,7 @@ public class OfertaProducteDAOTest extends AbstractDAOTest {
 		List<OfertaProducte> tots = dao.obtenirTots();
 		// Comprovem que hem rebut tres rols
 		Assert.assertEquals(3, tots.size());
-		// Comprovem que el un a un s�n correctes
+		// Comprovem que el un a un sin correctes
 		Assert.assertEquals(tots.get(0).getId(), (Long)1l);
 		Assert.assertEquals(tots.get(0).getNom(), "Special Hot eWok Dish");
 		Assert.assertEquals(tots.get(0).getPctDescompte(), (Float)15.00f);

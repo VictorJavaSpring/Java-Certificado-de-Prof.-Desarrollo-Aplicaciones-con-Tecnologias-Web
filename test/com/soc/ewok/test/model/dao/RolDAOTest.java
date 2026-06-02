@@ -15,7 +15,7 @@ public class RolDAOTest extends AbstractDAOTest {
 	public void preparaBD() throws SQLException {
 		// Creem l'esquema a traves de la classe base
 		super.preparaBD();
-		// Executem l'script de c�rrega de dades de rol
+		// Executem l'script de carrega de dades de rol
 		executaScript("test/resources/scripts/RolData.sql");
 	}
 
@@ -32,7 +32,7 @@ public class RolDAOTest extends AbstractDAOTest {
 		// Recupero de nou el rol
 		// (alta m'ha d'haver assignat el nou id)
 		Rol nou = dao.obtenirPerId(r.getId());
-		// Miro que els dos objectes s�n iguals
+		// Miro que els dos objectes sin iguals
 		Assert.assertEquals(r, nou);
 	}
 	
@@ -44,7 +44,7 @@ public class RolDAOTest extends AbstractDAOTest {
 		// El modifico
 		r.setNom("Un altre");
 		dao.modificar(r);
-		// El recupero i comprobo que est� modificat
+		// El recupero i comprobo que este modificat
 		Rol nou = dao.obtenirPerId(1l);
 		Assert.assertEquals(r, nou);
 	}
@@ -70,7 +70,7 @@ public class RolDAOTest extends AbstractDAOTest {
 		List<Rol> tots = dao.obtenirTots();
 		// Comprovem que hem rebut tres rols
 		Assert.assertEquals(3, tots.size());
-		// Comprovem que el un a un s�n correctes
+		// Comprovem que el un a un sin correctes
 		Assert.assertEquals(tots.get(0).getId(), (Long)1l);
 		Assert.assertEquals(tots.get(0).getNom(), "Administrador");
 		Assert.assertEquals(tots.get(0).getCodi(), "C1Administ");

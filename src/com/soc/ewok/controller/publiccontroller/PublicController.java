@@ -9,7 +9,7 @@ import com.soc.ewok.model.Comanda;
 
 /**
  * Classe base per a tots els servlets
- * (controladors) de la zona �blica
+ * (controladors) de la zona publica
  * @author Administrador
  *
  */

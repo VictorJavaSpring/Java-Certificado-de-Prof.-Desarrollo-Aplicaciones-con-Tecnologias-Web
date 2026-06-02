@@ -12,7 +12,7 @@ import com.soc.ewok.model.OfertaComanda;
 
 
 public class OfertaComandaDAOTest extends AbstractDAOTest {
-	//creo dates accessibles des de qualsevol m�tode 
+	//creo dates accessibles des de qualsevol metode 
 	//per a provar iniciVigencia i fiVigencia on calgui
 	
 	Date data1 = new Date();
@@ -22,7 +22,7 @@ public class OfertaComandaDAOTest extends AbstractDAOTest {
 	public void preparaBD() throws SQLException {
 		// Creem l'esquema a traves de la classe base
 		super.preparaBD();
-		// Executem l'script de c�rrega de dades de rol
+		// Executem l'script de carrega de dades de rol
 		executaScript("test/resources/scripts/OfertaComandaData.sql"); 
 	}
 
@@ -42,7 +42,7 @@ public class OfertaComandaDAOTest extends AbstractDAOTest {
 		// Recupero de nou el Producte
 		// (alta m'ha d'haver assignat el nou id)
 		OfertaComanda nou = dao.obtenirPerId(r.getId());
-		// Miro que els dos objectes s�n iguals
+		// Miro que els dos objectes sin iguals
 		Assert.assertEquals(r, nou);
 	}
 	@Test
@@ -57,7 +57,7 @@ public class OfertaComandaDAOTest extends AbstractDAOTest {
 		r.setFiVigencia(data2);
 		// El modifico
 		dao.modificar(r);
-		// El recupero i comprobo que est� modificat
+		// El recupero i comprobo que este modificat
 		OfertaComanda nou = dao.obtenirPerId(1l);
 		Assert.assertEquals(r, nou);
 	}
@@ -83,7 +83,7 @@ public class OfertaComandaDAOTest extends AbstractDAOTest {
 		List<OfertaComanda> tots = dao.obtenirTots();
 		// Comprovem que hem rebut tres rols
 		Assert.assertEquals(3, tots.size());
-		// Comprovem que el un a un s�n correctes
+		// Comprovem que el un a un sin correctes
 		Assert.assertEquals(tots.get(0).getId(), (Long)1l);
 		Assert.assertEquals(tots.get(0).getLimitInferior(), (Float)25.30f);
 		Assert.assertEquals(tots.get(0).getPctDescompte(), (Float)10.00f);

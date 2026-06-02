@@ -43,7 +43,7 @@ CREATE TABLE IF NOT EXISTS `TipusProducte` (
   `Id` INT UNSIGNED NOT NULL AUTO_INCREMENT,
   `Nom` VARCHAR(45) NOT NULL,
   `Descripcio` VARCHAR(45) NULL,
-  `Codi` VARCHAR(10) NULL COMMENT 'Camp destinat a codificar subcategories de productes. Obert a la codificaci� que es necessiti en cada cas.\n\nIndicarem:\n* Si el plat es cuinat o no per enviar-lo a la cuina',
+  `Codi` VARCHAR(10) NULL COMMENT 'Camp destinat a codificar subcategories de productes. Obert a la codificacio que es necessiti en cada cas.\n\nIndicarem:\n* Si el plat es cuinat o no per enviar-lo a la cuina',
   PRIMARY KEY (`Id`));
 
   

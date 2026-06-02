@@ -12,7 +12,7 @@ import com.soc.ewok.model.Producte;
 
 
 public class ProducteDAOTest extends AbstractDAOTest {
-	//creo dates accessibles des de qualsevol m�tode 
+	//creo dates accessibles des de qualsevol metode 
 	//per a provar iniciVigencia i fiVigencia on calgui
 	
 	Date data1 = new Date();
@@ -22,7 +22,7 @@ public class ProducteDAOTest extends AbstractDAOTest {
 	public void preparaBD() throws SQLException {
 		// Creem l'esquema a traves de la classe base
 		super.preparaBD();
-		// Executem l'script de c�rrega de dades de rol
+		// Executem l'script de carrega de dades de rol
 		executaScript("test/resources/scripts/ProducteData.sql"); 
 	}
 
@@ -45,7 +45,7 @@ public class ProducteDAOTest extends AbstractDAOTest {
 		// Recupero de nou el Producte
 		// (alta m'ha d'haver assignat el nou id)
 		Producte nou = dao.obtenirPerId(r.getId());
-		// Miro que els dos objectes s�n iguals
+		// Miro que els dos objectes sin iguals
 		Assert.assertEquals(r, nou);
 	}
 	@Test
@@ -59,7 +59,7 @@ public class ProducteDAOTest extends AbstractDAOTest {
 		r.setIdTipusProducte(2l);
 		// El modifico
 		dao.modificar(r);
-		// El recupero i comprobo que est� modificat
+		// El recupero i comprobo que este modificat
 		Producte nou = dao.obtenirPerId(1l);
 		Assert.assertEquals(r, nou);
 	}
@@ -85,7 +85,7 @@ public class ProducteDAOTest extends AbstractDAOTest {
 		List<Producte> tots = dao.obtenirTots();
 		// Comprovem que hem rebut tres objectes
 		Assert.assertEquals(3, tots.size());
-		// Comprovem que un a un s�n correctes
+		// Comprovem que un a un sin correctes
 		Assert.assertEquals(tots.get(0).getId(), (Long)2l);
 		Assert.assertEquals(tots.get(0).getNom(), "Arros");
 		Assert.assertEquals(tots.get(0).getDescripcioCurta(), "Arros thai amb chinchis");

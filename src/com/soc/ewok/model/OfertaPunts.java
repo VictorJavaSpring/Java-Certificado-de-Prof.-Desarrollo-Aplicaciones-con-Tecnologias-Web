@@ -26,7 +26,7 @@ public class OfertaPunts {
 	/**
 	 * Retorna l'id de OfertaPunts.
 	 * @return L'id de OferaPunts. Si OfertaPunts no s'ha grabat a base de dades,
-	 * retornarà null. 
+	 * retornara null. 
 	 */
 	public Long getId() {
 		return nId;
@@ -45,7 +45,7 @@ public class OfertaPunts {
 	/**
 	 * Retorna Euros Per punt 
 	 * @return EurosPerPunt. Si OfertaPunts no s'ha grabat a base de dades,
-	 * retornarà null. 
+	 * retornara null. 
 	 */
 
 	
@@ -72,7 +72,7 @@ public class OfertaPunts {
 	/**
 	 * Retorna Punts per Xec
 	 * @return Punts per Xec. Si OfertaPunts no s'ha grabat a base de dades,
-	 * retornarà null. 
+	 * retornara null. 
 	 */
 
 	public Short getPuntsPerXec() {
@@ -97,7 +97,7 @@ public class OfertaPunts {
 	/**
 	 * Retorna DiesVigenciaPunts
 	 * @return DiesVigenciaPunts Si OfertaPunts no s'ha grabat a base de dades,
-	 * retornarà null. 
+	 * retornara null. 
 	 */
 	public Long getDiesVigenciaPunts() {
 		return dDiesVigenciaPunts;
@@ -120,7 +120,7 @@ public class OfertaPunts {
 	/**
 	 * Retorna : DiesVigenciaXecs
 	 * @return DiesVigenciaXecs. Si OfertaPunts no s'ha grabat a base de dades,
-	 * retornarà null. 
+	 * retornara null. 
 	 */
 	public Long getDiesVigenciaXecs() {
 		return dDiesVigenciaXecs;
@@ -143,7 +143,7 @@ public class OfertaPunts {
 	/**
 	 * Retorna : DiesIniciVigencia.
 	 * @return DiesIniciVigencia. Si OfertaPunts no s'ha grabat a base de dades,
-	 * retornarà null. 
+	 * retornara null. 
 	 */
 	public Date getIniciVigencia() {
 		return dIniciVigencia;
@@ -157,7 +157,7 @@ public class OfertaPunts {
 	public void setIniciVigencia(Date iniciVigencia) {
 		
 		/*if (iniciVigencia == null) {
-			throw new IllegalArgumentException("Inici de Vigència ha d'estar informat");
+			throw new IllegalArgumentException("Inici de Vigencia ha d'estar informat");
 		}*/
 	
 		dIniciVigencia = iniciVigencia;
@@ -166,7 +166,7 @@ public class OfertaPunts {
 	/**
 	 * Retorna : FiVigencia
 	 * @return FiVigencia. Si OfertaPunts no s'ha grabat a base de dades,
-	 * retornarà null. 
+	 * retornara null. 
 	 */
 	public Date getFiVigencia() {
 		return dFiVigencia;

@@ -11,7 +11,7 @@ import com.soc.ewok.model.Rol;
 public class ProvaService {
 	@GET
 	@Path("/unRol")
-	// s'arriba a aquest mètode per eWok/data/prova/unRol
+	// s'arriba a aquest metode per eWok/data/prova/unRol
 	@Produces({MediaType.APPLICATION_JSON})
 	public Rol getUnRol() {
 		Rol r = new Rol();

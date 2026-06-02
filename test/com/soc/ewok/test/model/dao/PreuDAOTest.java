@@ -21,7 +21,7 @@ public class PreuDAOTest extends AbstractDAOTest {
 	public void preparaBD() throws SQLException {
 		// Creem l'esquema a traves de la classe base
 		super.preparaBD();
-		// Executem l'script de c�rrega de dades de preu
+		// Executem l'script de carrega de dades de preu
 		executaScript("test/resources/scripts/PreuData.sql"); 
 	}
 
@@ -40,7 +40,7 @@ public class PreuDAOTest extends AbstractDAOTest {
 		// Recupero de nou el preu
 		// (alta m'ha d'haver assignat el nou id)
 		Preu nou = dao.obtenirPerId(p.getId());
-		// Miro que els dos objectes s�n iguals
+		// Miro que els dos objectes sin iguals
 		Assert.assertEquals(p, nou);
 	}
 	
@@ -55,7 +55,7 @@ public class PreuDAOTest extends AbstractDAOTest {
 		p.setFinalVigencia(dFinalModificada);
 		p.setIdProducte(1l);
 		dao.modificar(p);
-		// El recupero i comprobo que est� modificat
+		// El recupero i comprobo que este modificat
 		Preu nou = dao.obtenirPerId(1l);
 		Assert.assertEquals(p, nou);
 	}
@@ -81,7 +81,7 @@ public class PreuDAOTest extends AbstractDAOTest {
 		List<Preu> tots = dao.obtenirTots();
 		// Comprovem que hem rebut tres rols
 		Assert.assertEquals(3, tots.size());
-		// Comprovem que un a un s�n correctes
+		// Comprovem que un a un sin correctes
 		Assert.assertEquals(tots.get(0).getId(), (Long)1l);
 		Assert.assertEquals(tots.get(0).getPreu(), (Float)10f);
 		Assert.assertTrue(sonIguals(tots.get(0).getIniciVigencia(), 2015, 4, 25, 0, 0, 0));

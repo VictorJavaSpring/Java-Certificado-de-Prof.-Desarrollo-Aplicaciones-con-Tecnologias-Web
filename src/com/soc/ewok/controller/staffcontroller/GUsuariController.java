@@ -58,7 +58,7 @@ public class GUsuariController extends SeccioController{
 	
 	
 	public GUsuariController() {
-		// Creo un DAO que anir� contra BD
+		// Creo un DAO que anira contra BD
 	daoUsuari = new UsuariDAO(EWokController.getGlobalDatasource());
 	// Afegir els rols que poden usar aquest controller
 //			addRols2Controller(Rol.ROL_CODI_ADMINISTRADOR);
@@ -80,7 +80,7 @@ public class GUsuariController extends SeccioController{
 	public void doGet (String accio, HttpServletRequest request, HttpServletResponse response)
 			throws ServletException, IOException {
 		
-		// M�tode principal per servir totes les peticions
+		// metode principal per servir totes les peticions
 				// relatives a OfertaPunts
 		if (ACCIO_VEURE.equals(accio)) {
 			doVeureUsuari(request, response);
@@ -113,12 +113,12 @@ public class GUsuariController extends SeccioController{
 				Usuari usuari = extreureUsuari(request, response, false);
 				
 				// Si no l'he obtingu no faig res
-				// (extreureusuari ja haur� redirigit on calgui)
+				// (extreureusuari ja haura redirigit on calgui)
 				if (usuari == null) {
 					return;
 				}
 				
-				// Si tot ha anat b�
+				// Si tot ha anat be
 				// Donem d'alta la persona a traves del DAO
 				try {
 					daoUsuari.alta(usuari);
@@ -194,7 +194,7 @@ public class GUsuariController extends SeccioController{
 //			doLlistatUsuari(request, response);
 //			return null;
 //		}
-//		// Si tot ha anat b�, retorno l'id
+//		// Si tot ha anat be, retorno l'id
 //		return pw;
 //	}
 
@@ -296,10 +296,10 @@ public class GUsuariController extends SeccioController{
 			usuari.setActiu(extreureEmail);
 		
 		
-		// Si hi ha algun error de validaci�, retornem al formulari
+		// Si hi ha algun error de validacio, retornem al formulari
 		if (extreureEmail && mail == null) {
 			if (extreureEmail) {
-				// Si hi ha algun error i era una modificaci�
+				// Si hi ha algun error i era una modificacio
 				// (extreureEmail == true), llavors cal posar un usuari
 //				// com a flag
 				request.setAttribute(MODEL_USUARI, usuari);
@@ -361,7 +361,7 @@ public class GUsuariController extends SeccioController{
 						request);
 			}
 			
-			// Hagi anat b� o malament, pintem el llistat de persones
+			// Hagi anat be o malament, pintem el llistat de persones
 			doLlistatUsuari(request, response);
 			}
 	
@@ -379,7 +379,7 @@ public class GUsuariController extends SeccioController{
 		
 		String mail = obtenirPerEmail(request, response, "veure");
 		if (mail == null){
-			// Redirigim cap a la p�gina de llistat
+			// Redirigim cap a la pagina de llistat
 			doLlistatUsuari(request, response);
 			return;
 		}
@@ -429,7 +429,7 @@ public class GUsuariController extends SeccioController{
 					doLlistatUsuari(request, response);
 					return null;
 				}
-				// Si tot ha anat b�, retorno l'id
+				// Si tot ha anat be, retorno l'id
 				return mail;
 		
 	}

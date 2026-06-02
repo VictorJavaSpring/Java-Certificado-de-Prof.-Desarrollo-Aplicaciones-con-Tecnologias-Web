@@ -15,7 +15,7 @@ public class PagamentDAOTest extends AbstractDAOTest {
 	public void preparaBD() throws SQLException {
 		// Creem l'esquema a traves de la classe base
 		super.preparaBD();
-		// Executem l'script de c�rrega de dades de rol
+		// Executem l'script de carrega de dades de rol
 		executaScript("test/resources/scripts/PagamentData.sql"); 
 	}
 
@@ -38,7 +38,7 @@ public class PagamentDAOTest extends AbstractDAOTest {
 		// Recupero de nou el rol
 		// (alta m'ha d'haver assignat el nou id)
 		Pagament nou = dao.obtenirPerId(p.getnId());
-		// Miro que els dos objectes s�n iguals
+		// Miro que els dos objectes sin iguals
 		Assert.assertEquals(p, nou);
 	}
 	
@@ -58,7 +58,7 @@ public class PagamentDAOTest extends AbstractDAOTest {
 		
 		// El modifico
 		dao.modificar(p);
-		// El recupero i comprobo que est� modificat
+		// El recupero i comprobo que este modificat
 		Pagament nou = dao.obtenirPerId(1l);
 		Assert.assertEquals(p, nou);
 	}
@@ -84,7 +84,7 @@ public class PagamentDAOTest extends AbstractDAOTest {
 		List<Pagament> tots = dao.obtenirTots();
 		// Comprovem que hem rebut tres rols
 		Assert.assertEquals(3, tots.size());
-		// Comprovem que el un a un s�n correctes
+		// Comprovem que el un a un sin correctes
 		Assert.assertEquals(tots.get(0).getnId(), (Long)1l);
 		Assert.assertEquals(tots.get(0).getnIdComanda(), (Long)1l);
 		Assert.assertEquals((float)tots.get(0).getQuantitat(),(float)123.45,(float)0.00);

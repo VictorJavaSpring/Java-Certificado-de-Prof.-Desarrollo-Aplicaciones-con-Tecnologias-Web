@@ -64,8 +64,8 @@ import com.soc.utils.IPrepareStatement;
 		}
 
 		/**
-		 * Dóna d'alta un registre a base de dades.
-		 * Actualitzarà l'id amb el valor generat pel gestor
+		 * d'na d'alta un registre a base de dades.
+		 * Actualitzara l'id amb el valor generat pel gestor
 		 * @param u Unitat a donar d'alta
 		 * @throws SQLException En cas que hi hagi un error de base de dades
 		 */
@@ -118,8 +118,8 @@ import com.soc.utils.IPrepareStatement;
 
 		/** 
 		 * Modifica una Unitat a base de dades
-		 * @param u El Unitat a modificar. Usarà l'id
-		 * per buscar el registre i actualitzarà tots els seus camps
+		 * @param u El Unitat a modificar. usara l'id
+		 * per buscar el registre i actualitzara tots els seus camps
 		 * @throws SQLException En cas que es produeixi un error de base de dades
 		 */
 		public void modificar(final Unitat u) throws SQLException {
@@ -161,10 +161,10 @@ import com.soc.utils.IPrepareStatement;
 					public boolean processRow(Connection con, PreparedStatement st,
 							ResultSet uset) throws SQLException {
 						// Obtinc el registre de la fila actual
-						// i el fico a l'objecte que retornaré
+						// i el fico a l'objecte que retornara
 						crearUnitat(uset, laUnitat);
 						// Indico al DBWrapper que segueixi amb el 
-						// següent registre
+						// segÃ¼ent registre
 						return false;
 					}
 				}
@@ -174,7 +174,7 @@ import com.soc.utils.IPrepareStatement;
 
 		/**
 		 * Recupera de base de dades tots las unitats ordenats per nom
-		 * @return La llista de unitats. Si no n'hi ha, retornarà una llista buida
+		 * @return La llista de unitats. Si no n'hi ha, retornara una llista buida
 		 * @throws SQLException En cas que es produeixi un error de base de dades
 		 */
 		public List<Unitat> obtenirTots() throws SQLException {
@@ -189,7 +189,7 @@ import com.soc.utils.IPrepareStatement;
 						// i el fico a la llista
 						laUnitat.add(crearUnitat(uset));
 						// Indico al DBWrapper que segueixi amb el 
-						// següent registre
+						// segÃ¼ent registre
 						return true;
 					}
 				}
@@ -198,7 +198,7 @@ import com.soc.utils.IPrepareStatement;
 		}
 
 		/**
-		 * Funció d'utilitat per crear un objecte Unitat a partir de la fila actual
+		 * Funcio d'utilitat per crear un objecte Unitat a partir de la fila actual
 		 * d'un recordset 
 		 * @param uset El recordset d'on treurem la Unitat
 		 * @return la Unitat creat
@@ -209,10 +209,10 @@ import com.soc.utils.IPrepareStatement;
 		}
 
 		/**
-		 * Funció d'utilitat per omplir un objecte Unitat amb els valors
+		 * Funcio d'utilitat per omplir un objecte Unitat amb els valors
 		 * de la fila actual d'un recordset
 		 * @param uset El recordset d'on treurem la Unitat
-		 * @param u La Unitat a omplir. Pot ser null i es crearà una Unitat nou
+		 * @param u La Unitat a omplir. Pot ser null i es creara una Unitat nou
 		 * @return La Unitat amb els camps recuperats
 		 * @throws SQLException El recordset d'on treurem la Unitat
 		 */

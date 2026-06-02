@@ -60,8 +60,8 @@ public class TipusProducteDAO {
 	}
 
 	/**
-	 * Dóna d'alta un registre a base de dades.
-	 * Actualitzarà l'id amb el valor generat pel gestor
+	 * d'na d'alta un registre a base de dades.
+	 * Actualitzara l'id amb el valor generat pel gestor
 	 * @param tp TipusPrroducte a donar d'alta
 	 * @throws SQLException En cas que hi hagi un error de base de dades
 	 */
@@ -114,8 +114,8 @@ public class TipusProducteDAO {
 
 	/** 
 	 * Modifica un Tipu de producte a base de dades
-	 * @param tp El TipusProducte a modificar. Usarà l'id
-	 * per buscar el registre i actualitzarà tots els seus camps
+	 * @param tp El TipusProducte a modificar. usara l'id
+	 * per buscar el registre i actualitzara tots els seus camps
 	 * @throws SQLException En cas que es produeixi un error de base de dades
 	 */
 	public void modificar(final TipusProducte tp) throws SQLException {
@@ -157,10 +157,10 @@ public class TipusProducteDAO {
 				public boolean processRow(Connection con, PreparedStatement st,
 						ResultSet tpset) throws SQLException {
 					// Obtinc el registre de la fila actual
-					// i el fico a l'objecte que retornaré
+					// i el fico a l'objecte que retornara
 					crearTipusProducte(tpset, elTipo);
 					// Indico al DBWrapper que segueixi amb el 
-					// següent registre
+					// segÃ¼ent registre
 					return false;
 				}
 			}
@@ -170,7 +170,7 @@ public class TipusProducteDAO {
 
 	/**
 	 * Recupera de base de dades tots els tipus de producte ordenats per nom
-	 * @return La llista de Tipus de Producte. Si no n'hi ha, retornarà una llista buida
+	 * @return La llista de Tipus de Producte. Si no n'hi ha, retornara una llista buida
 	 * @throws SQLException En cas que es produeixi un error de base de dades
 	 */
 	public List<TipusProducte> obtenirTots() throws SQLException {
@@ -185,7 +185,7 @@ public class TipusProducteDAO {
 					// i el fico a la llista
 					elTipo.add(crearTipusProducte(tpset));
 					// Indico al DBWrapper que segueixi amb el 
-					// següent registre
+					// segÃ¼ent registre
 					return true;
 				}
 			}
@@ -194,7 +194,7 @@ public class TipusProducteDAO {
 	}
 
 	/**
-	 * Funció d'utilitat per crear un objecte TipusProducte a partir de la fila actual
+	 * Funcio d'utilitat per crear un objecte TipusProducte a partir de la fila actual
 	 * d'un recordset 
 	 * @param tpset El recordset d'on treurem el TipusProducte
 	 * @return el TipusProducte creat
@@ -205,10 +205,10 @@ public class TipusProducteDAO {
 	}
 
 	/**
-	 * Funció d'utilitat per omplir un objecte TipusProducte amb els valors
+	 * Funcio d'utilitat per omplir un objecte TipusProducte amb els valors
 	 * de la fila actual d'un recordset
 	 * @param tpset El recordset d'on treurem el TipusProducte
-	 * @param tp El TipusProducte a omplir. Pot ser null i es crearà un TipusProducte nou
+	 * @param tp El TipusProducte a omplir. Pot ser null i es creara un TipusProducte nou
 	 * @return El TipusProducte amb els camps recuperats
 	 * @throws SQLException El recordset d'on treurem la Unitat
 	 */

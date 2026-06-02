@@ -14,15 +14,15 @@ import javax.servlet.http.HttpServletResponse;
  */
 public interface ISectionController {
 	/**
-	 * Retorn el nom de l'acció per discernir si la request
+	 * Retorn el nom de l'accio per discernir si la request
 	 * actual ha de ser gestionada per aquest controlador
 	 * @return
 	 */
 	public String getNomAccio();
 
 	/**
-	 * Retorna una llista dels rols que poden executar l'acció indicada
-	 * @param accio L'acció que es vol executar
+	 * Retorna una llista dels rols que poden executar l'accio indicada
+	 * @param accio L'accio que es vol executar
 	 * @return La llista de rols autoritzats
 	 */
 	public List<String> getRolsValids(String accio);
@@ -30,11 +30,11 @@ public interface ISectionController {
 
 	/**
 	 * Processa una request concreta
-	 * @param accio L'acció demanada
+	 * @param accio L'accio demanada
 	 * @param request La request en curs
 	 * @param response La response en curs
-	 * @throws ServletException Excepció genèrica de servlet
-	 * @throws IOException Excepció genèrica de servlet
+	 * @throws ServletException excepcio generica de servlet
+	 * @throws IOException excepcio generica de servlet
 	 */
 	public void doGet(String accio, HttpServletRequest request, HttpServletResponse response) 
 			throws ServletException, IOException;

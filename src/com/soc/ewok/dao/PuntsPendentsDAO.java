@@ -63,8 +63,8 @@ public class PuntsPendentsDAO {
 	}
 
 	/**
-	 * Dóna d'alta un registre a base de dades.
-	 * Actualitzarà l'id amb el valor generat pel gestor
+	 * d'na d'alta un registre a base de dades.
+	 * Actualitzara l'id amb el valor generat pel gestor
 	 * @param pp PuntsPendents a donar d'alta
 	 * @throws SQLException En cas que hi hagi un error de base de dades
 	 */
@@ -121,8 +121,8 @@ public class PuntsPendentsDAO {
 
 	/** 
 	 * Modifica un PuntsPendents a base de dades
-	 * @param pp El PuntsPendents a modificar. Usarà l'id
-	 * per buscar el registre i actualitzarà tots els seus camps
+	 * @param pp El PuntsPendents a modificar. usara l'id
+	 * per buscar el registre i actualitzara tots els seus camps
 	 * @throws SQLException En cas que es produeixi un error de base de dades
 	 */
 	public void modificar(final PuntsPendents pp) throws SQLException {
@@ -168,10 +168,10 @@ public class PuntsPendentsDAO {
 					public boolean processRow(Connection con, PreparedStatement st,
 							ResultSet rset) throws SQLException {
 						// Obtinc el registre de la fila actual
-						// i el fico a l'objecte que retornaré
+						// i el fico a l'objecte que retornara
 						crearPuntsPendents(rset, elPP);
 						// Indico al DBWrapper que segueixi amb el 
-						// següent registre
+						// segÃ¼ent registre
 						return false;
 					}
 				}
@@ -181,7 +181,7 @@ public class PuntsPendentsDAO {
 
 	/**
 	 * Recupera de base de dades tots els PuntsPendents ordenats per id
-	 * @return La llista de PuntsPendents. Si no n'hi ha, retornarà una llista buida
+	 * @return La llista de PuntsPendents. Si no n'hi ha, retornara una llista buida
 	 * @throws SQLException En cas que es produeixi un error de base de dades
 	 */
 	public List<PuntsPendents> obtenirTots() throws SQLException {
@@ -196,7 +196,7 @@ public class PuntsPendentsDAO {
 						// i el fico a la llista
 						elsPP.add(crearPuntsPendents(rset));
 						// Indico al DBWrapper que segueixi amb el 
-						// següent registre
+						// segÃ¼ent registre
 						return true;
 					}
 				}
@@ -205,7 +205,7 @@ public class PuntsPendentsDAO {
 	}
 
 	/**
-	 * Funció d'utilitat per crear un objecte PuntsPendents a partir de la fila
+	 * Funcio d'utilitat per crear un objecte PuntsPendents a partir de la fila
 	 * actual d'un recordset 
 	 * @param rset El recordset d'on treurem el PuntsPendents
 	 * @return El PuntsPendents creat
@@ -216,10 +216,10 @@ public class PuntsPendentsDAO {
 	}
 
 	/**
-	 * Funció d'utilitat per omplir un objecte PuntsPendents amb els valors
+	 * Funcio d'utilitat per omplir un objecte PuntsPendents amb els valors
 	 * de la fila actual d'un recordset
 	 * @param rset El recordset d'on treurem el PuntsPendents
-	 * @param x El PuntsPendents a omplir. Pot ser null i es crearà un PuntsPendents nou
+	 * @param x El PuntsPendents a omplir. Pot ser null i es creara un PuntsPendents nou
 	 * @return El PuntsPendents amb els camps recuperats
 	 * @throws SQLException El recordset d'on treurem el PuntsPendents
 	 */

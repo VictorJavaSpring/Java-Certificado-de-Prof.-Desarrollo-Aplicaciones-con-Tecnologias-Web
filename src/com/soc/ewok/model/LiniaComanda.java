@@ -68,7 +68,7 @@ public class LiniaComanda {
 	}
 
 	/**
-	 * retorna el Long Id de Linia Comanda si encara no s�havia guardat a BD pot
+	 * retorna el Long Id de Linia Comanda si encara no sihavia guardat a BD pot
 	 * retornar NULL
 	 * 
 	 * @return
@@ -78,13 +78,13 @@ public class LiniaComanda {
 	}
 
 	/**
-	 * assigna l�Id de Linia (Comanda)
+	 * assigna l'Id de Linia (Comanda)
 	 * 
 	 * @param id
 	 */
 	public void setId(Long id) {
 		if (id == null || id.equals("")) {
-			throw new IllegalArgumentException("l�id ha de ser un long v�lid");
+			throw new IllegalArgumentException("l'id ha de ser un long valid");
 		}
 		this.id = id;
 	}
@@ -100,14 +100,14 @@ public class LiniaComanda {
 	}
 
 	/**
-	 * assigna el Long n�mero de linia(comanda)
+	 * assigna el Long numero de linia(comanda)
 	 * 
 	 * @param linia
 	 */
 	public void setLinia(Long linia) {
 		if (linia == null || linia.equals("")) {
 			throw new IllegalArgumentException(
-					"la linia ha de ser un long v�lid");
+					"la linia ha de ser un long valid");
 		}
 		this.linia = linia;
 	}
@@ -129,7 +129,7 @@ public class LiniaComanda {
 	public void setIdProducte(Long idProducte) {
 		if (idProducte == null || idProducte.equals("")) {
 			throw new IllegalArgumentException(
-					"idProducte ha de ser un long v�lid");
+					"idProducte ha de ser un long valid");
 		}
 		this.idProducte = idProducte;
 	}
@@ -151,7 +151,7 @@ public class LiniaComanda {
 	public void setQuantitat(Integer quantitat) {
 		if (quantitat == null || quantitat.equals("")) {
 			throw new IllegalArgumentException(
-					"la quantitat ha de ser un Integer v�lid");
+					"la quantitat ha de ser un Integer valid");
 		}
 		this.quantitat = quantitat;
 	}
@@ -173,7 +173,7 @@ public class LiniaComanda {
 	public void setPreuBrut(Float preuBrut) {
 		if (preuBrut == null || preuBrut.equals("")) {
 			throw new IllegalArgumentException(
-					"el preuBrut ha de ser un Float v�lid");
+					"el preuBrut ha de ser un Float valid");
 		}
 		this.preuBrut = preuBrut;
 	}
@@ -195,7 +195,7 @@ public class LiniaComanda {
 	public void setPreuVenda(Float preuVenda) {
 		if (preuVenda == null || preuVenda.equals("")) {
 			throw new IllegalArgumentException(
-					"el preuVenta ha de ser un Float v�lid");
+					"el preuVenta ha de ser un Float valid");
 		}
 		this.preuVenda = preuVenda;
 	}
@@ -218,7 +218,7 @@ public class LiniaComanda {
 	public void setEstat(EEstatLiniaComanda estat) {
 		if (linia == null) {
 			throw new IllegalArgumentException(
-					"l�estat ha de ser un caracter v�lid");
+					"l'estat ha de ser un caracter valid");
 		}
 		this.eEstat = estat;
 	}

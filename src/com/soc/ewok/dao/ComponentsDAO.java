@@ -69,8 +69,8 @@ public class ComponentsDAO {
 	}
 	
 	/**
-	 * Dóna d'alta un registre a base de dades.
-	 * Actualitzarà l'id amb el valor generat pel gestor
+	 * d'na d'alta un registre a base de dades.
+	 * Actualitzara l'id amb el valor generat pel gestor
 	 * @param c Component a donar d'alta
 	 * @throws SQLException En cas que hi hagi un error de base de dades
 	 */
@@ -113,8 +113,8 @@ public class ComponentsDAO {
 	
 	/**
 	 * Modifica un component a base de dades 
-	 * @param c El component a modificar- Usarà l'id
-	 * per buscar el registre i actualitzarà tots els camps
+	 * @param c El component a modificar- usara l'id
+	 * per buscar el registre i actualitzara tots els camps
 	 * @throws SQLException En cas que es produeixi un error de base de dades
 	 */
 	public void modificar(final Components c) throws SQLException {
@@ -159,10 +159,10 @@ public class ComponentsDAO {
 				public boolean processRow(Connection con, PreparedStatement st,
 						ResultSet rset) throws SQLException {
 					// Obtinc el registre de la fila actual
-					// i el fico a l'objecte que retornaré
+					// i el fico a l'objecte que retornara
 					crearComponent(rset, elComponent);
 					// Indico al DBWrapper que segueixi amb el 
-					// següent registre
+					// segÃ¼ent registre
 					return false;
 				}
 			}
@@ -173,7 +173,7 @@ public class ComponentsDAO {
 	
 	/**
 	 * Recupera de base de dades tots els components ordenats per nom
-	 * @return La llista de components. Si no n'hi ha, retornarà una llista buida
+	 * @return La llista de components. Si no n'hi ha, retornara una llista buida
 	 * @throws SQLException En cas que es produeixi un error de base de dades
 	 */
 	public List<Components> obtenirTots() throws SQLException {
@@ -188,7 +188,7 @@ public class ComponentsDAO {
 					// i el fico a la llista
 					elsComponents.add(crearComponent(rset));
 					// Indico al DBWrapper que segueixi amb el 
-					// següent registre
+					// segÃ¼ent registre
 					return true;
 				}
 			}
@@ -197,7 +197,7 @@ public class ComponentsDAO {
 	}
 	
 	/**
-	 * Funció d'utilitat per crear un objecte Component a partir de la fila actual
+	 * Funcio d'utilitat per crear un objecte Component a partir de la fila actual
 	 * d'un recordset 
 	 * @param rset El recordset d'on treurem el Component
 	 * @return El Component creat
@@ -208,10 +208,10 @@ public class ComponentsDAO {
 	}
 	
 	/**
-	 * Funció d'utilitat per omplir un objecte Component amb els valors
+	 * Funcio d'utilitat per omplir un objecte Component amb els valors
 	 * de la fila actual d'un recordset 
 	 * @param rset El recordset d'on treurem el Component
-	 * @param c El Component a omplir. Pot ser null i es crearà un Component nou
+	 * @param c El Component a omplir. Pot ser null i es creara un Component nou
 	 * @return El Component amb els camps recuperats
 	 * @throws SQLException El recordset d'on treurem el Component
 	 */

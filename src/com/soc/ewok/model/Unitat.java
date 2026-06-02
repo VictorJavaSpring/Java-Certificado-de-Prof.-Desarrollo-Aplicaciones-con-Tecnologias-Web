@@ -1,7 +1,7 @@
 package com.soc.ewok.model;
 
 /**
- * Classe que representa les Unitats de medició del producte
+ * Classe que representa les Unitats de medicio del producte
  * 
  * @author Edixon
  *
@@ -49,8 +49,8 @@ public class Unitat {
 	}
 	
 	/**
-	 * Retorna el acrònim que ha de tenir cada producte
-	 * @return El Acrònim del producte
+	 * Retorna el acronim que ha de tenir cada producte
+	 * @return El Acronim del producte
 	 */
 	public String getAcron() {
 		return sAcron;

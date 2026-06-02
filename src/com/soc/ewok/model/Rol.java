@@ -26,7 +26,7 @@ public class Rol {
 	/**
 	 * Retorna l'id del rol.
 	 * @return L'id del rol. Si el rol no s'ha grabat a base de dades,
-	 * retornarà null. 
+	 * retornara null. 
 	 */
 	public Long getId() {
 		return nId;
@@ -61,7 +61,7 @@ public class Rol {
 		sNom = nom;
 	}
 	/**
-	 * Obté el codi del rol
+	 * Obte el codi del rol
 	 * @return el codi del rol
 	 * @author JordiM
 	 */
