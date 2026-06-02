@@ -13,6 +13,10 @@ Mantener una rama separada del sistema legacy funcional (`main`) para realizar:
 
 sin comprometer la versión estable original.
 
+## Documentación
+
+- [Arquitectura del proyecto](Architecture.md) — controladores, DAOs, modelos, REST, filtros, listeners y base de datos.
+
 ---
 
 # Estado actual del proyecto

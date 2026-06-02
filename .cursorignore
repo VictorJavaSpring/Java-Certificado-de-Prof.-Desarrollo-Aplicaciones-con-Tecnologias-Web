@@ -1,0 +1,16 @@
+target/
+build/
+.settings/
+.metadata/
+Servers/
+
+*.class
+*.log
+
+node_modules/
+
+WebContent/fonts/
+WebContent/img/
+
+CAPTURA*
+MODEL.bmp
